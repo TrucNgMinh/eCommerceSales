@@ -76,7 +76,7 @@ File: Main Css File
   z-index: 1030;
   border: 0;
   -webkit-transition: all .5s ease;
-  transition: all .5s ease;
+  transition: top .5s ease;
   min-height: 62px;
   background: #ffffff;
   -webkit-box-shadow: 0 0 18px 0 rgba(0, 0, 0, 0.2);
@@ -159,6 +159,7 @@ File: Main Css File
 }
 
 #topnav .navbar-custom {
+  position: relative;
   background-color: #02c0ce;
 }
 
