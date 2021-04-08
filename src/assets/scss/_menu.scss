@@ -204,6 +204,7 @@
     }
 }
 
+
 /*
   Responsive Menu
 */
@@ -213,9 +214,6 @@
         .navigation-menu>li>a {
             padding-top: 20px;
             padding-bottom: 20px;
-        }
-        .navigation-menu>li:first-of-type>a {
-            padding-left: 0;
         }
         .navigation-menu>li.last-elements .submenu {
             left: auto;
@@ -481,6 +479,7 @@
     }
 }
 
+
 /* Footer */
 
 .footer {
@@ -493,6 +492,7 @@
     background-color: $white;
     left: 0;
 }
+
 
 /* Search */
 
@@ -542,6 +542,7 @@
         color: rgba($white, 70%);
     }
 }
+
 
 /* Notification */
 
