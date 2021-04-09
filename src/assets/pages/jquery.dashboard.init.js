@@ -11,7 +11,7 @@
                 document.getElementById("topnav").style.top = "-90px";
             }
         } else {
-            document.getElementById("topnav").style.top = "-160px";
+            document.getElementById("topnav").style.top = "-190px";
         }
         prevScrollpos = currentScrollPos;
     }
