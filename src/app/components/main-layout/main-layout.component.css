@@ -640,3 +640,9 @@ ul.wpb_thumbnails-fluid>li {
     padding-right: 15px;
     width: 100%;
 }
+
+.wpb_single_image img {
+    height: auto;
+    max-width: 100%;
+    vertical-align: top;
+}
