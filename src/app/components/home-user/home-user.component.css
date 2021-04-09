@@ -114,7 +114,7 @@ body .wpb_gallery_slides ul li {
 }
 
 .vc_custom_1571978588841 {
-    margin-bottom: 60px!important;
+    margin-bottom: 15px !important;
 }
 
 .vc_custom_heading.style2:before {
@@ -423,4 +423,16 @@ i {
     -webkit-transition: padding .2s ease-in-out;
     -o-transition: padding .2s ease-in-out;
     transition: padding .2s ease-in-out;
+}
+
+.btn-reason {
+    width: 100%;
+    text-align: left;
+    font-size: 18px;
+    font-weight: 500;
+    border-radius: 5px;
+}
+
+.btn-reason span {
+    color: GRAY;
 }

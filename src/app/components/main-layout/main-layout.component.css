@@ -122,7 +122,7 @@ section {
     position: relative;
     display: inline-block;
     padding: 10px 10px 10px 20px;
-    background-color: #007dc5;
+    background-color: #8b0000;
 }
 
 .site-footer .textwidget .info p {
@@ -198,7 +198,7 @@ section {
 }
 
 .site-footer .widget-title span:after {
-    border-left-color: #007dc5 !important;
+    border-left-color: #8b0000 !important;
 }
 
 .site-footer .widget-title span:after {
@@ -274,7 +274,7 @@ section {
     padding-top: 40px;
     padding-bottom: 40px;
     position: relative;
-    background-color: #007dc5;
+    background-color: #8b0000;
 }
 
 .get-quote:before,
@@ -290,7 +290,7 @@ section {
 .header01 .site-branding:before,
 .copyright .left,
 .copyright .left:before {
-    background-color: #007dc5;
+    background-color: #8b0000;
 }
 
 .end-md {
@@ -316,7 +316,7 @@ section {
 .better-menu-widget li:hover:after,
 .header01 .site-branding:after,
 .copyright .left:after {
-    border-left-color: #007dc5;
+    border-left-color: #8b0000;
 }
 
 @media (min-width: 62rem) {
@@ -645,4 +645,8 @@ ul.wpb_thumbnails-fluid>li {
     height: auto;
     max-width: 100%;
     vertical-align: top;
+}
+
+.site-footer .container .row .widget_text .textwidget div {
+    font-size: 18px;
 }

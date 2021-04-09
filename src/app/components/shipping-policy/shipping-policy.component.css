@@ -1,0 +1,49 @@
+.title-head {
+    line-height: 0px;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 20px;
+    color: #000000;
+    text-transform: uppercase;
+    text-decoration: none;
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+
+.title-head a {
+    font-size: 25px;
+    font-weight: bold;
+    line-height: 20px;
+    color: #007dc5;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+[role=button],
+a,
+area,
+button,
+input,
+label,
+select,
+summary,
+textarea {
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+}
+
+a {
+    color: #0275d8;
+    text-decoration: none;
+}
+
+a {
+    background-color: transparent;
+}
+
+.content-page {
+    margin-left: 0px !important;
+    overflow: hidden;
+    padding: 0px !important;
+    min-height: 80vh;
+}

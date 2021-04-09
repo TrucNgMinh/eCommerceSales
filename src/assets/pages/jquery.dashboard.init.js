@@ -8,10 +8,10 @@
             if (currentScrollPos == 0) {
                 document.getElementById("topnav").style.top = "0";
             } else {
-                document.getElementById("topnav").style.top = "-90px";
+                document.getElementById("topnav").style.top = "-140px";
             }
         } else {
-            document.getElementById("topnav").style.top = "-190px";
+            document.getElementById("topnav").style.top = "-240px";
         }
         prevScrollpos = currentScrollPos;
     }

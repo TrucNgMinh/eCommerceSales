@@ -164,7 +164,7 @@ File: Main Css File
 
 #topnav .navbar-custom {
     position: relative;
-    background-color: #007dc5;
+    background-color: #8b0000;
     min-height: 60px;
     text-align: center;
 }
@@ -734,7 +734,7 @@ File: Main Css File
 body {
     margin: 0;
     overflow-x: hidden;
-    font-size: 14px;
+    font-size: 18px;
     background-color: #fff;
     font-family: "Roboto", sans-serif;
 }
