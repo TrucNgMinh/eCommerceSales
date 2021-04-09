@@ -251,11 +251,10 @@ File: Main Css File
 #topnav .navigation-menu>li>a {
     display: block;
     color: rgba(255, 255, 255, 0.7);
-    font-weight: 500;
-    font-size: 16px;
-    -webkit-transition: all .5s ease;
+    font-weight: 600;
+    font-size: 20px;
     transition: all .5s ease;
-    line-height: 20px;
+    line-height: 60px;
     padding-left: 25px;
     padding-right: 25px;
 }
@@ -266,6 +265,8 @@ File: Main Css File
     -moz-transition: all 0s cubic-bezier(.215, .61, .355, 1);
     -o-transition: all 0s cubic-bezier(.215, .61, .355, 1);
     transition: all 0s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+    border-left: 0.1px solid rgb(178, 209, 230);
+    border-right: 0.1px solid rgb(178, 209, 230);
 }
 
 #topnav .navigation-menu>li>a:focus {
@@ -734,7 +735,7 @@ body {
     margin: 0;
     overflow-x: hidden;
     font-size: 14px;
-    background-color: #ece4e4;
+    background-color: #fff;
     font-family: "Roboto", sans-serif;
 }
 
@@ -1385,7 +1386,6 @@ code {
 .pagination-split li {
     margin-left: 5px;
     display: inline-block;
-    float: left;
 }
 
 .pagination-split li:first-child {
@@ -1492,7 +1492,6 @@ code {
     height: 2.5em;
     line-height: 2.5em;
     border-radius: 50%;
-    -webkit-mask-image: none;
 }
 
 .waves-input-wrapper {
@@ -3961,7 +3960,6 @@ code {
 
 .mail-list a {
     font-family: "Rubik", sans-serif;
-    vertical-align: middle;
     color: #797979;
     padding: 10px 15px;
     display: block;
@@ -5154,7 +5152,6 @@ table.dataTable>tbody>tr.child span.dtr-title {
 .footable-pagination li {
     margin-left: 5px;
     display: inline-block;
-    float: left;
 }
 
 .footable-pagination li a {
@@ -6679,7 +6676,6 @@ td,
 figure {
     border: 0;
     font-family: inherit;
-    text-align: justify;
     font-style: inherit;
     font-weight: inherit;
     margin: 0;
@@ -6871,7 +6867,8 @@ h6 {
 }
 
 :-webkit-any(article, aside, nav, section) h1 {
-    font-size: 1.5em;
+    font-size: 2.5em;
+    ;
     margin-block-start: 0.83em;
     margin-block-end: 0.83em;
 }
@@ -6914,4 +6911,63 @@ html {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     overflow-x: hidden;
+}
+
+.wpb_image_grid .wpb_image_grid_ul img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+.entry-content img,
+.entry-summary img,
+.comment-content img[height],
+img[class*="align"],
+img[class*="wp-image-"],
+img[class*="attachment-"] {
+    height: auto;
+}
+
+.entry-content img,
+.entry-summary img,
+.comment-content img,
+.widget img,
+.wp-caption {
+    max-width: 100%;
+}
+
+a img {
+    border: 0;
+}
+
+img {
+    max-width: 100%;
+}
+
+img,
+video {
+    max-width: 100%;
+    vertical-align: top;
+    height: auto;
+}
+
+img {
+    -ms-interpolation-mode: bicubic;
+    border: 0;
+    height: auto;
+    max-width: 100%;
+    vertical-align: middle;
+}
+
+.vc_row-full-width.vc_clearfix {
+    margin-bottom: 0px!important;
+    padding-top: 70px!important;
+}
+
+.wpb_wrapper .justify {
+    font-size: 1.18rem;
+}
+
+.wpb_wrapper h1 {
+    font-weight: bold !important;
 }
