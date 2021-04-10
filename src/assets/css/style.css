@@ -287,10 +287,6 @@ File: Main Css File
 #topnav .navigation-menu>li>a:hover,
 #topnav .navigation-menu>li>a:focus {
     background-color: rgba(255, 255, 255, .2);
-    -webkit-transform: translateX(0%) translateY(0%) skewX(20deg);
-    -moz-transform: translateX(0%) translateY(0%) skewX(20deg);
-    -ms-transform: translateX(0%) translateY(0%) skewX(20deg);
-    transform: translateX(0%) translateY(0%) skewX(20deg);
 }
 
 
