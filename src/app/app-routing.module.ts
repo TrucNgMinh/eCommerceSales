@@ -7,7 +7,8 @@ import { HomeUserComponent } from './components/home-user/home-user.component';
 import { MainLayoutComponent } from './components/main-layout/main-layout.component';
 import { NewsComponent } from './components/news/news.component';
 import { PriceListComponent } from './components/price-list/price-list.component';
-import { ProductsComponent } from './components/products/products.component';
+import { ProductDetailComponent } from './components/product-detail/product-detail.component';
+import { ProductListComponent } from './components/product-list/product-list.component';
 import { ShippingPolicyComponent } from './components/shipping-policy/shipping-policy.component';
 
 const routes: Routes = [
@@ -21,7 +22,7 @@ const routes: Routes = [
       },
       {
         path: 'products',
-        component: ProductsComponent
+        component: ProductListComponent
       },
       {
         path: 'price-list',
@@ -42,6 +43,10 @@ const routes: Routes = [
       {
         path: 'contact',
         component: ContactComponent
+      },
+      {
+        path: 'product-detail',
+        component: ProductDetailComponent
       }
 
     ]

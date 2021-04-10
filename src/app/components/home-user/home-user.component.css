@@ -143,6 +143,7 @@ body .wpb_gallery_slides ul li {
 
 .vc_custom_heading.style2 h2 {
     display: inline-block;
+    color: #007dc5 !important;
     font-size: 24px;
     line-height: 1;
 }

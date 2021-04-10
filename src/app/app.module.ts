@@ -13,6 +13,8 @@ import { DistributionMarketComponent } from './components/distribution-market/di
 import { ShippingPolicyComponent } from './components/shipping-policy/shipping-policy.component';
 import { NewsComponent } from './components/news/news.component';
 import { ContactComponent } from './components/contact/contact.component';
+import { ProductDetailComponent } from './components/product-detail/product-detail.component';
+import { ProductListComponent } from './components/product-list/product-list.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,9 @@ import { ContactComponent } from './components/contact/contact.component';
     DistributionMarketComponent,
     ShippingPolicyComponent,
     NewsComponent,
-    ContactComponent
+    ContactComponent,
+    ProductDetailComponent,
+    ProductListComponent
   ],
   imports: [
     BrowserModule,
