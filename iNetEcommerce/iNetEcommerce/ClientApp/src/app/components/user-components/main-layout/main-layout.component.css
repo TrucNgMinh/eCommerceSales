@@ -499,7 +499,7 @@ ul.style1 li:before,
 
 @media (min-width: 62rem) {
     #topnav .extra-info>div {
-        padding: 35px 15px 0;
+        padding: 25px 15px 0;
     }
 }
 
@@ -1044,8 +1044,8 @@ svg rect {
 
 @media (min-width: 1500px) {
     #topnav .navigation-menu>li>a {
-        padding-top: 5px;
-        padding-bottom: 5px;
+        padding-top: 10px;
+        padding-bottom: 10px;
     }
 }
 
