@@ -1,143 +1,110 @@
-<!-- Navigation Bar-->
-<header id="topnav">
-    <header class="site-header">
-        <div class="container">
-            <div class="row middle-xs top-md">
-                <div class="col-md-2 col-xs-10 site-branding">
-                    <a title="Công Ty Vận Tải Văn Dung" routerLink="/" rel="home">
-                        <img width="96" height="96" src="assets/images/vdlogo-crop.jpg" srcset="assets/images/vdlogo-crop.jpg 2x" alt="Công Ty TNHH TM DV Vận Tải Văn Dung"></a>
-                </div>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12 col-lg-7">
+            <div class="card-box">
+                <h4 class="header-title">Cấu hình chung</h4>
 
-                <div class="col-md-10 hidden-xs hidden-sm">
-                    <div class="site-top">
-                        <div class="header-right">
-                            <div class="row middle">
-                                <div class="col-lg-11">
-                                    <aside id="custom_html-2" class="widget_text widget header-right widget_custom_html">
-                                        <div class="textwidget custom-html-widget">
-                                            <div class="row extra-info center header07-end">
-                                                <div class="col-md-4 col-lg-4 header07-col-5"> <i class="mdi mdi-phone"></i>
-                                                    <h3>0979.998.199 - 0988.361.399</h3>
-                                                    <span>cttnhh.tm.dv.vt.vandung@gmail.com</span>
-                                                </div>
-                                                <div class="col-md-4 col-lg-4 header07-col-5"> <i class="mdi mdi-google-maps"></i>
-                                                    <h3>38/5 tổ 5 ấp tân hiệp, xã Tân Bình,</h3> <span> huyện Dĩ An,
-                                                        tỉnh Bình Dương</span>
-                                                </div>
-                                                <div class="col-md-4 col-lg-4 header07-hide"> <i class="mdi mdi-clock"></i>
-                                                    <h3>Thứ 2 - CN: 8AM-5PM</h3> <span>Thời Gian Mở Cửa</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </aside>
+                <div class="row">
+                    <div class="card-box">
+                        <div class="form-group">
+                            <label>Màu nền</label>
+
+                            <div class="input-group colorpicker-default" data-color-format="rgb" data-color="rgb(255, 146, 180)">
+                                <input type="text" readonly="readonly" class="form-control">
+                                <div class="input-group-append add-on">
+                                    <button class="btn btn-light" type="button">
+                                            <i style="background-color: rgb(124, 66, 84);margin-top: 2px;"></i>
+                                        </button>
                                 </div>
                             </div>
+
+                        </div>
+                        <!-- end row -->
+                    </div>
+                    <div class="card-box">
+                        <div class="form-group">
+                            <label>Màu nền menu</label>
+
+                            <div class="input-group colorpicker-default" data-color-format="rgb" data-color="rgb(255, 146, 180)">
+                                <input type="text" readonly="readonly" class="form-control">
+                                <div class="input-group-append add-on">
+                                    <button class="btn btn-light" type="button">
+                                            <i style="background-color: rgb(124, 66, 84);margin-top: 2px;"></i>
+                                        </button>
+                                </div>
+                            </div>
+
+                        </div>
+                        <!-- end row -->
+                    </div>
+                    <div class="card-box">
+                        <div class="form-group">
+                            <label>Màu chữ</label>
+
+                            <div class="input-group colorpicker-default" data-color-format="rgb" data-color="rgb(255, 146, 180)">
+                                <input type="text" readonly="readonly" class="form-control">
+                                <div class="input-group-append add-on">
+                                    <button class="btn btn-light" type="button">
+                                            <i style="background-color: rgb(124, 66, 84);margin-top: 2px;"></i>
+                                        </button>
+                                </div>
+                            </div>
+                            <div class="clearfix text-right mt-3">
+                                <button type="button" class="btn btn-custom waves-effect waves-light">Xác nhận</button>
+                            </div>
+                            <!-- end row -->
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </header>
-    <!-- end topbar-main -->
 
-    <div class="navbar-custom">
-        <div class="container-fluid">
-            <div id="navigation">
-                <!-- Navigation Menu-->
-                <ul class="navigation-menu">
-
-                    <li class="has-submenu active">
-                        <a routerLink="/admin">TỔNG QUAN</a>
-                    </li>
-
-                    <li class="has-submenu">
-                        <a routerLink="/admin-products">SẢN PHẨM</a>
-                    </li>
-                    <li class="has-submenu">
-                        <a routerLink="/admin-contact">LIÊN HỆ</a>
-                    </li>
-                    <li class="has-submenu">
-                        <a routerLink="/admin-distribution-market">THỊ TRƯỜNG PHÂN PHỐI</a>
-                    </li>
-                    <li class="has-submenu">
-                        <a routerLink="/admin-news">TIN TỨC</a>
-                    </li>
-
-                </ul>
-                <!-- End navigation menu -->
-            </div>
-            <!-- end #navigation -->
-        </div>
-        <!-- end container -->
-    </div>
-    <!-- end navbar-custom -->
-</header>
-<!-- End Navigation Bar-->
-
-<div id="content" class="site-content" style="    padding-top: 240px;">
-
-    <router-outlet>
-
-    </router-outlet>
-
-</div>
-
-
-<!-- Footer -->
-<div id="stop">
-    <footer class="site-footer">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4">
-                    <aside id="text-4" class="widget widget_text">
-                        <h3 class="widget-title"><span>Công ty TNHH Văn Dung</span></h3>
-                        <div class="textwidget">
-                            <div class="office">
-                                <p><i class="fa fa-map-marker mr-2"></i> Trụ Sở Chính: 38/5 tổ 5 ấp Tân Hiệp – xã Tân Bình – huyện Dĩ An – tỉnh Bình Dương</p>
-                                <!-- <p><i class="fa fa-map-marker mr-2"></i> Kho Bãi Xi Măng: 38/5 tổ 5 ấp Tân Hiệp – xã Tân Bình – huyện Dĩ An – tỉnh Bình Dương</p> -->
-                            </div>
-                        </div>
-                    </aside>
-                </div>
-                <div class="col-md-4 offset-md-4">
-                    <aside id="text-4" class="widget widget_text">
-                        <h3 class="widget-title"><span>Sản phẩm</span></h3>
-                        <div class="textwidget">
-                            <div class="office">
-                                <p><i class="fa fa-eercast mr-2"></i> Xi măng</p>
-                                <p><i class="fa fa-eercast mr-2"></i> Gạch</p>
-                                <p><i class="fa fa-eercast mr-2"></i> Sắt thép</p>
-                                <p><i class="fa fa-eercast mr-2"></i> Cát đá</p>
-                            </div>
-                        </div>
-                    </aside>
-                </div>
-                <div class="col-md-4">
-                    <aside id="custom_html-3" class="widget_text widget widget_custom_html">
-                        <h3 class="widget-title"><span>Thông tin liên hệ</span></h3>
-                        <div class="textwidget custom-html-widget">
-                            <div class="info">
-                                <p><i class="fa fa-phone mr-2"></i> <a href="tel:0988361399">0988.361.399</a> - <a href="tel: 0979998199"> 0979.998.199</a></p>
-                                <p><i class="fa fa-envelope mr-2 mt-1"></i> <a href="mailto:cttnhh.tm.dv.vt.vandung@gmail.com">cttnhh.tm.dv.vt.vandung@gmail.com</a>
-                                </p>
-                            </div>
-                            <div><img src="https://vanchuyenachau.com.vn/wp-content/uploads/2019/10/a-chau-da-thong-bao-bo-cong-thuong.png" alt="Đã thông báo bộ công thương" style="width: 200px; padding-top:30px;"></div>
-                        </div>
-                    </aside>
-                </div>
-
-            </div>
-        </div>
-    </footer>
-</div>
-<div class="copyright">
-    <div class="container">
-        <div class="row middle">
-            <div class="col-md-4 left" style="line-height: 1.5rem;"> © Copyrights 2021 <br /> Công ty TNHH Thương Mại Dịch Vụ Vận Tải Văn Dung</div>
-            <div class="col-md-8 end-md end-lg">
-                <div class="right"></div>
+                <!-- end row -->
             </div>
         </div>
     </div>
+    <div class="row">
+        <div class="col-12">
+
+            <div class="card-box">
+                <h4 class="header-title m-t-0">Cấu hình Logo</h4>
+                <div class="row">
+                    <div class="col-sm-4">
+                        <p class="text-muted font-14 m-b-10">
+                            Favicon
+                        </p>
+                        <form action="#" class="dropzone dz-clickable" id="dropzone">
+                            <div class="dz-default dz-message"><span>Thả tệp ảnh(hoặc click) vào đây để upload</span></div>
+                        </form>
+                        <div class="clearfix text-right mt-3">
+                            <button type="button" class="btn btn-custom waves-effect waves-light">Tải lên</button>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <p class="text-muted font-14 m-b-10">
+                            Logo
+                        </p>
+                        <form action="#" class="dropzone dz-clickable" id="dropzone">
+                            <div class="dz-default dz-message"><span>Thả tệp ảnh(hoặc click) vào đây để upload</span></div>
+                        </form>
+                        <div class="clearfix text-right mt-3">
+                            <button type="button" class="btn btn-custom waves-effect waves-light">Tải lên</button>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <p class="text-muted font-14 m-b-10">
+                            Chứng nhận
+                        </p>
+                        <form action="#" class="dropzone dz-clickable" id="dropzone">
+                            <div class="dz-default dz-message"><span>Thả tệp ảnh(hoặc click) vào đây để upload</span></div>
+                        </form>
+                        <div class="clearfix text-right mt-3">
+                            <button type="button" class="btn btn-custom waves-effect waves-light">Tải lên</button>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
 </div>
-<!-- End Footer -->

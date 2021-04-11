@@ -10,6 +10,8 @@ import { MainLayoutComponent } from './components/user-components/main-layout/ma
 import { NewsComponent } from './components/user-components/news/news.component';
 import { PriceListComponent } from './components/user-components/price-list/price-list.component';
 import { ProductDetailComponent } from './components/user-components/product-detail/product-detail.component';
+import { MainLayoutAdminComponent } from './components/admin-components/main-layout-admin/main-layout-admin.component';
+import { AdminProductComponent } from './components/admin-components/products/admin-product/admin-product.component';
 
 const routes: Routes = [
   {
@@ -53,9 +55,17 @@ const routes: Routes = [
   },
   {
     path: 'admin',
-    component: HomeAdminComponent,
+    component: MainLayoutAdminComponent,
     children: [
-      // not implement
+      {
+        path: 'admin',
+        component: HomeAdminComponent, 
+        outlet: 'aux'
+      },{
+        path: 'admin-product',
+        component: AdminProductComponent,
+        outlet: 'aux'
+      }
     ]
   }
 ];

@@ -839,6 +839,16 @@ a:focus {
     font-size: 14px;
     font-weight: 500;
     margin-top: 0;
+    font-size: 25px;
+    text-transform: uppercase;
+    /* font-weight: 600; */
+    color: #3d43cf;
+    font-family: sans-serif;
+}
+
+.card-box .form-group label {
+    font-size: 20px;
+    padding-bottom: 0.5em;
 }
 
 .page-title-box {
@@ -1555,8 +1565,8 @@ code {
 .card-box {
     padding: 20px;
     border-radius: 3px;
-    margin-bottom: 30px;
     background-color: #ffffff;
+    padding-bottom: 0px !important;
 }
 
 

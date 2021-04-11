@@ -15,6 +15,8 @@ import { MainLayoutComponent } from './components/user-components/main-layout/ma
 import { NewsComponent } from './components/user-components/news/news.component';
 import { PriceListComponent } from './components/user-components/price-list/price-list.component';
 import { ProductDetailComponent } from './components/user-components/product-detail/product-detail.component';
+import { MainLayoutAdminComponent } from './components/admin-components/main-layout-admin/main-layout-admin.component';
+import { AdminProductComponent } from './components/admin-components/products/admin-product/admin-product.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +31,9 @@ import { ProductDetailComponent } from './components/user-components/product-det
     NewsComponent,
     ContactComponent,
     ProductDetailComponent,
-    ProductListComponent
+    ProductListComponent,
+    AdminProductComponent,
+    MainLayoutAdminComponent
   ],
   imports: [
     BrowserModule,
