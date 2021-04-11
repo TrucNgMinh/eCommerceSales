@@ -355,6 +355,7 @@ section {
 .site-header,
 .extra-info h3 {
     color: #111;
+    font-weight: 600 !important;
 }
 
 #topnav .site-branding {
@@ -916,4 +917,120 @@ svg rect {
 .js-facebook-messenger-container,
 .js-facebook-messenger-container-button {
     z-index: 1000;
+}
+
+@media (max-width: 768px) {
+    .site-branding {
+        padding: 10px 15px!important;
+    }
+}
+
+#open-left {
+    color: #fff;
+}
+
+@media (max-width: 992px) {
+    #open-left {
+        color: #f80000!important;
+        padding-right: 30px!important;
+        font-size: 25px!important;
+    }
+    .site-top {
+        display: none !important;
+    }
+    .navbar-custom {
+        display: none !important;
+    }
+    #content {
+        background-color: #f3f6f8;
+        padding-top: 0px !important;
+    }
+    .site-branding {
+        width: auto;
+    }
+    #topnav {
+        position: relative;
+    }
+}
+
+#content {
+    background-color: #f3f6f8;
+    /* padding-top: 148px; */
+    padding-top: 240px;
+}
+
+#open-left {
+    font-size: 20px;
+    line-height: 1;
+    cursor: pointer;
+}
+
+@media (min-width: 75rem) {
+    .hidden-lg {
+        display: none!important;
+    }
+}
+
+@media (max-width: 30rem) {
+    .hidden-lg {
+        display: inline-block!important;
+        width: 66%;
+        padding-top: 12%;
+        padding-right: 0px;
+    }
+}
+
+.end {
+    -webkit-justify-content: flex-end;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
+    text-align: end;
+}
+
+@media (max-width: 991px) {
+    #navigation {
+        position: absolute;
+        top: 62px;
+        left: 0;
+        width: 100%;
+        display: none;
+        height: auto;
+        padding-bottom: 0;
+        overflow: auto;
+        border-top: 1px solid #e7e7e7;
+        border-bottom: 1px solid #e7e7e7;
+        background-color: #f80000;
+    }
+    #topnav .navigation-menu {
+        float: none;
+        max-height: 400px;
+        text-align: left;
+    }
+    #topnav .navigation-menu>li {
+        display: block;
+    }
+    #topnav .navigation-menu>li>a {
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 768px) {
+    .container-fluid {
+        max-width: 100%;
+    }
+}
+
+@media (min-width: 1500px) {
+    #topnav .navigation-menu>li>a {
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+}
+
+@media (max-width: 1499px) {
+    #topnav .navigation-menu>li>a {
+        padding-top: 20px;
+        padding-bottom: 20px;
+        font-size: 15px;
+    }
 }
