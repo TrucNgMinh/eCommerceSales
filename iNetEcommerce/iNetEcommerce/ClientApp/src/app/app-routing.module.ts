@@ -58,20 +58,14 @@ const routes: Routes = [
     component: MainLayoutAdminComponent,
     children: [
       {
-        path: 'admin',
-        component: HomeAdminComponent, 
-        outlet: 'aux'
-      },{
+        path: '',
+        component: HomeAdminComponent,
+      }, {
         path: 'admin-product',
-        component: AdminProductComponent,
-        outlet: 'aux'
+        component: AdminProductComponent
       }
     ]
   }
 ];
 
-@NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
-})
-export class AppRoutingModule { }
+export const AppRoutingModule = RouterModule.forRoot(routes);

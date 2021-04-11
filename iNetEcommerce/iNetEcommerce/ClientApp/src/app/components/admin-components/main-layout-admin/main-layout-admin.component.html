@@ -51,19 +51,19 @@
                     </li>
 
                     <li class="has-submenu">
-                        <a routerLink="/admin-product">SẢN PHẨM</a>
+                        <a routerLink="/admin/admin-product">SẢN PHẨM</a>
                     </li>
 
                     <li class="has-submenu">
-                        <a routerLink="/admin-contact">LIÊN HỆ</a>
+                        <a routerLink="/admin/admin-contact">LIÊN HỆ</a>
                     </li>
 
                     <li class="has-submenu">
-                        <a routerLink="/admin-distribution-market">THỊ TRƯỜNG PHÂN PHỐI</a>
+                        <a routerLink="/admin/admin-distribution-market">THỊ TRƯỜNG PHÂN PHỐI</a>
                     </li>
 
                     <li class="has-submenu">
-                        <a routerLink="/admin-news">TIN TỨC</a>
+                        <a routerLink="/admin/admin-news">TIN TỨC</a>
                     </li>
 
                 </ul>
@@ -79,7 +79,9 @@
 
 <div id="content" class="site-content" style="background-color: #f3f6f8; padding-top: 240px;">
 
-    <app-home-admin></app-home-admin>
+    <!-- <app-home-admin></app-home-admin> -->
+
+    <router-outlet></router-outlet>
 
 </div>
 
