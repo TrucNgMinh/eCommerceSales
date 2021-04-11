@@ -15,8 +15,9 @@ using System.Collections.Generic;
 
 namespace iNetEcommerce.Controllers
 {
+    [ApiController]
   [ApiVersion("1.0")]
-  [ODataRoutePrefix("Products")]
+    [ODataRoutePrefix("Products")]
   [Route("api/v{version:apiVersion}/[controller]")]
   public class ProductsController : BaseController
   {

@@ -1,16 +1,18 @@
 import { __decorate } from "tslib";
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { ContactComponent } from './components/contact/contact.component';
-import { DistributionMarketComponent } from './components/distribution-market/distribution-market.component';
-import { HomeAdminComponent } from './components/home-admin/home-admin.component';
-import { HomeUserComponent } from './components/home-user/home-user.component';
-import { MainLayoutComponent } from './components/main-layout/main-layout.component';
-import { NewsComponent } from './components/news/news.component';
-import { PriceListComponent } from './components/price-list/price-list.component';
-import { ProductDetailComponent } from './components/product-detail/product-detail.component';
-import { ProductListComponent } from './components/product-list/product-list.component';
-import { ShippingPolicyComponent } from './components/shipping-policy/shipping-policy.component';
+import { ContactComponent } from './components/user-components/contact/contact.component';
+import { DistributionMarketComponent } from './components/user-components/distribution-market/distribution-market.component';
+import { HomeAdminComponent } from './components/admin-components/home-admin/home-admin.component';
+import { ProductListComponent } from './components/user-components/product-list/product-list.component';
+import { ShippingPolicyComponent } from './components/user-components/shipping-policy/shipping-policy.component';
+import { HomeUserComponent } from './components/user-components/home-user/home-user.component';
+import { MainLayoutComponent } from './components/user-components/main-layout/main-layout.component';
+import { NewsComponent } from './components/user-components/news/news.component';
+import { PriceListComponent } from './components/user-components/price-list/price-list.component';
+import { ProductDetailComponent } from './components/user-components/product-detail/product-detail.component';
+import { MainLayoutAdminComponent } from './components/admin-components/main-layout-admin/main-layout-admin.component';
+import { AdminProductComponent } from './components/admin-components/products/admin-product/admin-product.component';
 const routes = [
     {
         path: '',
@@ -52,9 +54,17 @@ const routes = [
     },
     {
         path: 'admin',
-        component: HomeAdminComponent,
+        component: MainLayoutAdminComponent,
         children: [
-        // not implement
+            {
+                path: 'admin',
+                component: HomeAdminComponent,
+                outlet: 'aux'
+            }, {
+                path: 'admin-product',
+                component: AdminProductComponent,
+                outlet: 'aux'
+            }
         ]
     }
 ];
