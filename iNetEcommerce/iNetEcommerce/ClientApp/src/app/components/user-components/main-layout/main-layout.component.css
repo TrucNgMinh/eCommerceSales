@@ -990,16 +990,19 @@ svg rect {
 @media (max-width: 991px) {
     #navigation {
         position: absolute;
-        top: 62px;
-        left: 0;
-        width: 100%;
+        top: 0px;
+        right: 0 !important;
+        width: 60%;
         display: none;
-        height: auto;
+        height: 620px;
         padding-bottom: 0;
         overflow: auto;
         border-top: 1px solid #e7e7e7;
         border-bottom: 1px solid #e7e7e7;
         background-color: #f80000;
+    }
+    #topnav .navbar-custom {
+        min-height: 0px;
     }
     #topnav .navigation-menu {
         float: none;
@@ -1012,6 +1015,25 @@ svg rect {
     #topnav .navigation-menu>li>a {
         font-size: 15px;
     }
+    #topnav .navigation-menu>li>a {
+        padding: 15px;
+        font-size: 10px;
+        max-height: 30px;
+    }
+    #topnav .navigation-menu>li>a:hover,
+    #topnav .navigation-menu>li>a:focus {
+        background-color: rgba(255, 255, 255, .2);
+    }
+    #topnav .navigation-menu>li>a:hover,
+    #topnav .navigation-menu>li>a:focus {
+        color: #ffffff;
+        transition: all 0s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+        border-left: 0.1px solid rgb(178, 209, 230);
+        border-right: 0.1px solid rgb(178, 209, 230);
+    }
+    .site-top {
+        display: none;
+    }
 }
 
 @media (max-width: 768px) {
@@ -1022,15 +1044,13 @@ svg rect {
 
 @media (min-width: 1500px) {
     #topnav .navigation-menu>li>a {
-        padding-top: 20px;
-        padding-bottom: 20px;
+        padding-top: 5px;
+        padding-bottom: 5px;
     }
 }
 
 @media (max-width: 1499px) {
     #topnav .navigation-menu>li>a {
-        padding-top: 20px;
-        padding-bottom: 20px;
-        font-size: 15px;
+        font-size: 12px;
     }
 }

@@ -14,10 +14,13 @@ export class MainLayoutComponent implements OnInit,AfterViewInit {
 
   ngOnInit(): void {
     $("#menu-icon-left").on("click", function() {
-      let $nav = $(".navbar-custom");
-      if ($nav.css("display") === "none") {
+      let $navCustom = $(".navbar-custom");
+      let $nav = $("#navigation");
+      if ($navCustom.css("display") === "none") {
+        $navCustom.attr('style', 'display:block !important');
         $nav.attr('style', 'display:block !important');
     } else {
+      $navCustom.attr('style', 'display:none !important');
       $nav.attr('style', 'display:none !important');
     }
   });
