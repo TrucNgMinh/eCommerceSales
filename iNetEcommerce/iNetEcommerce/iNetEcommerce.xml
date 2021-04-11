@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>iNetEcommerce</name>
+    </assembly>
+    <members>
+        <member name="T:iNetEcommerce.Controllers.HomeController">
+            <summary>
+            Represents a RESTful service of General.
+            </summary>
+        </member>
+        <member name="M:iNetEcommerce.Controllers.ProductsController.GetProductGroups">
+            <summary>
+            Get product groups
+            </summary>
+            <param name="model"></param>
+            <returns>The requested Product Group.</returns>
+            <response code="200">Get Product Group was successfully</response>
+            <response code="500">Server Error.</response>
+            
+        </member>
+        <member name="M:iNetEcommerce.Controllers.ProductsController.AddEditProductGroup(iNet.Entities.ApiProductGroup)">
+            <summary>
+            Add/Edit Product Group
+            </summary>
+            <param name="model"></param>
+            <returns>The requested Product Group.</returns>
+            <response code="200">Product Group was successfully</response>
+            <response code="500">Server Error.</response>
+            
+        </member>
+        <member name="M:iNetEcommerce.Controllers.ProductsController.DeleteProductGroup(iNet.Entities.ApiProductGroup)">
+            <summary>
+            Delete Product Group
+            </summary>
+            <param name="model"></param>
+            <returns>Delete Product Group.</returns>
+            <response code="200">Delete Product Group was successfully</response>
+            <response code="500">Server Error.</response>
+            
+        </member>
+        <member name="M:iNetEcommerce.Startup.#ctor(Microsoft.AspNetCore.Hosting.IHostingEnvironment)">
+            <summary>
+            Startup with Environment
+            </summary>
+            <param name="env"></param>
+        </member>
+        <member name="M:iNetEcommerce.Startup.#ctor(Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            Startup with Configuration
+            </summary>
+            <param name="configuration"></param>
+        </member>
+    </members>
+</doc>

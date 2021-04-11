@@ -47,3 +47,11 @@ Thumbs.db
 iNetEcommerce/iNetEcommerce/obj/
 iNetEcommerce/iNetEcommerce/bin/
 iNetEcommerce/.vs/
+iNetEcommerce/iNetEcommerce/ClientApp/node_modules/
+iNetEcommerce/iNetEcommerce/wwwroot/
+iNetEcommerce/iNet.Common/bin/
+iNetEcommerce/iNet.Common/obj/
+iNetEcommerce/iNet.Context/bin/
+iNetEcommerce/iNet.Context/obj/
+iNetEcommerce/iNet.Entities/bin/
+iNetEcommerce/iNet.Entities/obj/
