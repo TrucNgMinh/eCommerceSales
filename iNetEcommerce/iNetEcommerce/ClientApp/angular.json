@@ -45,7 +45,8 @@
                             "src/assets/css/sweetalert2.min.css",
                             "src/assets/plugins/dropzone/dropzone.css",
                             "src/assets/plugins/bootstrap-fileupload/bootstrap-fileupload.css",
-                            "src/assets/plugins/bootstrap-colorpicker/css/bootstrap-colorpicker.min.css"
+                            "src/assets/plugins/bootstrap-colorpicker/css/bootstrap-colorpicker.min.css",
+                            "src/assets/plugins/footable/css/footable.core.css"
                         ],
                         "scripts": [
                             "src/assets/js/modernizr.min.js",
@@ -69,7 +70,9 @@
                             "src/assets/pages/jquery.dashboard.init.js",
                             "src/assets/plugins/dropzone/dropzone.js",
                             "src/assets/plugins/bootstrap-fileupload/bootstrap-fileupload.js",
-                            "src/assets/plugins/bootstrap-colorpicker/js/bootstrap-colorpicker.min.js"
+                            "src/assets/plugins/bootstrap-colorpicker/js/bootstrap-colorpicker.min.js",
+                            "src/assets/plugins/footable/js/footable.all.min.js",
+                            "src/assets/pages/jquery.footable.js"
                         ]
                     },
                     "configurations": {

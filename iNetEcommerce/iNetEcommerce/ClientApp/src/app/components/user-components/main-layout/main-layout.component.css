@@ -994,7 +994,7 @@ svg rect {
         right: 0 !important;
         width: 60%;
         display: none;
-        height: 213px;
+        height: auto;
         padding-bottom: 0;
         overflow: auto;
         border-top: 1px solid #e7e7e7;
