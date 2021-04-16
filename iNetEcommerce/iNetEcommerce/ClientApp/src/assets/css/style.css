@@ -1,64 +1,3 @@
-/*
-Template Name: Highdmin - Responsive Bootstrap 4 Admin Dashboard
-Author: CoderThemes
-Email: coderthemes@gmail.com
-File: Main Css File
-*/
-
-
-/*
-1. Menu
-2. Common
-3. Helper
-4. Bootstrap Reset
-5. Waves Effect
-6. Card
-7. Buttons
-8. Ribbons
-9. Popovers and Tooltips
-10. Checkbox & Radio
-11. Alerts
-12. Modal
-13. Spinners
-14. Widgets
-15. Tabs
-16. Progress
-17. Sweet Alert
-18. Charts
-19. Email
-20. Form Elements
-21. Form Advanced
-22. Form Validation
-23. Form Pickers
-24. Form Wizard
-25. Summernote
-26. Wysiwig
-27. Form Uploads
-28. Tables
-29. Maps
-30. Calendar
-31. Tickets
-32. taskboards
-33. Projects
-34. Companies
-35. File Manager
-36. Timeline
-37. Profile
-38. Print
-39. FAQ
-40. Pricing
-41. Account-Pages
-42. Search Results
-43. Gallery
-44. Coming Soon
-45. Responsive
-*/
-
-
-/* ===========
-   Menu
- =============*/
-
 .container-fluid {
     max-width: 95%;
 }
@@ -334,7 +273,7 @@ File: Main Css File
         margin-top: 10px;
         -webkit-transition: all .2s ease;
         transition: all .2s ease;
-        background-color: #ffffff;
+        background-color: #8b0000;
         -webkit-box-shadow: 0 0 24px 0 rgba(0, 0, 0, 0.06), 0 1px 0 0 rgba(0, 0, 0, 0.02);
         box-shadow: 0 0 24px 0 rgba(0, 0, 0, 0.06), 0 1px 0 0 rgba(0, 0, 0, 0.02);
     }
@@ -375,11 +314,15 @@ File: Main Css File
         padding: 8px 25px;
         clear: both;
         white-space: nowrap;
-        font-size: 15px;
-        color: #313a46;
+        font-size: inherit;
+        color: rgba(255, 255, 255, 0.7);
     }
     #topnav .navigation-menu>li .submenu li a:hover {
-        color: #02c0ce;
+        color: #ffffff;
+        background-color: rgba(255, 255, 255, .2);
+        transition: all 0s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+        border-top: 0.1px solid rgb(178, 209, 230);
+        border-bottom: 0.1px solid rgb(178, 209, 230);
     }
     #topnav .navigation-menu>li .submenu li span {
         display: block;
@@ -439,11 +382,13 @@ File: Main Css File
     #topnav .navigation-menu>li .submenu li a {
         display: block;
         position: relative;
-        padding: 7px 20px;
+        font-size: 16px;
+        padding-left: 30px;
         color: #313a46;
+        font-weight: 700;
     }
     #topnav .navigation-menu>li .submenu li a:hover {
-        color: #02c0ce;
+        color: #8b0000;
     }
     #topnav .navigation-menu>li .submenu li.has-submenu>a:after {
         content: "\F140";
@@ -510,6 +455,9 @@ File: Main Css File
     }
     .site-footer .container .row div {
         display: contents;
+    }
+    .site-footer .container .row div p {
+        padding-right: 15px;
     }
     .site-footer .container .widget_text {
         padding-bottom: 30px;
