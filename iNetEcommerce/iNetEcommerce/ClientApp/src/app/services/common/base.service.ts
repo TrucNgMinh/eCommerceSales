@@ -12,8 +12,9 @@ declare var require: any
 @Injectable()
 export class BaseService {
   static defaultHeader = {
-    'Content-Type': 'application/json',
+    'Content-Type': 'application/json; charset=utf-8',
     'Access-Control-Max-Age': '3600',
+    'api-supported-versions': '1.0'
   };
   static formdataHeader = {
     'enctype': 'multipart/form-data'

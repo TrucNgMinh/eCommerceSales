@@ -34,7 +34,9 @@ export const FORMAT_DATE_CONSTANT = {
 }
 
 export const API_ENDPOINT = {
-    
+    ADD_EDIT_PRODUCT_GROUP: "/Products/AddEditProductGroup",
+    DELETE_PRODUCT_GROUP:"/Products/DeleteProductGroup",
+    GET_PRODUCT_GROUP:"/Products/GetProductGroups"
 }
 
 export const ADMIN_CONST = '1';

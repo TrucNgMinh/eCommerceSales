@@ -1,5 +1,3 @@
-import { __decorate } from "tslib";
-import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { ContactComponent } from './components/user-components/contact/contact.component';
 import { DistributionMarketComponent } from './components/user-components/distribution-market/distribution-market.component';
@@ -13,6 +11,9 @@ import { PriceListComponent } from './components/user-components/price-list/pric
 import { ProductDetailComponent } from './components/user-components/product-detail/product-detail.component';
 import { MainLayoutAdminComponent } from './components/admin-components/main-layout-admin/main-layout-admin.component';
 import { AdminProductComponent } from './components/admin-components/products/admin-product/admin-product.component';
+import { LoginComponent } from './components/login/login.component';
+import { AdminProductGroupComponent } from './components/admin-components/products/admin-product-group/admin-product-group.component';
+import { AdminProductDetailComponent } from './components/admin-components/products/admin-product-detail/admin-product-detail.component';
 const routes = [
     {
         path: '',
@@ -57,24 +58,26 @@ const routes = [
         component: MainLayoutAdminComponent,
         children: [
             {
-                path: 'admin',
+                path: '',
                 component: HomeAdminComponent,
-                outlet: 'aux'
             }, {
                 path: 'admin-product',
-                component: AdminProductComponent,
-                outlet: 'aux'
+                component: AdminProductComponent
+            },
+            {
+                path: 'admin-product-group',
+                component: AdminProductGroupComponent
+            },
+            {
+                path: 'admin-product-detail',
+                component: AdminProductDetailComponent
             }
         ]
+    },
+    {
+        path: 'login',
+        component: LoginComponent
     }
 ];
-let AppRoutingModule = class AppRoutingModule {
-};
-AppRoutingModule = __decorate([
-    NgModule({
-        imports: [RouterModule.forRoot(routes)],
-        exports: [RouterModule]
-    })
-], AppRoutingModule);
-export { AppRoutingModule };
+export const AppRoutingModule = RouterModule.forRoot(routes);
 //# sourceMappingURL=app-routing.module.js.map

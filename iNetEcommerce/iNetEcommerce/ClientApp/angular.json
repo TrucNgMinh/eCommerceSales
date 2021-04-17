@@ -73,6 +73,7 @@
                             "src/assets/plugins/bootstrap-colorpicker/js/bootstrap-colorpicker.min.js",
                             "src/assets/plugins/footable/js/footable.all.min.js",
                             "src/assets/pages/jquery.footable.js"
+
                         ]
                     },
                     "configurations": {

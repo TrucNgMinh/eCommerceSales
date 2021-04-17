@@ -17,6 +17,15 @@ import { PriceListComponent } from './components/user-components/price-list/pric
 import { ProductDetailComponent } from './components/user-components/product-detail/product-detail.component';
 import { MainLayoutAdminComponent } from './components/admin-components/main-layout-admin/main-layout-admin.component';
 import { AdminProductComponent } from './components/admin-components/products/admin-product/admin-product.component';
+import { LoginComponent } from './components/login/login.component';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { AuthService } from './services/auth.service';
+import { BaseService } from './services/common/base.service';
+import { ErrorService } from './services/common/error.service';
+import { GlobalService } from './services/global.service';
+import { AdminProductGroupComponent } from './components/admin-components/products/admin-product-group/admin-product-group.component';
+import { AdminProductDetailComponent } from './components/admin-components/products/admin-product-detail/admin-product-detail.component';
 let AppModule = class AppModule {
 };
 AppModule = __decorate([
@@ -35,14 +44,24 @@ AppModule = __decorate([
             ProductDetailComponent,
             ProductListComponent,
             AdminProductComponent,
-            MainLayoutAdminComponent
+            MainLayoutAdminComponent,
+            LoginComponent,
+            AdminProductGroupComponent,
+            AdminProductDetailComponent
         ],
         imports: [
             BrowserModule,
             AppRoutingModule,
-            BrowserAnimationsModule
+            HttpClientModule,
+            BrowserAnimationsModule,
+            FormsModule
         ],
-        providers: [],
+        providers: [
+            ErrorService,
+            AuthService,
+            BaseService,
+            GlobalService
+        ],
         bootstrap: [AppComponent]
     })
 ], AppModule);

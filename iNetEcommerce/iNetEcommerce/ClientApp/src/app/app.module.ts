@@ -24,6 +24,8 @@ import { AuthService } from './services/auth.service';
 import { BaseService } from './services/common/base.service';
 import { ErrorService } from './services/common/error.service';
 import { GlobalService } from './services/global.service';
+import { AdminProductGroupComponent } from './components/admin-components/products/admin-product-group/admin-product-group.component';
+import { AdminProductDetailComponent } from './components/admin-components/products/admin-product-detail/admin-product-detail.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +43,9 @@ import { GlobalService } from './services/global.service';
     ProductListComponent,
     AdminProductComponent,
     MainLayoutAdminComponent,
-    LoginComponent
+    LoginComponent,
+    AdminProductGroupComponent,
+    AdminProductDetailComponent
   ],
   imports: [
     BrowserModule,

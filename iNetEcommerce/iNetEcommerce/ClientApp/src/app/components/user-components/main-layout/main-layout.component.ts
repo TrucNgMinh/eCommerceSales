@@ -1,4 +1,6 @@
 import { AfterViewInit, Component, OnInit } from '@angular/core';
+import { ProductGroup } from 'src/app/models/product-group.model';
+import { ProductGroupService } from 'src/app/services/product-group.service';
 
 @Component({
   selector: 'app-main-layout',
@@ -6,8 +8,9 @@ import { AfterViewInit, Component, OnInit } from '@angular/core';
   styleUrls: ['./main-layout.component.css']
 })
 export class MainLayoutComponent implements OnInit, AfterViewInit {
+  productGroups: ProductGroup[] = [];
 
-  constructor() { }
+  constructor(private productGroupService: ProductGroupService) { }
   ngAfterViewInit(): void {
     $("#menu-icon-left").on("click", function() {
       let $navCustom = $(".navbar-custom");
