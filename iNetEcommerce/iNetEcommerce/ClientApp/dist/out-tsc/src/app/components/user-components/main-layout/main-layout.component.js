@@ -2,9 +2,6 @@ import { __decorate } from "tslib";
 import { Component } from '@angular/core';
 let MainLayoutComponent = class MainLayoutComponent {
     constructor() { }
-    ngAfterViewInit() {
-        throw new Error('Method not implemented.');
-    }
     ngOnInit() {
         $("#menu-icon-left").on("click", function () {
             let $navCustom = $(".navbar-custom");

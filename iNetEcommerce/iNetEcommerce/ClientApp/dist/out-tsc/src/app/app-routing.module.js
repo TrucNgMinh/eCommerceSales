@@ -1,5 +1,3 @@
-import { __decorate } from "tslib";
-import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { ContactComponent } from './components/user-components/contact/contact.component';
 import { DistributionMarketComponent } from './components/user-components/distribution-market/distribution-market.component';
@@ -57,24 +55,14 @@ const routes = [
         component: MainLayoutAdminComponent,
         children: [
             {
-                path: 'admin',
+                path: '',
                 component: HomeAdminComponent,
-                outlet: 'aux'
             }, {
                 path: 'admin-product',
-                component: AdminProductComponent,
-                outlet: 'aux'
+                component: AdminProductComponent
             }
         ]
     }
 ];
-let AppRoutingModule = class AppRoutingModule {
-};
-AppRoutingModule = __decorate([
-    NgModule({
-        imports: [RouterModule.forRoot(routes)],
-        exports: [RouterModule]
-    })
-], AppRoutingModule);
-export { AppRoutingModule };
+export const AppRoutingModule = RouterModule.forRoot(routes);
 //# sourceMappingURL=app-routing.module.js.map

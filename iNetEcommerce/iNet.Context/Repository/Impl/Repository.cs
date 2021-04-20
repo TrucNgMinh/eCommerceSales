@@ -93,6 +93,22 @@ namespace iNet.Context
             }
         }
 
+        public virtual async Task<TEntity> FirstOrDefaultAsync(Expression<Func<TEntity, bool>> whereClause)
+        {
+            using (var context = new INetEcommerceContext())
+            {
+                var query = from b in context.Set<TEntity>()
+                            select b;
+
+                if (whereClause != null)
+                {
+                    query = query.Where(whereClause);
+                }
+
+                return await query.FirstOrDefaultAsync(); ;
+            }
+        }
+
         public virtual async Task<List<TEntity>> GetByIdAsync(IEnumerable<int> id)
         {
             using (var context = new INetEcommerceContext())

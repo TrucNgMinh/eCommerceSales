@@ -2,6 +2,8 @@
 using iNet.Common;
 using iNet.Entities;
 using Microsoft.EntityFrameworkCore;
+using System;
+using static iNet.Common.UtilEnum;
 
 namespace iNet.Context
 {
@@ -23,8 +25,13 @@ namespace iNet.Context
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<ProductImage>().HasIndex(p => p.ProductId);
-            
+
+            #region user
+            var hash = new Guid().ToString();
+            modelBuilder.Entity<User>().HasData(new User { Id = 1, UserName = "haonguyen", Email = "nhenden1511@gmail.com", FullName = "Hao nguyen", Hash = hash, Passcode = UtilCommon.GeneratePasscode("123456x@X", hash), UserRole = UserRole.Administrator, Phone = "0132666666", IsDeactivate = false });
+            #endregion
         }
         #endregion
+
     }
 }

@@ -4,9 +4,9 @@ namespace iNet.Entities
 {
 	  public abstract class Entity : IDisposable
 	  {
-        public bool? IsDeactivate { get; set; }
+        public bool IsDeactivate { get; set; }
 
-        public bool? IsDeleted { get; set; }
+        public bool IsDeleted { get; set; }
 
         public DateTimeOffset? DateTimeProcessed { get; set; }
 
