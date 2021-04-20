@@ -215,6 +215,8 @@ namespace iNetEcommerce
 
             //inject dependency
             services.AddTransient<IProductService, ProductService>();
+            services.AddTransient<IUserService, UserService>();
+            services.AddTransient<IBlogService, BlogService>();
             //register background thread
             services.AddScheduler();
           }

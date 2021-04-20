@@ -16,6 +16,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="ApiModels\RequestModels\" />
+    <ProjectReference Include="..\iNet.Common\iNet.Common.csproj" />
   </ItemGroup>
 </Project>

@@ -32,5 +32,6 @@ namespace iNet.Context
 
         Task<int> InsertOrReplaceAllAsync(IEnumerable<TEntity> entities);
 
+        Task<TEntity> FirstOrDefaultAsync(Expression<Func<TEntity, bool>> whereClause);
     }
 }

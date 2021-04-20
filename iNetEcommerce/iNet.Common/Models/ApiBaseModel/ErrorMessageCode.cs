@@ -9,6 +9,7 @@ namespace iNet.Common
     {
         public const string EMAIL_INVALID = "email_invalid"; //Email invalid
         public const string USER_NOT_FOUND = "user_not_found"; //User not found
+        public const string USER_IS_DEACTIVATE = "user_is_deactivate"; //User is Deactivate
         public const string SERVER_ERROR = "server_error"; //Server Error
         public const string IMAGE_EXTENTION = "image_extention"; //Please Upload image of type .jpg,.gif,.png.
         public const string VIDEO_EXTENTION = "video_extention"; //Please Upload video of type .mp4,.avi,.3gp.
@@ -22,5 +23,6 @@ namespace iNet.Common
         public const string USERNAME_INCORRECT = "username_incorrect"; //This user name is Incorrect
         public const string PRODUCT_NOT_FOUND = "product_not_found"; 
         public const string GROUP_NOT_FOUND = "group_not_found"; 
+        public const string BLOG_NOT_FOUND = "blog_not_found"; 
     }
 }
