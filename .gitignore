@@ -48,6 +48,7 @@ iNetEcommerce/iNetEcommerce/obj/
 iNetEcommerce/iNetEcommerce/bin/
 iNetEcommerce/.vs/
 iNetEcommerce/iNetEcommerce/ClientApp/node_modules/
+iNetEcommerce/iNetEcommerce/ClientApp/dist/
 iNetEcommerce/iNetEcommerce/wwwroot/
 iNetEcommerce/iNet.Common/bin/
 iNetEcommerce/iNet.Common/obj/
