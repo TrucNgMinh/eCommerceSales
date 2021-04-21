@@ -1,4 +1,5 @@
 import { AfterViewInit, Component, OnInit } from '@angular/core';
+import { jsFileForMainLayout } from 'src/app/app.constants';
 import { ProductGroup } from 'src/app/models/product-group.model';
 import { ProductGroupService } from 'src/app/services/product-group.service';
 
@@ -12,6 +13,18 @@ export class MainLayoutComponent implements OnInit, AfterViewInit {
 
   constructor(private productGroupService: ProductGroupService) { }
   ngAfterViewInit(): void {
+
+    jsFileForMainLayout.forEach((item) => {
+      let $item = document.getElementById(item.name);
+      if ($item) {
+        $item.remove();
+      }
+      let script = document.createElement("script");
+      script.setAttribute("id", item.name);
+      script.setAttribute("src", item.src);
+      document.body.appendChild(script);
+    });
+
     $("#menu-icon-left").on("click", function() {
       let $navCustom = $(".navbar-custom");
       let $nav = $("#navigation");

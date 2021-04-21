@@ -212,3 +212,7 @@ a.fc-more {
     padding-left: 0px;
     padding-right: 0px;
 }
+
+.dataTables_wrapper {
+    padding-bottom: 10px !important;
+}

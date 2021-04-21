@@ -1,3 +1,4 @@
+import { invalid } from '@angular/compiler/src/render3/view/util';
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -15,40 +16,33 @@ export class LoginComponent implements OnInit {
   constructor(
     private authService: AuthService,
     private router: Router
-    ) { }
+  ) { }
 
   ngOnInit(): void {
   }
 
   login(form: NgForm) {
-    LocalService.setLogStatus(true);
+    if (form.invalid) {
+      console.log("invalid");
+      return;
+    }
 
-    LocalService.setAccessToken("abcabc");
-    
-    this.router.navigate(["admin"]);
-    
+    this.authService.login(this.model)
+      .subscribe(data => {
 
+        console.log(data);
 
-//Implement later
+        if (data && data.token) {
+          LocalService.setAccessToken(data.token);
+          LocalService.setLogStatus(true);
+        }
 
-    // if (form.invalid) {
-    //   return;
-    // }
+        this.router.navigate(["admin"]);
 
-  //   this.authService.login(this.model)
-  //   .subscribe(data => {
-
-  //     if (data && data.token) {
-  //       LocalService.setAccessToken(data.token);
-  //       LocalService.setLogStatus(true);
-  //       LocalService.setUserName(data.fullName);
-  //       LocalService.setUserId(data.userId);
-  //     }
-
-  //   },
-  //     () => {
-  //       this.model = new Login();
-  //     });
+      },
+        () => {
+          this.model = new Login();
+        });
   }
 
 }

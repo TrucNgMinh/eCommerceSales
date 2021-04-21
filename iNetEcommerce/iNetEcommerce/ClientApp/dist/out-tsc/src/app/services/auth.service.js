@@ -1,7 +1,7 @@
 import { __decorate } from "tslib";
 import { Injectable } from '@angular/core';
 import { LocalService } from './common/local.service';
-import { LOGIN_STATUS, LOCAL_STORAGE_VARIABLE, ADMIN_CONST } from '../app.constants';
+import { LOGIN_STATUS, LOCAL_STORAGE_VARIABLE, ADMIN_CONST, API_ENDPOINT } from '../app.constants';
 import { BaseService } from './common/base.service';
 let AuthService = class AuthService extends BaseService {
     constructor(http, errorHandler, globalService) {
@@ -18,10 +18,7 @@ let AuthService = class AuthService extends BaseService {
         return (isAdmin && isAdmin.toString()) === ADMIN_CONST;
     }
     login(data) {
-        return this.post('/Home/Login', data, false);
-    }
-    logOut() {
-        return this.get('/Home/Logout', null, true);
+        return this.post(API_ENDPOINT.LOG_IN, data, false);
     }
 };
 AuthService = __decorate([

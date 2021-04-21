@@ -11,25 +11,21 @@ let LoginComponent = class LoginComponent {
     ngOnInit() {
     }
     login(form) {
-        LocalService.setLogStatus(true);
-        LocalService.setAccessToken("abcabc");
-        this.router.navigate(["admin"]);
-        //Implement later
-        // if (form.invalid) {
-        //   return;
-        // }
-        //   this.authService.login(this.model)
-        //   .subscribe(data => {
-        //     if (data && data.token) {
-        //       LocalService.setAccessToken(data.token);
-        //       LocalService.setLogStatus(true);
-        //       LocalService.setUserName(data.fullName);
-        //       LocalService.setUserId(data.userId);
-        //     }
-        //   },
-        //     () => {
-        //       this.model = new Login();
-        //     });
+        if (form.invalid) {
+            console.log("invalid");
+            return;
+        }
+        this.authService.login(this.model)
+            .subscribe(data => {
+            console.log(data);
+            if (data && data.token) {
+                LocalService.setAccessToken(data.token);
+                LocalService.setLogStatus(true);
+            }
+            this.router.navigate(["admin"]);
+        }, () => {
+            this.model = new Login();
+        });
     }
 };
 LoginComponent = __decorate([

@@ -15,20 +15,26 @@
                         </a>
                     </h2>
 
-                    <form #form="ngForm" (submit)="login(form)" autocomplete="on">
+                    <form #form="ngForm" (submit)="login(form)">
 
                         <div class="form-group m-b-20 row">
                             <div class="col-12">
-                                <label for="emailaddress">Địa chỉ email</label>
-                                <input class="form-control" type="email" name="email" id="emailaddress" [(ngModel)]="model.email" required="true" placeholder="Nhập email của bạn">
+                                <app-text-box type="text" title="Tên đăng nhập" name="username" placeholder="Tên đăng nhập" autocomplete="none" required="true" [(ngModel)]="model.userName">
+                                    <div invalidmessage="username">
+                                        <p *invalidType="'required'">Bạn vui lòng nhập tài khoản</p>
+                                    </div>
+                                </app-text-box>
                             </div>
                         </div>
 
                         <div class="form-group row m-b-20">
                             <div class="col-12">
-                                <!-- <a href="page-recoverpw.html" class="text-muted float-right"><small>Forgot your password?</small></a> -->
-                                <label for="password">Mật khẩu</label>
-                                <input class="form-control" type="password" name="password" [(ngModel)]="model.passWord" required="true" id="password" placeholder="Nhậm mật khẩu của bạn">
+                                <app-text-box type="password" title="Mật khẩu" name="password" placeholder="*********" autocomplete="none" required="true" [(ngModel)]="model.passWord">
+                                    <div invalidmessage="password">
+                                        <p *invalidType="'required'">Bạn vui lòng nhập mật khẩu</p>
+                                        <p *invalidType="'password'">Vui lòng nhập mật khẩu hợp lệ</p>
+                                    </div>
+                                </app-text-box>
                             </div>
                         </div>
 

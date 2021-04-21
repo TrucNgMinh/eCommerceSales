@@ -26,9 +26,22 @@ import { ErrorService } from './services/common/error.service';
 import { GlobalService } from './services/global.service';
 import { AdminProductGroupComponent } from './components/admin-components/products/admin-product-group/admin-product-group.component';
 import { AdminProductDetailComponent } from './components/admin-components/products/admin-product-detail/admin-product-detail.component';
+import { TextBoxComponent } from './controls/text-box/text-box.component';
+import { InvalidTypeDirective } from './directives/invalid-type.directive';
+import { InvalidmessageDirective } from './directives/invalid-message.directive';
+import { DataTablesModule } from 'angular-datatables';
 
 @NgModule({
   declarations: [
+
+    //controls
+    TextBoxComponent,
+
+    //Directives
+    InvalidTypeDirective,
+    InvalidmessageDirective,
+    
+    //components
     AppComponent,
     MainLayoutComponent,
     HomeAdminComponent,
@@ -52,7 +65,8 @@ import { AdminProductDetailComponent } from './components/admin-components/produ
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    FormsModule
+    FormsModule,
+    DataTablesModule
   ],
   providers: [
     ErrorService,

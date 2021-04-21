@@ -1,11 +1,22 @@
 import { __decorate } from "tslib";
 import { Component } from '@angular/core';
+import { jsFileForMainLayout } from 'src/app/app.constants';
 let MainLayoutComponent = class MainLayoutComponent {
     constructor(productGroupService) {
         this.productGroupService = productGroupService;
         this.productGroups = [];
     }
     ngAfterViewInit() {
+        jsFileForMainLayout.forEach((item) => {
+            let $item = document.getElementById(item.name);
+            if ($item) {
+                $item.remove();
+            }
+            let script = document.createElement("script");
+            script.setAttribute("id", item.name);
+            script.setAttribute("src", item.src);
+            document.body.appendChild(script);
+        });
         $("#menu-icon-left").on("click", function () {
             let $navCustom = $(".navbar-custom");
             let $nav = $("#navigation");
@@ -32,11 +43,6 @@ let MainLayoutComponent = class MainLayoutComponent {
         });
     }
     ngOnInit() {
-        this.productGroupService.getProductGroups().subscribe((data) => {
-            console.log(data);
-            this.productGroups = data;
-            console.log(this.productGroups);
-        });
     }
 };
 MainLayoutComponent = __decorate([

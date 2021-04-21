@@ -1,7 +1,7 @@
 
 import { Injectable } from '@angular/core';
 import { LocalService } from './common/local.service';
-import { LOGIN_STATUS, LOCAL_STORAGE_VARIABLE, ADMIN_CONST } from '../app.constants';
+import { LOGIN_STATUS, LOCAL_STORAGE_VARIABLE, ADMIN_CONST, API_ENDPOINT } from '../app.constants';
 import { BaseService } from './common/base.service';
 import { HttpClient } from '@angular/common/http';
 import { ErrorService } from './common/error.service';
@@ -30,12 +30,6 @@ export class AuthService extends BaseService {
   }
 
   login(data: Login) {
-    return this.post('/Home/Login', data, false);
+    return this.post(API_ENDPOINT.LOG_IN, data, false);
   }
-
-  logOut() {
-    return this.get('/Home/Logout', null, true);
-  }
-
-
 }

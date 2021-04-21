@@ -35,8 +35,42 @@ export const FORMAT_DATE_CONSTANT = {
 
 export const API_ENDPOINT = {
     ADD_EDIT_PRODUCT_GROUP: "/Products/AddEditProductGroup",
-    DELETE_PRODUCT_GROUP:"/Products/DeleteProductGroup",
-    GET_PRODUCT_GROUP:"/Products/GetProductGroups"
+    DELETE_PRODUCT_GROUP: "/Products/DeleteProductGroup",
+    GET_PRODUCT_GROUP: "/Products/GetProductGroups",
+    LOG_IN: "/User/Login"
 }
 
 export const ADMIN_CONST = '1';
+
+export const jsFileForMainLayout = [
+    {
+        name: "metisMenu",
+        src: "../assets/js/metisMenu.min.js"
+    },
+    {
+        name: "jqueryApp",
+        src: "../assets/js/jquery.app.js"
+    },
+    {
+        name: "jqueryCore",
+        src: "../assets/js/jquery.core.js"
+    }
+];
+
+export const datatableLanguageOptions =  {
+    processing: "Đang xử lý...",
+        search: "Tìm kiếm:",
+        lengthMenu: "Hiển thị _MENU_ mục mỗi trang",
+        info: "Hiển thị trang _PAGE_ của _PAGES_",
+        infoEmpty: "Hiển thị trang _PAGE_ của _PAGES_",
+        infoFiltered: "( lọc từ _MAX_ mục )",
+        loadingRecords: "Đang tải lên...",
+        zeroRecords: "Không có danh mục nào",
+        emptyTable: "Không có danh mục nào",
+        paginate: {
+          first: "Trang đầu",
+          previous: "Trang trước",
+          next: "Trang kế",
+          last: "Trang cuối"
+        }
+}
