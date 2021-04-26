@@ -475,6 +475,9 @@
     .product-add-btn {
         width: 45px;
     }
+    .wrapper-page.account-page-full {
+        width: 100%;
+    }
 }
 
 @media (min-width: 480px) {
@@ -501,6 +504,9 @@
     }
     .navbar-toggle {
         display: block;
+    }
+    .wrapper-page.account-page-full {
+        width: 100%;
     }
 }
 
