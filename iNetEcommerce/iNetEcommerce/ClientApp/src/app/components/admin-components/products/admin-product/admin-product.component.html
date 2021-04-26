@@ -4,144 +4,123 @@
         <div class="col-sm-12">
             <div class="card-box">
                 <h4 class="m-t-0 header-title">QUẢN LÝ DANH MỤC SẢN PHẨM</h4>
-                <p class="text-muted m-b-30 font-13">
+                <p class="text-muted mb-2 font-18">
                     Thêm, sửa hoặc xóa danh mục sản phẩm.
                 </p>
 
-                <div class="mb-3">
-                    <div class="row">
-                        <div class="col-12 text-sm-center form-inline">
-                            <div class="form-group mr-2">
-                                <button id="demo-btn-addrow" class="btn btn-primary"><i class="mdi mdi-plus-circle mr-2"></i> Thêm danh mục mới</button>
-                            </div>
-                            <div class="form-group">
-                                <input id="demo-input-search2" type="text" placeholder="Tìm kiếm" class="form-control" autocomplete="off">
-                            </div>
-                        </div>
-                    </div>
-                </div>
 
-                <table id="demo-foo-addrow" class="table table-striped table-bordered m-b-0 toggle-circle" data-page-size="7">
+                <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="row-border hover">
                     <thead>
                         <tr>
-                            <th data-sort-ignore="true" class="min-width"></th>
-                            <th data-sort-initial="true" data-toggle="true">STT</th>
-                            <th>TÊN DANH MỤC</th>
+                            <th>STT</th>
+                            <th>Danh Mục</th>
+                            <th>Đơn vị tính</th>
+                            <th>Tác vụ</th>
                         </tr>
                     </thead>
-                    <tbody>
-                        <tr>
-                            <td class="text-center"><button title="Xóa" class="demo-delete-row btn btn-danger btn-sm btn-icon"><i class="fa fa-times"></i></button></td>
-                            <td>Isidra</td>
-                            <td>Boudreaux</td>
-                        </tr>
-                        <tr>
-                            <td class="text-center"><button title="Xóa" class="demo-delete-row btn btn-danger btn-sm btn-icon"><i class="fa fa-times"></i></button></td>
-                            <td>Shona</td>
-                            <td>Woldt</td>
-                        </tr>
-                        <tr>
-                            <td class="text-center"><button title="Xóa" class="demo-delete-row btn btn-danger btn-sm btn-icon"><i class="fa fa-times"></i></button></td>
-                            <td>Granville</td>
-                            <td>Leonardo</td>
-                        </tr>
-                        <tr>
-                            <td class="text-center"><button title="Xóa" class="demo-delete-row btn btn-danger btn-sm btn-icon"><i class="fa fa-times"></i></button></td>
-                            <td>Easer</td>
-                            <td>Dragoo</td>
-                        </tr>
-                    </tbody>
-                    <tfoot>
-                        <tr class="active">
-                            <td colspan="6">
-                                <div class="text-right">
-                                    <ul class="pagination pagination-split justify-content-end footable-pagination m-t-10"></ul>
-                                </div>
+                    <tbody *ngIf="productGroups?.length != 0">
+                        <tr *ngFor="let productGroup of productGroups">
+                            <td>{{ productGroup.id }}</td>
+                            <td>{{ productGroup.name }}</td>
+                            <td>{{ productGroup.unit }}</td>
+                            <td>
+                                <button class="btn btn-warning btn-sm btn-icon mr-2" title="Chỉnh sửa"><i class="fa fa-pencil"></i></button>
+                                <button class="btn btn-danger btn-sm btn-icon" title="Xóa"><i class="fa fa-times"></i></button>
                             </td>
                         </tr>
-                    </tfoot>
+                    </tbody>
                 </table>
             </div>
+            <button (click)="triggerModal(modalAddProductGroup)" style="position: absolute; top: 10px; right: 25px;" class="btn btn-custom waves-effect waves-light product-add-btn"><i class="mdi mdi-plus-circle mr-3"></i> Thêm danh mục mới</button>
+
         </div>
     </div>
     <div class="row">
         <div class="col-sm-12">
             <div class="card-box">
                 <h4 class="m-t-0 header-title">QUẢN LÝ SẢN PHẨM</h4>
-                <p class="text-muted m-b-30 font-13">
+                <p class="text-muted mb-2 font-18">
                     Thêm, sửa hoặc xóa sản phẩm.
                 </p>
 
-                <div class="mb-3">
-                    <div class="row">
-                        <div class="col-12 text-sm-center form-inline">
-                            <div class="form-group mr-2">
-                                <button id="demo-btn-addrow" class="btn btn-primary"><i class="mdi mdi-plus-circle mr-2"></i> Thêm sản phẩm mới</button>
-                            </div>
-                            <div class="form-group">
-                                <input id="demo-input-search2" type="text" placeholder="Tìm kiếm" class="form-control" autocomplete="off">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <table id="demo-foo-addrow" class="table table-striped table-bordered m-b-0 toggle-circle" data-page-size="7">
+                <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="row-border hover">
                     <thead>
                         <tr>
-                            <th data-sort-ignore="true" class="min-width"></th>
-                            <th data-sort-initial="true" data-toggle="true">STT</th>
+                            <th>STT</th>
                             <th>TÊN SẢN PHẨM</th>
-                            <th>DANH MỤC</th>
-                            <th>GIÁ</th>
+                            <th>GIÁ GỐC</th>
+                            <th>GIÁ BÁN</th>
                             <th>MÔ TẢ</th>
+                            <th>TÁC VỤ</th>
                         </tr>
                     </thead>
-                    <tbody>
-                        <tr>
-                            <td class="text-center"><button title="Xóa" class="demo-delete-row btn btn-danger btn-sm btn-icon"><i class="fa fa-times"></i></button></td>
-                            <td>Isidra</td>
-                            <td>Boudreaux</td>
-                            <td>Boudreaux</td>
-                            <td>Boudreaux</td>
-                            <td>Boudreaux</td>
-                        </tr>
-                        <tr>
-                            <td class="text-center"><button title="Xóa" class="demo-delete-row btn btn-danger btn-sm btn-icon"><i class="fa fa-times"></i></button></td>
-                            <td>Shona</td>
-                            <td>Woldt</td>
-                            <td>Boudreaux</td>
-                            <td>Boudreaux</td>
-                            <td>Boudreaux</td>
-                        </tr>
-                        <tr>
-                            <td class="text-center"><button title="Xóa" class="demo-delete-row btn btn-danger btn-sm btn-icon"><i class="fa fa-times"></i></button></td>
-                            <td>Granville</td>
-                            <td>Leonardo</td>
-                            <td>Boudreaux</td>
-                            <td>Boudreaux</td>
-                            <td>Boudreaux</td>
-                        </tr>
-                        <tr>
-                            <td class="text-center"><button title="Xóa" class="demo-delete-row btn btn-danger btn-sm btn-icon"><i class="fa fa-times"></i></button></td>
-                            <td>Easer</td>
-                            <td>Dragoo</td>
-                            <td>Boudreaux</td>
-                            <td>Boudreaux</td>
-                            <td>Boudreaux</td>
-                        </tr>
-                    </tbody>
-                    <tfoot>
-                        <tr class="active">
-                            <td colspan="6">
-                                <div class="text-right">
-                                    <ul class="pagination pagination-split justify-content-end footable-pagination m-t-10"></ul>
-                                </div>
+                    <tbody *ngIf="products?.length != 0">
+                        <tr *ngFor="let product of products">
+                            <td>{{ product.id }}</td>
+                            <td>{{ product.name }}</td>
+                            <td>{{ product.price }}</td>
+                            <td>{{ product.sellPrice }}</td>
+                            <td>{{ product.content }}</td>
+                            <td>
+                                <button class="btn btn-warning btn-sm btn-icon mr-2" title="Chỉnh sửa"><i class="fa fa-pencil"></i></button>
+                                <button class="btn btn-danger btn-sm btn-icon" title="Xóa"><i class="fa fa-times"></i></button>
                             </td>
                         </tr>
-                    </tfoot>
+                    </tbody>
                 </table>
             </div>
+            <button (click)="triggerModal(modalAddProduct)" style="position: absolute; top: 10px; right: 25px;" class="btn btn-custom waves-effect waves-light product-add-btn"><i class="mdi mdi-plus-circle mr-3"></i> Thêm sản phẩm mới</button>
         </div>
     </div>
 
 </div>
+
+
+<ng-template #modalAddProductGroup let-modal>
+    <div class="modal-header">
+        <h4 class="modal-title" id="modal-basic-title">Thêm danh mục sản phẩm</h4>
+        <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+        <span aria-hidden="true">×</span>
+      </button>
+    </div>
+    <form #addProductGroupForm="ngForm" (submit)="addProductGroup(addProductGroupForm)" autocomplete="off">
+        <div class="modal-body">
+            <div class="form-group row m-b-20">
+                <div class="col-12">
+                    <app-text-box type="text" title="Tên danh mục" name="productgroupname" placeholder="Nhập tên danh mục" required="true" [(ngModel)]="productGroupModel.name">
+                        <div invalidmessage="productgroupname">
+                            <p *invalidType="'required'">Bạn vui lòng nhập tên danh mục!</p>
+                        </div>
+                    </app-text-box>
+                </div>
+            </div>
+            <div class="form-group row m-b-20">
+                <div class="col-12">
+                    <app-text-box type="text" title="Đơn vị" name="unit" placeholder="Nhập đơn vị tính" [(ngModel)]="productGroupModel.unit">
+                    </app-text-box>
+                </div>
+            </div>
+        </div>
+    </form>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-custom waves-effect waves-light" type="submit">Xác nhận</button>
+    </div>
+</ng-template>
+
+<ng-template #modalAddProduct let-modal>
+    <div class="modal-header">
+        <h4 class="modal-title" id="modal-basic-title">Thêm sản phẩm</h4>
+        <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+        <span aria-hidden="true">×</span>
+      </button>
+    </div>
+    <div class="modal-body">
+        <p><strong>Are you sure you want to delete <span class="text-primary">"Agatha Harkness"</span> profile?</strong></p>
+
+        <p>All data related to west view profile will be removed permanently.
+        </p>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-danger" (click)="modal.close('Save click')">Close</button>
+    </div>
+</ng-template>

@@ -1,15 +1,30 @@
 import { AfterViewInit, Component, OnInit } from '@angular/core';
+import { jsFileForMainLayout } from 'src/app/app.constants';
+import { ProductGroup } from 'src/app/models/product-group.model';
+import { ProductGroupService } from 'src/app/services/product-group.service';
 
 @Component({
   selector: 'app-main-layout',
   templateUrl: './main-layout.component.html',
   styleUrls: ['./main-layout.component.css']
 })
-export class MainLayoutComponent implements OnInit {
+export class MainLayoutComponent implements OnInit, AfterViewInit {
+  productGroups: ProductGroup[] = [];
 
-  constructor() { }
+  constructor(private productGroupService: ProductGroupService) { }
+  ngAfterViewInit(): void {
 
-  ngOnInit(): void {
+    jsFileForMainLayout.forEach((item) => {
+      let $item = document.getElementById(item.name);
+      if ($item) {
+        $item.remove();
+      }
+      let script = document.createElement("script");
+      script.setAttribute("id", item.name);
+      script.setAttribute("src", item.src);
+      document.body.appendChild(script);
+    });
+
     $("#menu-icon-left").on("click", function() {
       let $navCustom = $(".navbar-custom");
       let $nav = $("#navigation");
@@ -21,6 +36,22 @@ export class MainLayoutComponent implements OnInit {
       $nav.attr('style', 'display:none !important');
     }
   });
+
+  $(".has-submenu").on("click", function (evt: any) {
+    let $subMenuClicked = $(evt.currentTarget);
+    let $subMenuMegaMenu = $subMenuClicked.find(".submenu");
+    if ($subMenuClicked.hasClass("open")) {
+      $subMenuClicked.removeClass("open");
+      $subMenuMegaMenu.removeClass("open");
+    }
+    else{
+      $subMenuClicked.addClass("open");
+      $subMenuMegaMenu.addClass("open");
+    }
+  })
+  }
+
+  ngOnInit(): void {
   }
 
 }

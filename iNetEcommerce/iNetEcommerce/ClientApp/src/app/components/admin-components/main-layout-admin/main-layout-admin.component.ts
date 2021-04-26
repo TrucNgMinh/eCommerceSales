@@ -1,4 +1,6 @@
 import { AfterViewInit, Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-main-layout-admin',
@@ -7,7 +9,7 @@ import { AfterViewInit, Component, OnInit } from '@angular/core';
 })
 export class MainLayoutAdminComponent implements OnInit, AfterViewInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngAfterViewInit(): void {
     $("#menu-icon-left").on("click", function () {
@@ -26,40 +28,13 @@ export class MainLayoutAdminComponent implements OnInit, AfterViewInit {
 
       }
     });
-
-    jsFile.forEach((item) => {
-      var $object = document.getElementById(item.name);
-      if ($object) {
-        $object.remove();
-      }
-
-      let script = document.createElement("script");
-      script.setAttribute("id", item.name);
-      script.setAttribute("src", item.src);
-      document.body.appendChild(script);
-    });
   }
 
   ngOnInit(): void {
+    if (!AuthService.isLoggedIn())
+    {
+      this.router.navigate(["login"]);
+    }
   }
 
 }
-
-export const jsFile = [
-  {
-    name: "slimScroll",
-    src: "../assets/js/jquery.slimscroll.js"
-  },
-  {
-    name: "metisMenu",
-    src: "../assets/js/metisMenu.min.js"
-  },
-  {
-    name: "jqueryApp",
-    src: "../assets/js/jquery.app.js"
-  },
-  {
-    name: "jqueryCore",
-    src: "../assets/js/jquery.core.js"
-  }
-]

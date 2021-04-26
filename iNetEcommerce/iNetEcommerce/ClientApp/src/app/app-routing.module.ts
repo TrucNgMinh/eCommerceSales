@@ -12,6 +12,9 @@ import { PriceListComponent } from './components/user-components/price-list/pric
 import { ProductDetailComponent } from './components/user-components/product-detail/product-detail.component';
 import { MainLayoutAdminComponent } from './components/admin-components/main-layout-admin/main-layout-admin.component';
 import { AdminProductComponent } from './components/admin-components/products/admin-product/admin-product.component';
+import { LoginComponent } from './components/login/login.component';
+import { AdminProductGroupComponent } from './components/admin-components/products/admin-product-group/admin-product-group.component';
+import { AdminProductDetailComponent } from './components/admin-components/products/admin-product-detail/admin-product-detail.component';
 
 const routes: Routes = [
   {
@@ -64,7 +67,19 @@ const routes: Routes = [
         path: 'admin-product',
         component: AdminProductComponent
       }
+      , {
+        path: 'admin-product-group',
+        component: AdminProductGroupComponent
+      }
+      , {
+        path: 'admin-product-detail',
+        component: AdminProductDetailComponent
+      }
     ]
+  },
+  {
+    path: 'login',
+    component: LoginComponent
   }
 ];
 

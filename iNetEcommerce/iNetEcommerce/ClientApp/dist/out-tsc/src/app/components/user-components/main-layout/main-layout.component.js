@@ -1,8 +1,22 @@
 import { __decorate } from "tslib";
 import { Component } from '@angular/core';
+import { jsFileForMainLayout } from 'src/app/app.constants';
 let MainLayoutComponent = class MainLayoutComponent {
-    constructor() { }
-    ngOnInit() {
+    constructor(productGroupService) {
+        this.productGroupService = productGroupService;
+        this.productGroups = [];
+    }
+    ngAfterViewInit() {
+        jsFileForMainLayout.forEach((item) => {
+            let $item = document.getElementById(item.name);
+            if ($item) {
+                $item.remove();
+            }
+            let script = document.createElement("script");
+            script.setAttribute("id", item.name);
+            script.setAttribute("src", item.src);
+            document.body.appendChild(script);
+        });
         $("#menu-icon-left").on("click", function () {
             let $navCustom = $(".navbar-custom");
             let $nav = $("#navigation");
@@ -15,6 +29,20 @@ let MainLayoutComponent = class MainLayoutComponent {
                 $nav.attr('style', 'display:none !important');
             }
         });
+        $(".has-submenu").on("click", function (evt) {
+            let $subMenuClicked = $(evt.currentTarget);
+            let $subMenuMegaMenu = $subMenuClicked.find(".submenu");
+            if ($subMenuClicked.hasClass("open")) {
+                $subMenuClicked.removeClass("open");
+                $subMenuMegaMenu.removeClass("open");
+            }
+            else {
+                $subMenuClicked.addClass("open");
+                $subMenuMegaMenu.addClass("open");
+            }
+        });
+    }
+    ngOnInit() {
     }
 };
 MainLayoutComponent = __decorate([

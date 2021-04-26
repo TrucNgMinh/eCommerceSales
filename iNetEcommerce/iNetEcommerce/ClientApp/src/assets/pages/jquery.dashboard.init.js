@@ -15,7 +15,6 @@
         }
         prevScrollpos = currentScrollPos;
     }
-
 }(window.jQuery),
 
 function($) {

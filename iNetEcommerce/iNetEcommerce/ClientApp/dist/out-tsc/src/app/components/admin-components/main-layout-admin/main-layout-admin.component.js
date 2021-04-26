@@ -1,7 +1,10 @@
 import { __decorate } from "tslib";
 import { Component } from '@angular/core';
+import { AuthService } from 'src/app/services/auth.service';
 let MainLayoutAdminComponent = class MainLayoutAdminComponent {
-    constructor() { }
+    constructor(router) {
+        this.router = router;
+    }
     ngAfterViewInit() {
         $("#menu-icon-left").on("click", function () {
             let $navCustom = $(".navbar-custom");
@@ -15,18 +18,11 @@ let MainLayoutAdminComponent = class MainLayoutAdminComponent {
                 $nav.attr('style', 'display:none !important');
             }
         });
-        jsFile.forEach((item) => {
-            var $object = document.getElementById(item.name);
-            if ($object) {
-                $object.remove();
-            }
-            let script = document.createElement("script");
-            script.setAttribute("id", item.name);
-            script.setAttribute("src", item.src);
-            document.body.appendChild(script);
-        });
     }
     ngOnInit() {
+        if (!AuthService.isLoggedIn()) {
+            this.router.navigate(["login"]);
+        }
     }
 };
 MainLayoutAdminComponent = __decorate([
@@ -37,22 +33,4 @@ MainLayoutAdminComponent = __decorate([
     })
 ], MainLayoutAdminComponent);
 export { MainLayoutAdminComponent };
-export const jsFile = [
-    {
-        name: "slimScroll",
-        src: "../assets/js/jquery.slimscroll.js"
-    },
-    {
-        name: "metisMenu",
-        src: "../assets/js/metisMenu.min.js"
-    },
-    {
-        name: "jqueryApp",
-        src: "../assets/js/jquery.app.js"
-    },
-    {
-        name: "jqueryCore",
-        src: "../assets/js/jquery.core.js"
-    }
-];
 //# sourceMappingURL=main-layout-admin.component.js.map
