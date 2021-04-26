@@ -1,5 +1,6 @@
 using iNet.Common;
 using iNet.Entities;
+using Microsoft.AspNetCore.Http;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -39,7 +40,7 @@ namespace iNet.Context.Services.Impl
             return response;
         }
 
-        public async Task<ApiResponseModel> AddEditBlog(RequestBlogPost model, UserTokenModel userToken)
+        public async Task<ApiResponseModel> AddEditBlog(RequestBlogPost model, UserTokenModel userToken, IFormFile image)
         {
             var response = new ApiResponseModel();
             ApiBlogPost result = null;
@@ -56,6 +57,11 @@ namespace iNet.Context.Services.Impl
                 }
                 blog.Title = model.Title;
                 blog.Body = model.Body;
+                blog.Abstract = model.Abstract;
+                if (image != null)
+                {
+                    blog.Image = UtilCommon.ImageUpload(ApiConstants.FOLDELUPLOAD, image, blog.Image, false);
+                }
                 await _blogRepository.UpdateAsync(blog);
                 result = blog.ToModel();
             }
@@ -67,8 +73,14 @@ namespace iNet.Context.Services.Impl
                     Body = model.Body,
                     UserId = userToken.UserId,
                     DateTimeCreate = DateTime.Now,
-                    IsDeactivate = false
+                    IsDeactivate = false,
+                    Abstract = model.Abstract
+
                 };
+                if (image != null)
+                {
+                    blog.Image = UtilCommon.ImageUpload(ApiConstants.FOLDELUPLOAD, image, blog.Image, false);
+                }
                 await _blogRepository.InsertAsync(blog);
                 result = blog.ToModel(user); ;
             }

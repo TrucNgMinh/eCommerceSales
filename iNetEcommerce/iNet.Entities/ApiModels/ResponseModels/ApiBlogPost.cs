@@ -13,6 +13,8 @@ namespace iNet.Entities
         public string Creator { get; set; }
         public string Title { get; set; }
         public string Body { get; set; }
+        public string Abstract { get; set; }
+        public string Image { get; set; }
         public bool IsDeactivate { get; set; }
         public DateTime DateTimeCreate { get; set; }
     }
@@ -28,6 +30,8 @@ namespace iNet.Entities
                 UserId = entity.UserId,
                 Title = entity.Title,
                 Body = entity.Body,
+                Abstract = entity.Abstract,
+                Image = entity.Image,
                 DateTimeCreate = entity.DateTimeCreate,
                 Creator = user?.FullName,
             };
@@ -42,6 +46,8 @@ namespace iNet.Entities
                 UserId = entity.UserId,
                 Title = entity.Title,
                 Body = entity.Body,
+                Abstract = entity.Abstract,
+                Image = entity.Image,
                 DateTimeCreate = entity.DateTimeCreate,
                 Creator = entity.User?.FullName,
             };

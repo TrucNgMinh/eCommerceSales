@@ -3,6 +3,7 @@ using iNet.Context.Services.Impl;
 using iNet.Entities;
 using Microsoft.AspNet.OData.Routing;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -69,12 +70,12 @@ namespace iNetEcommerce.Controllers
         [ProducesResponseType(Status500InternalServerError)]
         [Route("[action]")]
         [Authorize]
-        public async Task<IActionResult> AddEditBlog([FromBody] RequestBlogPost model)
+        public async Task<IActionResult> AddEditBlog([FromBody] RequestBlogPost model, IFormFile image)
         {
             try
             {
                 var userToken = GetUserIdentify();
-                var result = await _blogService.AddEditBlog(model, userToken);
+                var result = await _blogService.AddEditBlog(model, userToken, image);
 
                 return GetResult(result);
             }
