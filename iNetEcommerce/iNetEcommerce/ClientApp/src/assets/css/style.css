@@ -472,6 +472,9 @@
         height: 400px;
         object-fit: initial;
     }
+    .product-add-btn {
+        width: 45px;
+    }
 }
 
 @media (min-width: 480px) {
@@ -804,6 +807,7 @@ a:focus {
     text-transform: uppercase;
     letter-spacing: 0.02em;
     font-size: 14px;
+    line-height: 1.8rem;
     font-weight: 500;
     margin-top: 0;
     font-size: 25px;
@@ -2991,6 +2995,8 @@ code {
 
 .modal .modal-dialog .modal-title {
     margin: 0;
+    text-transform: uppercase;
+    font-size: 20px;
 }
 
 .modal .modal-dialog .modal-content {
@@ -3005,7 +3011,11 @@ code {
 }
 
 .modal .modal-dialog .modal-content .modal-body {
-    padding: 20px;
+    padding: 10px;
+}
+
+.modal .modal-dialog .modal-content .label {
+    font-size: 16px
 }
 
 .modal-backdrop {

@@ -1,35 +1,55 @@
 import { __decorate } from "tslib";
 import { Component } from '@angular/core';
+import { ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
+import { Subject } from 'rxjs-compat';
 import { datatableLanguageOptions } from 'src/app/app.constants';
 let AdminProductComponent = class AdminProductComponent {
-    constructor(productGroupService) {
+    constructor(productGroupService, modalService) {
         this.productGroupService = productGroupService;
+        this.modalService = modalService;
         this.productGroups = [];
+        this.products = [];
+        this.closeModal = "";
         this.dtOptions = {};
+        this.dtTrigger = new Subject();
     }
     ngAfterViewInit() {
     }
     ngOnInit() {
-        const that = this;
         this.dtOptions = {
             pagingType: 'full_numbers',
             pageLength: 10,
-            serverSide: true,
-            order: [1, 'desc'],
             processing: true,
-            language: datatableLanguageOptions,
-            ajax: (dataTablesParameters, callback) => {
-                that.productGroupService.getProductGroups().subscribe((resp) => {
-                    that.productGroups = resp;
-                    callback({
-                        recordsTotal: that.productGroups.length,
-                        recordsFiltered: that.productGroups.slice(10, that.productGroups.length),
-                        data: []
-                    });
-                });
-            },
-            columns: [{ data: 'id' }, { data: 'name' }, { data: 'unit' }]
+            language: datatableLanguageOptions
         };
+        this.getProductGroups();
+    }
+    getProductGroups() {
+        this.productGroupService.getProductGroups().subscribe((res) => {
+            this.productGroups = res;
+            this.dtTrigger.next();
+        });
+    }
+    ngOnDestroy() {
+        this.dtTrigger.unsubscribe();
+    }
+    triggerModal(content) {
+        this.modalService.open(content, { ariaLabelledBy: 'modal-basic-title' }).result.then((res) => {
+            this.closeModal = `Closed with: ${res}`;
+        }, (res) => {
+            this.closeModal = `Dismissed ${this.getDismissReason(res)}`;
+        });
+    }
+    getDismissReason(reason) {
+        if (reason === ModalDismissReasons.ESC) {
+            return 'by pressing ESC';
+        }
+        else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
+            return 'by clicking on a backdrop';
+        }
+        else {
+            return `with: ${reason}`;
+        }
     }
 };
 AdminProductComponent = __decorate([

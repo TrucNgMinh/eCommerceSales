@@ -31,7 +31,7 @@
                     </tbody>
                 </table>
             </div>
-            <button routerLink="/admin/admin-product-detail" style="position: absolute; top: 10px; right: 25px;" class="btn btn-custom waves-effect waves-light"><i class="mdi mdi-plus-circle mr-2"></i> Thêm danh mục mới</button>
+            <button (click)="triggerModal(modalAddProductGroup)" style="position: absolute; top: 10px; right: 25px;" class="btn btn-custom waves-effect waves-light product-add-btn"><i class="mdi mdi-plus-circle mr-3"></i> Thêm danh mục mới</button>
 
         </div>
     </div>
@@ -69,8 +69,58 @@
                     </tbody>
                 </table>
             </div>
-            <button routerLink="/admin/admin-product-detail" style="position: absolute; top: 10px; right: 25px;" class="btn btn-custom waves-effect waves-light"><i class="mdi mdi-plus-circle mr-2"></i> Thêm sản phẩm mới</button>
+            <button (click)="triggerModal(modalAddProduct)" style="position: absolute; top: 10px; right: 25px;" class="btn btn-custom waves-effect waves-light product-add-btn"><i class="mdi mdi-plus-circle mr-3"></i> Thêm sản phẩm mới</button>
         </div>
     </div>
 
 </div>
+
+
+<ng-template #modalAddProductGroup let-modal>
+    <div class="modal-header">
+        <h4 class="modal-title" id="modal-basic-title">Thêm danh mục sản phẩm</h4>
+        <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+        <span aria-hidden="true">×</span>
+      </button>
+    </div>
+    <form #addProductGroupForm="ngForm" (submit)="addProductGroup(addProductGroupForm)" autocomplete="off">
+        <div class="modal-body">
+            <div class="form-group row m-b-20">
+                <div class="col-12">
+                    <app-text-box type="text" title="Tên danh mục" name="productgroupname" placeholder="Nhập tên danh mục" required="true" [(ngModel)]="productGroupModel.name">
+                        <div invalidmessage="productgroupname">
+                            <p *invalidType="'required'">Bạn vui lòng nhập tên danh mục!</p>
+                        </div>
+                    </app-text-box>
+                </div>
+            </div>
+            <div class="form-group row m-b-20">
+                <div class="col-12">
+                    <app-text-box type="text" title="Đơn vị" name="unit" placeholder="Nhập đơn vị tính" [(ngModel)]="productGroupModel.unit">
+                    </app-text-box>
+                </div>
+            </div>
+        </div>
+    </form>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-custom waves-effect waves-light" type="submit">Xác nhận</button>
+    </div>
+</ng-template>
+
+<ng-template #modalAddProduct let-modal>
+    <div class="modal-header">
+        <h4 class="modal-title" id="modal-basic-title">Thêm sản phẩm</h4>
+        <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+        <span aria-hidden="true">×</span>
+      </button>
+    </div>
+    <div class="modal-body">
+        <p><strong>Are you sure you want to delete <span class="text-primary">"Agatha Harkness"</span> profile?</strong></p>
+
+        <p>All data related to west view profile will be removed permanently.
+        </p>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-danger" (click)="modal.close('Save click')">Close</button>
+    </div>
+</ng-template>

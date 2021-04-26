@@ -30,6 +30,7 @@ import { TextBoxComponent } from './controls/text-box/text-box.component';
 import { InvalidTypeDirective } from './directives/invalid-type.directive';
 import { InvalidmessageDirective } from './directives/invalid-message.directive';
 import { DataTablesModule } from 'angular-datatables';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 let AppModule = class AppModule {
 };
 AppModule = __decorate([
@@ -65,7 +66,8 @@ AppModule = __decorate([
             HttpClientModule,
             BrowserAnimationsModule,
             FormsModule,
-            DataTablesModule
+            DataTablesModule,
+            NgbModule
         ],
         providers: [
             ErrorService,
