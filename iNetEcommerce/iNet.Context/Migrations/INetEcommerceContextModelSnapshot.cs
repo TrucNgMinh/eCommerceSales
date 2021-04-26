@@ -17,6 +17,49 @@ namespace iNet.Context.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 64)
                 .HasAnnotation("ProductVersion", "5.0.4");
 
+            modelBuilder.Entity("iNet.Entities.BlogPost", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<string>("Abstract")
+                        .HasColumnType("text");
+
+                    b.Property<string>("Body")
+                        .HasColumnType("text");
+
+                    b.Property<DateTime>("DateTime")
+                        .HasColumnType("datetime");
+
+                    b.Property<DateTime>("DateTimeCreate")
+                        .HasColumnType("datetime");
+
+                    b.Property<DateTimeOffset?>("DateTimeProcessed")
+                        .HasColumnType("timestamp");
+
+                    b.Property<string>("Image")
+                        .HasColumnType("text");
+
+                    b.Property<bool>("IsDeactivate")
+                        .HasColumnType("tinyint(1)");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("tinyint(1)");
+
+                    b.Property<string>("Title")
+                        .HasColumnType("text");
+
+                    b.Property<int>("UserId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("blogpost");
+                });
+
             modelBuilder.Entity("iNet.Entities.Company", b =>
                 {
                     b.Property<int>("Id")
@@ -38,10 +81,10 @@ namespace iNet.Context.Migrations
                     b.Property<string>("Email")
                         .HasColumnType("text");
 
-                    b.Property<bool?>("IsDeactivate")
+                    b.Property<bool>("IsDeactivate")
                         .HasColumnType("tinyint(1)");
 
-                    b.Property<bool?>("IsDeleted")
+                    b.Property<bool>("IsDeleted")
                         .HasColumnType("tinyint(1)");
 
                     b.Property<string>("Logo")
@@ -82,10 +125,10 @@ namespace iNet.Context.Migrations
                     b.Property<DateTimeOffset?>("DateTimeProcessed")
                         .HasColumnType("timestamp");
 
-                    b.Property<bool?>("IsDeactivate")
+                    b.Property<bool>("IsDeactivate")
                         .HasColumnType("tinyint(1)");
 
-                    b.Property<bool?>("IsDeleted")
+                    b.Property<bool>("IsDeleted")
                         .HasColumnType("tinyint(1)");
 
                     b.Property<string>("PrimaryColor")
@@ -111,10 +154,10 @@ namespace iNet.Context.Migrations
                     b.Property<DateTimeOffset?>("DateTimeProcessed")
                         .HasColumnType("timestamp");
 
-                    b.Property<bool?>("IsDeactivate")
+                    b.Property<bool>("IsDeactivate")
                         .HasColumnType("tinyint(1)");
 
-                    b.Property<bool?>("IsDeleted")
+                    b.Property<bool>("IsDeleted")
                         .HasColumnType("tinyint(1)");
 
                     b.Property<string>("Name")
@@ -143,10 +186,10 @@ namespace iNet.Context.Migrations
                     b.Property<DateTimeOffset?>("DateTimeProcessed")
                         .HasColumnType("timestamp");
 
-                    b.Property<bool?>("IsDeactivate")
+                    b.Property<bool>("IsDeactivate")
                         .HasColumnType("tinyint(1)");
 
-                    b.Property<bool?>("IsDeleted")
+                    b.Property<bool>("IsDeleted")
                         .HasColumnType("tinyint(1)");
 
                     b.Property<string>("Name")
@@ -178,10 +221,10 @@ namespace iNet.Context.Migrations
                     b.Property<string>("Image")
                         .HasColumnType("text");
 
-                    b.Property<bool?>("IsDeactivate")
+                    b.Property<bool>("IsDeactivate")
                         .HasColumnType("tinyint(1)");
 
-                    b.Property<bool?>("IsDeleted")
+                    b.Property<bool>("IsDeleted")
                         .HasColumnType("tinyint(1)");
 
                     b.Property<int>("ProductId")
@@ -221,10 +264,10 @@ namespace iNet.Context.Migrations
                     b.Property<string>("Image")
                         .HasColumnType("text");
 
-                    b.Property<bool?>("IsDeactivate")
+                    b.Property<bool>("IsDeactivate")
                         .HasColumnType("tinyint(1)");
 
-                    b.Property<bool?>("IsDeleted")
+                    b.Property<bool>("IsDeleted")
                         .HasColumnType("tinyint(1)");
 
                     b.Property<string>("Passcode")
@@ -239,9 +282,39 @@ namespace iNet.Context.Migrations
                     b.Property<string>("UserName")
                         .HasColumnType("text");
 
+                    b.Property<int>("UserRole")
+                        .HasColumnType("int");
+
                     b.HasKey("Id");
 
                     b.ToTable("user");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            DateTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Email = "nhenden1511@gmail.com",
+                            FullName = "Hao nguyen",
+                            Hash = "00000000-0000-0000-0000-000000000000",
+                            IsDeactivate = false,
+                            IsDeleted = false,
+                            Passcode = "4gCaQiDMvnCFGpzB3UXGbWZ0cxFeVAi69XbUtGNZRno=",
+                            Phone = "0132666666",
+                            UserName = "haonguyen",
+                            UserRole = 1
+                        });
+                });
+
+            modelBuilder.Entity("iNet.Entities.BlogPost", b =>
+                {
+                    b.HasOne("iNet.Entities.User", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("User");
                 });
 #pragma warning restore 612, 618
         }

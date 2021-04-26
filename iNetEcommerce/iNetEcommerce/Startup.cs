@@ -217,6 +217,7 @@ namespace iNetEcommerce
             services.AddTransient<IProductService, ProductService>();
             services.AddTransient<IUserService, UserService>();
             services.AddTransient<IBlogService, BlogService>();
+            services.AddTransient<IGeneralService, GeneralService>();
             //register background thread
             services.AddScheduler();
           }

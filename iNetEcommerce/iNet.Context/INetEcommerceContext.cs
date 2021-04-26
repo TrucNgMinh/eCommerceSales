@@ -20,6 +20,7 @@ namespace iNet.Context
         public DbSet<User> ProductInformation { get; set; }
         public DbSet<ProductImage> ProductImage { get; set; }
         public DbSet<Config> ProductOverlayDescription { get; set; }
+        public DbSet<BlogPost> BlogPost { get; set; }
         public DbSet<Company> Company { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

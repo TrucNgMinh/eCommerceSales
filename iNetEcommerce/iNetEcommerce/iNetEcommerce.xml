@@ -14,7 +14,7 @@
             <response code="500">Server Error.</response>
             
         </member>
-        <member name="M:iNetEcommerce.Controllers.BlogController.AddEditBlog(iNet.Entities.RequestBlogPost)">
+        <member name="M:iNetEcommerce.Controllers.BlogController.AddEditBlog(iNet.Entities.RequestBlogPost,Microsoft.AspNetCore.Http.IFormFile)">
             <summary>
             Add/Edit Blog
             </summary>
@@ -27,6 +27,11 @@
         <member name="T:iNetEcommerce.Controllers.HomeController">
             <summary>
             Represents a RESTful service of General.
+            </summary>
+        </member>
+        <member name="M:iNetEcommerce.Controllers.HomeController.UpdateBanner(Microsoft.AspNetCore.Http.IFormFile,Microsoft.AspNetCore.Http.IFormFile,Microsoft.AspNetCore.Http.IFormFile,Microsoft.AspNetCore.Http.IFormFile)">
+            <summary>
+            Update User ID
             </summary>
         </member>
         <member name="M:iNetEcommerce.Controllers.ProductsController.GetProductGroups">
