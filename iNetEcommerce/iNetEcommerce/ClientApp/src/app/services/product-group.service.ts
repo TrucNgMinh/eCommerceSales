@@ -17,12 +17,12 @@ export class ProductGroupService extends BaseService {
       super(http, errorHandler, globalService);
   }
 
-  addEditProductGroup(model: ProductGroup) {
-    this.post(API_ENDPOINT.ADD_EDIT_PRODUCT_GROUP, model, true);
+  addEditProductGroup(model: ProductGroup): Observable<any> {
+    return this.post(API_ENDPOINT.ADD_EDIT_PRODUCT_GROUP, model, true);
   }
 
-  deleteProductGroup(model: ProductGroup) {
-    this.post(API_ENDPOINT.ADD_EDIT_PRODUCT_GROUP, model, true);
+  deleteProductGroup(model: ProductGroup): Observable<any> {
+    return this.post(API_ENDPOINT.DELETE_PRODUCT_GROUP, model, true);
   }
 
   getProductGroups(): Observable<ProductGroup[]>{
