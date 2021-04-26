@@ -122,3 +122,17 @@ b,
 strong {
     color: #007dc5;
 }
+
+.vc_row.wpb_row.vc_row-fluid[_ngcontent-qan-c16] {
+    border-bottom-width: 1px!important;
+    border-bottom-color: #7a7a7a!important;
+    border-bottom-style: solid!important;
+    display: block;
+    width: 100%;
+}
+
+@media (max-width: 991px) {
+    .vc_row.wpb_row.vc_row-fluid {
+        display: block !important;
+    }
+}

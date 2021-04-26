@@ -77,4 +77,8 @@ export class AdminProductComponent implements OnInit, OnDestroy, AfterViewInit {
     })
   }
 
+  addProduct(form: NgForm):void {
+    
+  }
+
 }

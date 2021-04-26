@@ -37,7 +37,9 @@ export const API_ENDPOINT = {
     ADD_EDIT_PRODUCT_GROUP: "/Products/AddEditProductGroup",
     DELETE_PRODUCT_GROUP: "/Products/DeleteProductGroup",
     GET_PRODUCT_GROUP: "/Products/GetProductGroups",
-    LOG_IN: "/User/Login"
+    LOG_IN: "/User/Login",
+    ADD_EDIT_BLOG: "/Blogs/AddEditBlog",
+    GET_BLOGS: "/Blogs/GetListBlog"
 }
 
 export const ADMIN_CONST = '1';

@@ -52,6 +52,13 @@ export class MainLayoutComponent implements OnInit, AfterViewInit {
   }
 
   ngOnInit(): void {
+    this.getProductGroups();
+  }
+
+  getProductGroups():void {
+    this.productGroupService.getProductGroups().subscribe((res)=>{
+      this.productGroups = res;
+    })
   }
 
 }

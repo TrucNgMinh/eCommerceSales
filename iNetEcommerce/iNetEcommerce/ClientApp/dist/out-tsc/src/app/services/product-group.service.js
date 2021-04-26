@@ -10,10 +10,10 @@ let ProductGroupService = class ProductGroupService extends BaseService {
         this.globalService = globalService;
     }
     addEditProductGroup(model) {
-        this.post(API_ENDPOINT.ADD_EDIT_PRODUCT_GROUP, model, true);
+        return this.post(API_ENDPOINT.ADD_EDIT_PRODUCT_GROUP, model, true);
     }
     deleteProductGroup(model) {
-        this.post(API_ENDPOINT.ADD_EDIT_PRODUCT_GROUP, model, true);
+        return this.post(API_ENDPOINT.DELETE_PRODUCT_GROUP, model, true);
     }
     getProductGroups() {
         var result = this.get(API_ENDPOINT.GET_PRODUCT_GROUP, null, true);

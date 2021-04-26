@@ -1,0 +1,28 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="card-box">
+                <h4 class="m-t-0 header-title">THÊM/CHỈNH SỬA BÀI VIẾT</h4>
+                <form #form="ngForm">
+                    <div class="form-group row m-b-20">
+                        <div class="col-12">
+                            <app-text-box type="text" title="Tiêu đề" name="title" placeholder="Nhập tiêu đề" autocomplete="none" required="true" [(ngModel)]="blog.title">
+                                <div invalidmessage="title">
+                                    <p *invalidType="'required'">Bạn vui lòng nhập tiêu đề bài viết</p>
+                                </div>
+                            </app-text-box>
+                        </div>
+                    </div>
+                    <div class="form-group row m-b-20">
+                        <div class="col-12">
+                            <h4 class="m-b-30 m-t-0 header-title">Example</h4>
+                            <form method="post">
+                                <textarea id="elm1" name="area"></textarea>
+                            </form>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

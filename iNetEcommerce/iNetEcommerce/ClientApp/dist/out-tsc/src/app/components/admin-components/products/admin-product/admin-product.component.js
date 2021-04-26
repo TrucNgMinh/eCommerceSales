@@ -1,17 +1,19 @@
 import { __decorate } from "tslib";
 import { Component } from '@angular/core';
-import { ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 import { Subject } from 'rxjs-compat';
 import { datatableLanguageOptions } from 'src/app/app.constants';
+import { ProductGroup } from 'src/app/models/product-group.model';
+import { Product } from 'src/app/models/product.model';
 let AdminProductComponent = class AdminProductComponent {
     constructor(productGroupService, modalService) {
         this.productGroupService = productGroupService;
         this.modalService = modalService;
         this.productGroups = [];
         this.products = [];
-        this.closeModal = "";
         this.dtOptions = {};
         this.dtTrigger = new Subject();
+        this.productGroupModel = new ProductGroup();
+        this.productModel = new Product();
     }
     ngAfterViewInit() {
     }
@@ -20,14 +22,32 @@ let AdminProductComponent = class AdminProductComponent {
             pagingType: 'full_numbers',
             pageLength: 10,
             processing: true,
-            language: datatableLanguageOptions
+            paging: true,
+            language: datatableLanguageOptions,
         };
-        this.getProductGroups();
+        this.getProductGroups(true);
     }
-    getProductGroups() {
+    getProductGroups(isTrigger = false) {
         this.productGroupService.getProductGroups().subscribe((res) => {
             this.productGroups = res;
-            this.dtTrigger.next();
+            if (isTrigger)
+                this.dtTrigger.next();
+        });
+    }
+    addProductGroup(form) {
+        if (form.invalid) {
+            return;
+        }
+        this.productGroupService.addEditProductGroup(this.productGroupModel).subscribe((res) => {
+            this.getProductGroups();
+            this.modalService.dismissAll();
+        });
+    }
+    removeProductGroup(id) {
+        let model = new ProductGroup();
+        model.id = id;
+        this.productGroupService.deleteProductGroup(model).subscribe((res) => {
+            this.getProductGroups();
         });
     }
     ngOnDestroy() {
@@ -35,21 +55,8 @@ let AdminProductComponent = class AdminProductComponent {
     }
     triggerModal(content) {
         this.modalService.open(content, { ariaLabelledBy: 'modal-basic-title' }).result.then((res) => {
-            this.closeModal = `Closed with: ${res}`;
-        }, (res) => {
-            this.closeModal = `Dismissed ${this.getDismissReason(res)}`;
+            console.log("modal opened");
         });
-    }
-    getDismissReason(reason) {
-        if (reason === ModalDismissReasons.ESC) {
-            return 'by pressing ESC';
-        }
-        else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
-            return 'by clicking on a backdrop';
-        }
-        else {
-            return `with: ${reason}`;
-        }
     }
 };
 AdminProductComponent = __decorate([

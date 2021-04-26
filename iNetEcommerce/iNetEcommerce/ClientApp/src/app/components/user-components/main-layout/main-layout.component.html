@@ -56,10 +56,7 @@
                     <li class="has-submenu">
                         <a>SẢN PHẨM</a>
                         <ul class="submenu">
-                            <li><a routerLink="/products">Xi măng</a></li>
-                            <li><a routerLink="/products">Gạch</a></li>
-                            <li><a routerLink="/products">Cát, đá</a></li>
-                            <li><a routerLink="/products">Sắt, thép</a></li>
+                            <li *ngFor="let productGroup of productGroups"><a routerLink="/products"> {{ productGroup.name }}</a></li>
                         </ul>
                     </li>
 
