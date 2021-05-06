@@ -1,3 +1,9 @@
+@media (min-width: 1200px) {
+    .container {
+        max-width: 90%;
+    }
+}
+
 .stop {
     -webkit-text-size-adjust: 100%;
     -webkit-font-smoothing: antialiased;
@@ -669,6 +675,10 @@ ul.wpb_thumbnails-fluid>li {
 
 .btn-zalo {
     bottom: 145px;
+}
+
+.btn-mail {
+    bottom: 15px;
 }
 
 .btn-frame .animated.infinite {

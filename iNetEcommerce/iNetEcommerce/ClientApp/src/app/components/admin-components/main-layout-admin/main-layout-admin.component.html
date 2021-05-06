@@ -54,7 +54,7 @@
                     </li>
 
                     <li class="has-submenu">
-                        <a  routerLink="/admin/admin-product">SẢN PHẨM</a>
+                        <a routerLink="/admin/admin-product">SẢN PHẨM</a>
                     </li>
 
                     <li class="has-submenu">
@@ -100,25 +100,46 @@
                         <div class="textwidget">
                             <div class="office">
                                 <p><i class="fa fa-map-marker mr-2"></i> Trụ Sở Chính: 38/5 tổ 5 ấp Tân Hiệp – xã Tân Bình – huyện Dĩ An – tỉnh Bình Dương</p>
-                                <!-- <p><i class="fa fa-map-marker mr-2"></i> Kho Bãi Xi Măng: 38/5 tổ 5 ấp Tân Hiệp – xã Tân Bình – huyện Dĩ An – tỉnh Bình Dương</p> -->
+                                <p><i class="fa fa-map-marker mr-2"></i> Trụ Sở HCM: 78 Hà Huy Giáp - Thạnh Xuân - quận 12 - Thành phố Hồ Chí Minh</p>
+                                <p><i class="fa fa-map-marker mr-2"></i> Trụ Sở HCM: 237/1c tổ 12B - khu phố 4 - phường An Phú Đông - quận 12 - Thành phố Hồ Chí Minh</p>
+                                <p><i class="fa fa-map-marker mr-2"></i> Trụ Sở HCM: 140/36 khu phố 1B - Thạnh Xuân 22 - quận 12 - Thành phố Hồ Chí Minh</p>
                             </div>
                         </div>
                     </aside>
                 </div>
-                <div class="col-md-4 offset-md-4">
+                <div class="col-md-2">
                     <aside id="text-4" class="widget widget_text">
-                        <h3 class="widget-title"><span>Sản phẩm</span></h3>
+                        <h3 class="widget-title"><span>Nhóm sản phẩm</span></h3>
                         <div class="textwidget">
                             <div class="office">
-                                <p><i class="fa fa-eercast mr-2"></i> Xi măng</p>
-                                <p><i class="fa fa-eercast mr-2"></i> Gạch</p>
-                                <p><i class="fa fa-eercast mr-2"></i> Sắt thép</p>
-                                <p><i class="fa fa-eercast mr-2"></i> Cát đá</p>
+                                <p *ngFor="let productGroup of productGroups"><i class="fa fa-eercast mr-2"></i> <a routerLink="/admin/admin-product"> {{productGroup.name}} </a></p>
                             </div>
                         </div>
                     </aside>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-3">
+                    <aside id="text-4" class="widget widget_text">
+                        <h3 class="widget-title"><span>Chính sách</span></h3>
+                        <div class="textwidget">
+                            <div class="office">
+                                <p><i class="fa fa-eercast mr-2"></i>
+                                    <a routerLink="/shipping-policy">
+                                        Chính sách giao hàng
+                                    </a>
+                                </p>
+                                <p><i class="fa fa-eercast mr-2"></i>
+                                    <a routerLink="/shipping-policy">
+                                        Chính sách vận chuyển
+                                    </a></p>
+                                <p><i class="fa fa-eercast mr-2"></i>
+                                    <a routerLink="/shipping-policy">
+                                        Chính sách trả hàng
+                                    </a></p>
+                            </div>
+                        </div>
+                    </aside>
+                </div>
+                <div class="col-md-3">
                     <aside id="custom_html-3" class="widget_text widget widget_custom_html">
                         <h3 class="widget-title"><span>Thông tin liên hệ</span></h3>
                         <div class="textwidget custom-html-widget">
