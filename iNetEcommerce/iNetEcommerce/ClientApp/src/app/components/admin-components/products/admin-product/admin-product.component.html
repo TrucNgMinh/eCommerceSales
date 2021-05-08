@@ -19,13 +19,13 @@
                         </tr>
                     </thead>
                     <tbody *ngIf="productGroups?.length != 0">
-                        <tr *ngFor="let productGroup of productGroups">
-                            <td>{{ productGroup.id }}</td>
+                        <tr *ngFor="let productGroup of productGroups; index as i;">
+                            <td>{{ i + 1 }}</td>
                             <td>{{ productGroup.name }}</td>
                             <td>{{ productGroup.unit }}</td>
                             <td>
                                 <button class="btn btn-warning btn-sm btn-icon mr-2" title="Chỉnh sửa"><i class="fa fa-pencil"></i></button>
-                                <button class="btn btn-danger btn-sm btn-icon" title="Xóa"><i class="fa fa-times"></i></button>
+                                <button class="btn btn-danger btn-sm btn-icon" (click)="removeProductGroup(productGroup.id)" title="Xóa"><i class="fa fa-times"></i></button>
                             </td>
                         </tr>
                     </tbody>
@@ -55,8 +55,8 @@
                         </tr>
                     </thead>
                     <tbody *ngIf="products?.length != 0">
-                        <tr *ngFor="let product of products">
-                            <td>{{ product.id }}</td>
+                        <tr *ngFor="let product of products; index as i;">
+                            <td>{{ i + 1}}</td>
                             <td>{{ product.name }}</td>
                             <td>{{ product.price }}</td>
                             <td>{{ product.sellPrice }}</td>
@@ -103,7 +103,7 @@
         </div>
     </form>
     <div class="modal-footer">
-        <button type="button" class="btn btn-custom waves-effect waves-light" type="submit">Xác nhận</button>
+        <button type="button" class="btn btn-custom waves-effect waves-light" (click)="addProductGroup(addProductGroupForm)" type="submit">Xác nhận</button>
     </div>
 </ng-template>
 
@@ -114,13 +114,38 @@
         <span aria-hidden="true">×</span>
       </button>
     </div>
-    <div class="modal-body">
-        <p><strong>Are you sure you want to delete <span class="text-primary">"Agatha Harkness"</span> profile?</strong></p>
-
-        <p>All data related to west view profile will be removed permanently.
-        </p>
-    </div>
+    <form #addProductForm="ngForm" (submit)="addProductGroup(addProductForm)" autocomplete="off">
+        <div class="modal-body">
+            <div class="form-group row m-b-20">
+                <div class="col-12">
+                    <app-text-box type="text" title="Tên sản phẩm" name="productname" placeholder="Nhập tên sản phẩm" required="true" [(ngModel)]="productGroupModel.name">
+                        <div invalidmessage="productname">
+                            <p *invalidType="'required'">Bạn vui lòng nhập tên sản phẩm!</p>
+                        </div>
+                    </app-text-box>
+                </div>
+            </div>
+            <div class="form-group row m-b-20">
+                <div class="col-12">
+                    <app-text-box type="number" title="Giá gốc" name="price" placeholder="Nhập giá gốc" [(ngModel)]="productGroupModel.unit">
+                    </app-text-box>
+                </div>
+            </div>
+            <div class="form-group row m-b-20">
+                <div class="col-12">
+                    <app-text-box type="number" title="Giá bán" name="sellprice" placeholder="Nhập giá bán" [(ngModel)]="productGroupModel.unit">
+                    </app-text-box>
+                </div>
+            </div>
+            <div class="form-group row m-b-20">
+                <div class="col-12">
+                    <app-text-box type="text" title="Mô tả" name="desc" placeholder="Nhập mô tả" [(ngModel)]="productGroupModel.unit">
+                    </app-text-box>
+                </div>
+            </div>
+        </div>
+    </form>
     <div class="modal-footer">
-        <button type="button" class="btn btn-danger" (click)="modal.close('Save click')">Close</button>
+        <button type="button" class="btn btn-custom waves-effect waves-light" (click)="addProduct(addProductForm)">Xác nhận</button>
     </div>
 </ng-template>

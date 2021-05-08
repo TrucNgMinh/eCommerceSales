@@ -33,17 +33,19 @@ namespace iNetEcommerce.Controllers
         /// <response code="200">Get blogs was successfully</response>
         /// <response code="500">Server Error.</response>
         /// 
-        [HttpPost]
+        [HttpGet]
         [MapToApiVersion("1.0")]
         [Produces("application/json")]
         [ProducesResponseType(typeof(List<ApiBlogPost>), Status200OK)]
         [ProducesResponseType(Status400BadRequest)]
         [ProducesResponseType(Status500InternalServerError)]
         [Route("[action]")]
-        public async Task<IActionResult> GetListBlog([FromBody] RequestGetBlogPost model)
+        public async Task<IActionResult> GetListBlog()
         {
             try
             {
+                var model = new RequestGetBlogPost();
+
                 var result = await _blogService.GetListBlogs(model);
 
                 return GetResult(result);

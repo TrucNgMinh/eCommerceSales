@@ -22,14 +22,32 @@ let AdminProductComponent = class AdminProductComponent {
             pagingType: 'full_numbers',
             pageLength: 10,
             processing: true,
-            language: datatableLanguageOptions
+            paging: true,
+            language: datatableLanguageOptions,
         };
-        this.getProductGroups();
+        this.getProductGroups(true);
     }
-    getProductGroups() {
+    getProductGroups(isTrigger = false) {
         this.productGroupService.getProductGroups().subscribe((res) => {
             this.productGroups = res;
-            this.dtTrigger.next();
+            if (isTrigger)
+                this.dtTrigger.next();
+        });
+    }
+    addProductGroup(form) {
+        if (form.invalid) {
+            return;
+        }
+        this.productGroupService.addEditProductGroup(this.productGroupModel).subscribe((res) => {
+            this.getProductGroups();
+            this.modalService.dismissAll();
+        });
+    }
+    removeProductGroup(id) {
+        let model = new ProductGroup();
+        model.id = id;
+        this.productGroupService.deleteProductGroup(model).subscribe((res) => {
+            this.getProductGroups();
         });
     }
     addProductGroup(form) {

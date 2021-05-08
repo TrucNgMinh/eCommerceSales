@@ -1,6 +1,8 @@
 import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ProductGroup } from 'src/app/models/product-group.model';
 import { AuthService } from 'src/app/services/auth.service';
+import { ProductGroupService } from 'src/app/services/product-group.service';
 
 @Component({
   selector: 'app-main-layout-admin',
@@ -8,8 +10,8 @@ import { AuthService } from 'src/app/services/auth.service';
   styleUrls: ['./main-layout-admin.component.css']
 })
 export class MainLayoutAdminComponent implements OnInit, AfterViewInit {
-
-  constructor(private router: Router) { }
+  productGroups: ProductGroup[] = [];
+  constructor(private router: Router, private productGroupService : ProductGroupService) { }
 
   ngAfterViewInit(): void {
     $("#menu-icon-left").on("click", function () {
@@ -35,6 +37,14 @@ export class MainLayoutAdminComponent implements OnInit, AfterViewInit {
     {
       this.router.navigate(["login"]);
     }
+
+    this.getProductGroups();
+    
+  }
+  getProductGroups():void {
+    this.productGroupService.getProductGroups().subscribe((res)=>{
+      this.productGroups = res;
+    })
   }
 
 }

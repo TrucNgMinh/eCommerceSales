@@ -16,24 +16,9 @@
                                         Tất cả
                                     </a>
                                 </li>
-                                <li>
+                                <li *ngFor="let product of productGroups">
                                     <a>
-                                        Xi Măng
-                                    </a>
-                                </li>
-                                <li>
-                                    <a>
-                                        Gạch
-                                    </a>
-                                </li>
-                                <li>
-                                    <a>
-                                        Cát, Đá
-                                    </a>
-                                </li>
-                                <li>
-                                    <a>
-                                        Sắt, Thép
+                                        {{product.name}}
                                     </a>
                                 </li>
                             </ul>

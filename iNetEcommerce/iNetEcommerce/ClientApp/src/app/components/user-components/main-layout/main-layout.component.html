@@ -56,10 +56,7 @@
                     <li class="has-submenu">
                         <a>SẢN PHẨM</a>
                         <ul class="submenu">
-                            <li><a routerLink="/products">Xi măng</a></li>
-                            <li><a routerLink="/products">Gạch</a></li>
-                            <li><a routerLink="/products">Cát, đá</a></li>
-                            <li><a routerLink="/products">Sắt, thép</a></li>
+                            <li *ngFor="let productGroup of productGroups"><a routerLink="/products"> {{ productGroup.name }}</a></li>
                         </ul>
                     </li>
 
@@ -114,25 +111,46 @@
                         <div class="textwidget">
                             <div class="office">
                                 <p><i class="fa fa-map-marker mr-2"></i> Trụ Sở Chính: 38/5 tổ 5 ấp Tân Hiệp – xã Tân Bình – huyện Dĩ An – tỉnh Bình Dương</p>
-                                <!-- <p><i class="fa fa-map-marker mr-2"></i> Kho Bãi Xi Măng: 38/5 tổ 5 ấp Tân Hiệp – xã Tân Bình – huyện Dĩ An – tỉnh Bình Dương</p> -->
+                                <p><i class="fa fa-map-marker mr-2"></i> Trụ Sở HCM: 78 Hà Huy Giáp - Thạnh Xuân - quận 12 - Thành phố Hồ Chí Minh</p>
+                                <p><i class="fa fa-map-marker mr-2"></i> Trụ Sở HCM: 237/1c tổ 12B - khu phố 4 - phường An Phú Đông - quận 12 - Thành phố Hồ Chí Minh</p>
+                                <p><i class="fa fa-map-marker mr-2"></i> Trụ Sở HCM: 140/36 khu phố 1B - Thạnh Xuân 22 - quận 12 - Thành phố Hồ Chí Minh</p>
                             </div>
                         </div>
                     </aside>
                 </div>
-                <div class="col-md-4 offset-md-4">
+                <div class="col-md-2">
                     <aside id="text-4" class="widget widget_text">
-                        <h3 class="widget-title"><span>Sản phẩm</span></h3>
+                        <h3 class="widget-title"><span>Nhóm sản phẩm</span></h3>
                         <div class="textwidget">
                             <div class="office">
-                                <p><i class="fa fa-eercast mr-2"></i> Xi măng</p>
-                                <p><i class="fa fa-eercast mr-2"></i> Gạch</p>
-                                <p><i class="fa fa-eercast mr-2"></i> Sắt thép</p>
-                                <p><i class="fa fa-eercast mr-2"></i> Cát đá</p>
+                                <p *ngFor="let productGroup of productGroups"><i class="fa fa-eercast mr-2"></i> <a routerLink="/products"> {{productGroup.name}} </a></p>
                             </div>
                         </div>
                     </aside>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-3">
+                    <aside id="text-4" class="widget widget_text">
+                        <h3 class="widget-title"><span>Chính sách</span></h3>
+                        <div class="textwidget">
+                            <div class="office">
+                                <p><i class="fa fa-eercast mr-2"></i>
+                                    <a routerLink="/shipping-policy">
+                                        Chính sách giao hàng
+                                    </a>
+                                </p>
+                                <p><i class="fa fa-eercast mr-2"></i>
+                                    <a routerLink="/shipping-policy">
+                                        Chính sách vận chuyển
+                                    </a></p>
+                                <p><i class="fa fa-eercast mr-2"></i>
+                                    <a routerLink="/shipping-policy">
+                                        Chính sách trả hàng
+                                    </a></p>
+                            </div>
+                        </div>
+                    </aside>
+                </div>
+                <div class="col-md-3">
                     <aside id="custom_html-3" class="widget_text widget widget_custom_html">
                         <h3 class="widget-title"><span>Thông tin liên hệ</span></h3>
                         <div class="textwidget custom-html-widget">
@@ -162,58 +180,18 @@
 </div>
 <!-- End Footer -->
 
-<a class="btn-zalo btn-frame text-decoration-none" target="_blank" href="https://zalo.me/0888112213">
+<a class="btn-zalo btn-frame text-decoration-none" target="_blank" href="https://zalo.me/0988361399">
     <div class="animated infinite zoomIn kenit-alo-circle"></div>
     <div class="animated infinite pulse kenit-alo-circle-fill"></div>
     <i><img src="//bizweb.dktcdn.net/100/416/215/themes/805269/assets/zl.png?1612339660293" alt="Zalo"></i>
 </a>
-<a class="btn-phone btn-frame text-decoration-none" href="tel:0888112213">
+<a class="btn-phone btn-frame text-decoration-none" href="tel:0988361399">
     <div class="animated infinite zoomIn kenit-alo-circle"></div>
     <div class="animated infinite pulse kenit-alo-circle-fill"></div>
     <i><img src="//bizweb.dktcdn.net/100/416/215/themes/805269/assets/hl.png?1612339660293" alt="Hotline"></i>
 </a>
-<div id="ChatMessages">
-    <!-- Chat Messenger 2 -->
-    <div class="js-facebook-messenger-box onApp rotate bottom-right cfm rubberBand animated" data-anim="rubberBand">
-        <svg id="fb-msng-icon" data-name="messenger icon" xmlns="//www.w3.org/2000/svg" viewBox="0 0 30.47 30.66">
-            <path
-                d="M29.56,14.34c-8.41,0-15.23,6.35-15.23,14.19A13.83,13.83,0,0,0,20,39.59V45l5.19-2.86a16.27,16.27,0,0,0,4.37.59c8.41,0,15.23-6.35,15.23-14.19S38,14.34,29.56,14.34Zm1.51,19.11-3.88-4.16-7.57,4.16,8.33-8.89,4,4.16,7.48-4.16Z"
-                transform="translate(-14.32 -14.34)" style="fill:#fff"></path>
-        </svg>
-        <svg id="close-icon" data-name="close icon" xmlns="//www.w3.org/2000/svg" viewBox="0 0 39.98 39.99">
-            <path
-                d="M48.88,11.14a3.87,3.87,0,0,0-5.44,0L30,24.58,16.58,11.14a3.84,3.84,0,1,0-5.44,5.44L24.58,30,11.14,43.45a3.87,3.87,0,0,0,0,5.44,3.84,3.84,0,0,0,5.44,0L30,35.45,43.45,48.88a3.84,3.84,0,0,0,5.44,0,3.87,3.87,0,0,0,0-5.44L35.45,30,48.88,16.58A3.87,3.87,0,0,0,48.88,11.14Z"
-                transform="translate(-10.02 -10.02)" style="fill:#fff"></path>
-        </svg>
-    </div>
-    <div class="js-facebook-messenger-container">
-        <div class="js-facebook-messenger-top-header">
-            <span>Baohoxemay.com</span>
-        </div>
-        <div class="fb-page fb_iframe_widget" data-href="https://www.facebook.com/BaoHoXeMayPhoNon" data-tabs="messages" data-small-header="true" data-height="300" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true" fb-xfbml-state="rendered"
-            fb-iframe-plugin-query="adapt_container_width=true&amp;app_id=&amp;container_width=250&amp;height=300&amp;hide_cover=false&amp;href=https%3A%2F%2Fwww.facebook.com%2FBaoHoXeMayPhoNon&amp;locale=vi_VN&amp;sdk=joey&amp;show_facepile=true&amp;small_header=true&amp;tabs=messages">
-            <span style="vertical-align: bottom; width: 250px; height: 300px;"><iframe name="faff8d6cc415a8"
-                    width="1000px" height="300px" data-testid="fb:page Facebook Social Plugin"
-                    title="fb:page Facebook Social Plugin" frameborder="0" allowtransparency="true"
-                    allowfullscreen="true" scrolling="no" allow="encrypted-media"
-                    src="https://www.facebook.com/v4.0/plugins/page.php?adapt_container_width=true&amp;app_id=&amp;channel=https%3A%2F%2Fstaticxx.facebook.com%2Fx%2Fconnect%2Fxd_arbiter%2F%3Fversion%3D46%23cb%3Df164a78bb026dcc%26domain%3Dbaohoxemay.com%26origin%3Dhttp%253A%252F%252Fbaohoxemay.com%252Ffddf2c624b2964%26relation%3Dparent.parent&amp;container_width=250&amp;height=300&amp;hide_cover=false&amp;href=https%3A%2F%2Fwww.facebook.com%2FBaoHoXeMayPhoNon&amp;locale=vi_VN&amp;sdk=joey&amp;show_facepile=true&amp;small_header=true&amp;tabs=messages"
-                    style="border: none; visibility: visible; width: 250px; height: 300px;" class=""></iframe></span>
-        </div>
-    </div>
-    <script type="text/javascript">
-        $(document).ready(function() {
-            $(".js-facebook-messenger-box").on("click", function() {
-                $(".js-facebook-messenger-box, .js-facebook-messenger-container").toggleClass("open"), $(".js-facebook-messenger-tooltip").length && $(".js-facebook-messenger-tooltip").toggle()
-            }), $(".js-facebook-messenger-box").hasClass("cfm") && setTimeout(function() {
-                $(".js-facebook-messenger-box").addClass("rubberBand animated")
-            }, 3500), $(".js-facebook-messenger-tooltip").length && ($(".js-facebook-messenger-tooltip").hasClass("fixed") ? $(".js-facebook-messenger-tooltip").show() : $(".js-facebook-messenger-box").on("hover", function() {
-                $(".js-facebook-messenger-tooltip").show()
-            }), $(".js-facebook-messenger-close-tooltip").on("click", function() {
-                $(".js-facebook-messenger-tooltip").addClass("closed")
-            }))
-            $(".search_open").click(function() {
-                $(".search_box_hide").toggleClass('opening');
-            });
-        });
-    </script>
-</div>
+<a class="btn-mail btn-frame text-decoration-none" href="mailto:cttnhh.tm.dv.vt.vandung@gmail.com">
+    <div class="animated infinite zoomIn kenit-alo-circle"></div>
+    <div class="animated infinite pulse kenit-alo-circle-fill"></div>
+    <i><img src="assets/images/gm-ic.png" alt="Email"></i>
+</a>

@@ -33,23 +33,38 @@ export class AdminProductComponent implements OnInit, OnDestroy, AfterViewInit {
       pagingType: 'full_numbers',
       pageLength: 10,
       processing: true,
-      language: datatableLanguageOptions
+      paging: true,
+      language: datatableLanguageOptions,
+
     };
 
-    this.getProductGroups();
-
+    this.getProductGroups(true);
   }
 
-  getProductGroups():void {
+  getProductGroups(isTrigger = false):void {
     this.productGroupService.getProductGroups().subscribe((res)=>{
       this.productGroups = res;
-      this.dtTrigger.next();
+      if (isTrigger)
+        this.dtTrigger.next();
     })
   }
 
   addProductGroup(form: NgForm):void {
-    console.log("a");
-    this.modalService.dismissAll();
+    if (form.invalid) {
+      return;
+    }
+    this.productGroupService.addEditProductGroup(this.productGroupModel).subscribe((res : any) => {
+      this.getProductGroups();
+      this.modalService.dismissAll();
+    });
+  }
+
+  removeProductGroup(id: Number): void {
+    let model = new ProductGroup();
+    model.id = id;
+    this.productGroupService.deleteProductGroup(model).subscribe((res : any) => {
+      this.getProductGroups();
+    });
   }
 
   ngOnDestroy(): void {
@@ -60,6 +75,10 @@ export class AdminProductComponent implements OnInit, OnDestroy, AfterViewInit {
     this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title'}).result.then((res) => {
       console.log("modal opened");
     })
+  }
+
+  addProduct(form: NgForm):void {
+    
   }
 
 }
