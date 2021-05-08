@@ -43,6 +43,12 @@ let MainLayoutComponent = class MainLayoutComponent {
         });
     }
     ngOnInit() {
+        this.getProductGroups();
+    }
+    getProductGroups() {
+        this.productGroupService.getProductGroups().subscribe((res) => {
+            this.productGroups = res;
+        });
     }
 };
 MainLayoutComponent = __decorate([

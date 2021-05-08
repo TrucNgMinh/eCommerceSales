@@ -31,6 +31,8 @@ import { InvalidTypeDirective } from './directives/invalid-type.directive';
 import { InvalidmessageDirective } from './directives/invalid-message.directive';
 import { DataTablesModule } from 'angular-datatables';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NewsAdminComponent } from './components/admin-components/news/news-admin/news-admin.component';
+import { NewsDetailComponent } from './components/admin-components/news/news-detail/news-detail.component';
 let AppModule = class AppModule {
 };
 AppModule = __decorate([
@@ -58,7 +60,9 @@ AppModule = __decorate([
             MainLayoutAdminComponent,
             LoginComponent,
             AdminProductGroupComponent,
-            AdminProductDetailComponent
+            AdminProductDetailComponent,
+            NewsAdminComponent,
+            NewsDetailComponent
         ],
         imports: [
             BrowserModule,

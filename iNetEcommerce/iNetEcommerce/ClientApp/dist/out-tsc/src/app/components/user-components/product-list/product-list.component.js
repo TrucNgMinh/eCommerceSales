@@ -1,8 +1,16 @@
 import { __decorate } from "tslib";
 import { Component } from '@angular/core';
 let ProductListComponent = class ProductListComponent {
-    constructor() { }
+    constructor(productGroupService) {
+        this.productGroupService = productGroupService;
+    }
     ngOnInit() {
+        this.getProductGroups();
+    }
+    getProductGroups() {
+        this.productGroupService.getProductGroups().subscribe((res) => {
+            this.productGroups = res;
+        });
     }
 };
 ProductListComponent = __decorate([

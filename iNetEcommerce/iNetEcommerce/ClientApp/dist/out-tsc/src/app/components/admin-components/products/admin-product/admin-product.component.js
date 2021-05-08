@@ -50,10 +50,6 @@ let AdminProductComponent = class AdminProductComponent {
             this.getProductGroups();
         });
     }
-    addProductGroup(form) {
-        console.log("a");
-        this.modalService.dismissAll();
-    }
     ngOnDestroy() {
         this.dtTrigger.unsubscribe();
     }
@@ -61,6 +57,8 @@ let AdminProductComponent = class AdminProductComponent {
         this.modalService.open(content, { ariaLabelledBy: 'modal-basic-title' }).result.then((res) => {
             console.log("modal opened");
         });
+    }
+    addProduct(form) {
     }
 };
 AdminProductComponent = __decorate([

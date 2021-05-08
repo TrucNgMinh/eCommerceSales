@@ -10,11 +10,17 @@ namespace iNet.Entities
     [Table("productcategorymap")]
     public class ProductCategoryMap : BaseEntity
     {
+        //public ProductCategoryMap(int productId, int groupId)
+        //{
+        //    ProductId = productId;
+        //    ProductGroupId = groupId;
+        //}
+
 		public int ProductId { get; set; }
-        [ForeignKey("ProductId")]
-        public Product Product { get; set; }
+        //[ForeignKey("ProductId")]
+        //public Product Product { get; set; }
         public int ProductGroupId { get; set; }
-        [ForeignKey("ProductGroupId")]
-        public ProductGroup ProductGroup { get; set; }
+        //[ForeignKey("ProductGroupId")]
+        //public ProductGroup ProductGroup { get; set; }
     }
 }

@@ -218,10 +218,6 @@ namespace iNet.Context.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("ProductGroupId");
-
-                    b.HasIndex("ProductId");
-
                     b.ToTable("productcategorymap");
                 });
 
@@ -366,25 +362,6 @@ namespace iNet.Context.Migrations
                         .IsRequired();
 
                     b.Navigation("User");
-                });
-
-            modelBuilder.Entity("iNet.Entities.ProductCategoryMap", b =>
-                {
-                    b.HasOne("iNet.Entities.ProductGroup", "ProductGroup")
-                        .WithMany()
-                        .HasForeignKey("ProductGroupId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("iNet.Entities.Product", "Product")
-                        .WithMany()
-                        .HasForeignKey("ProductId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Product");
-
-                    b.Navigation("ProductGroup");
                 });
 
             modelBuilder.Entity("iNet.Entities.ProductImage", b =>

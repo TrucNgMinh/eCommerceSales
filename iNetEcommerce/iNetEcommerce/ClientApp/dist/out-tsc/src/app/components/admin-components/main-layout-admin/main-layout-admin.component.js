@@ -2,8 +2,10 @@ import { __decorate } from "tslib";
 import { Component } from '@angular/core';
 import { AuthService } from 'src/app/services/auth.service';
 let MainLayoutAdminComponent = class MainLayoutAdminComponent {
-    constructor(router) {
+    constructor(router, productGroupService) {
         this.router = router;
+        this.productGroupService = productGroupService;
+        this.productGroups = [];
     }
     ngAfterViewInit() {
         $("#menu-icon-left").on("click", function () {
@@ -23,6 +25,12 @@ let MainLayoutAdminComponent = class MainLayoutAdminComponent {
         if (!AuthService.isLoggedIn()) {
             this.router.navigate(["login"]);
         }
+        this.getProductGroups();
+    }
+    getProductGroups() {
+        this.productGroupService.getProductGroups().subscribe((res) => {
+            this.productGroups = res;
+        });
     }
 };
 MainLayoutAdminComponent = __decorate([

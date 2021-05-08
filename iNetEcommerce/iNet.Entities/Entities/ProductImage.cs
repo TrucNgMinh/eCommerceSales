@@ -10,6 +10,11 @@ namespace iNet.Entities
     [Table("productimage")]
     public class ProductImage : BaseEntity
     {
+        public ProductImage(int productId, string image)
+        {
+            ProductId = productId;
+            Image = image;
+        }
         public int ProductId { get; set; }
 
         [ForeignKey("ProductId")]

@@ -114,5 +114,153 @@ namespace iNetEcommerce.Controllers
                 return GetServerErrorResult(ex.ToString());
             }
         }
+
+        /// <summary>
+        /// Get products
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns>The requested Product.</returns>
+        /// <response code="200">Get Product was successfully</response>
+        /// <response code="500">Server Error.</response>
+        /// 
+        [HttpGet]
+        [MapToApiVersion("1.0")]
+        [Produces("application/json")]
+        [ProducesResponseType(typeof(List<ApiListProduct>), Status200OK)]
+        [ProducesResponseType(Status400BadRequest)]
+        [ProducesResponseType(Status500InternalServerError)]
+        [Route("[action]")]
+        public async Task<IActionResult> GetProducts()
+        {
+            try
+            {
+                var result = await _productService.GetListProducts();
+
+                return GetResult(result);
+            }
+            catch (Exception ex)
+            {
+                return GetServerErrorResult(ex.ToString());
+            }
+        }
+
+        /// <summary>
+        /// Get product
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns>The requested Product.</returns>
+        /// <response code="200">Get Product was successfully</response>
+        /// <response code="500">Server Error.</response>
+        /// 
+        [HttpGet]
+        [MapToApiVersion("1.0")]
+        [Produces("application/json")]
+        [ProducesResponseType(typeof(List<ApiProduct>), Status200OK)]
+        [ProducesResponseType(Status400BadRequest)]
+        [ProducesResponseType(Status500InternalServerError)]
+        [Route("[action]")]
+        public async Task<IActionResult> GetProduct(int productId)
+        {
+            try
+            {
+                var result = await _productService.GetProduct(productId);
+
+                return GetResult(result);
+            }
+            catch (Exception ex)
+            {
+                return GetServerErrorResult(ex.ToString());
+            }
+        }
+
+        /// <summary>
+        /// Get product
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns>The requested Product.</returns>
+        /// <response code="200">Get Product was successfully</response>
+        /// <response code="500">Server Error.</response>
+        /// 
+        [HttpGet]
+        [MapToApiVersion("1.0")]
+        [Produces("application/json")]
+        [ProducesResponseType(typeof(List<ApiProduct>), Status200OK)]
+        [ProducesResponseType(Status400BadRequest)]
+        [ProducesResponseType(Status500InternalServerError)]
+        [Route("[action]")]
+        [Authorize]
+        public async Task<IActionResult> GetProductAdmin(int productId)
+        {
+            try
+            {
+                var result = await _productService.GetProduct(productId, true);
+
+                return GetResult(result);
+            }
+            catch (Exception ex)
+            {
+                return GetServerErrorResult(ex.ToString());
+            }
+        }
+
+        /// <summary>
+        /// Delete Product
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns>Delete Product.</returns>
+        /// <response code="200">Delete Product was successfully</response>
+        /// <response code="500">Server Error.</response>
+        /// 
+        [HttpPost]
+        [MapToApiVersion("1.0")]
+        [Produces("application/json")]
+        [ProducesResponseType(typeof(ApiProduct), Status200OK)]
+        [ProducesResponseType(Status400BadRequest)]
+        [ProducesResponseType(Status500InternalServerError)]
+        [Route("[action]")]
+        [Authorize]
+        public async Task<IActionResult> DeleteProduct([FromBody] ApiProduct model)
+        {
+            try
+            {
+                var result = await _productService.DeleteProduct(model);
+
+                return GetResult(result);
+            }
+            catch (Exception ex)
+            {
+                return GetServerErrorResult(ex.ToString());
+            }
+        }
+
+        /// <summary>
+        /// Add/Edit Product
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns>The requested Product.</returns>
+        /// <response code="200">Product was successfully</response>
+        /// <response code="500">Server Error.</response>
+        /// 
+        [HttpPost]
+        [MapToApiVersion("1.0")]
+        [Produces("application/json")]
+        [ProducesResponseType(typeof(ApiProduct), Status200OK)]
+        [ProducesResponseType(Status400BadRequest)]
+        [ProducesResponseType(Status500InternalServerError)]
+        [Route("[action]")]
+        [Authorize]
+        public async Task<IActionResult> AddEditProduct([FromForm] ApiProduct model, IFormFile image1, IFormFile image2, IFormFile image3, IFormFile image4)
+        {
+            try
+            {
+                var result = await _productService.AddEditProduct(model, image1, image2, image3, image4);
+
+                return GetResult(result);
+            }
+            catch (Exception ex)
+            {
+                return GetServerErrorResult(ex.ToString());
+            }
+        }
     }
 }

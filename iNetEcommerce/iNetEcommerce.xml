@@ -4,7 +4,7 @@
         <name>iNetEcommerce</name>
     </assembly>
     <members>
-        <member name="M:iNetEcommerce.Controllers.BlogController.GetListBlog(iNet.Entities.RequestGetBlogPost)">
+        <member name="M:iNetEcommerce.Controllers.BlogController.GetListBlog">
             <summary>
             Get blogs
             </summary>
@@ -72,6 +72,56 @@
             <param name="model"></param>
             <returns>Delete Product Group.</returns>
             <response code="200">Delete Product Group was successfully</response>
+            <response code="500">Server Error.</response>
+            
+        </member>
+        <member name="M:iNetEcommerce.Controllers.ProductsController.GetProducts">
+            <summary>
+            Get products
+            </summary>
+            <param name="model"></param>
+            <returns>The requested Product.</returns>
+            <response code="200">Get Product was successfully</response>
+            <response code="500">Server Error.</response>
+            
+        </member>
+        <member name="M:iNetEcommerce.Controllers.ProductsController.GetProduct(System.Int32)">
+            <summary>
+            Get product
+            </summary>
+            <param name="model"></param>
+            <returns>The requested Product.</returns>
+            <response code="200">Get Product was successfully</response>
+            <response code="500">Server Error.</response>
+            
+        </member>
+        <member name="M:iNetEcommerce.Controllers.ProductsController.GetProductAdmin(System.Int32)">
+            <summary>
+            Get product
+            </summary>
+            <param name="model"></param>
+            <returns>The requested Product.</returns>
+            <response code="200">Get Product was successfully</response>
+            <response code="500">Server Error.</response>
+            
+        </member>
+        <member name="M:iNetEcommerce.Controllers.ProductsController.DeleteProduct(iNet.Entities.ApiProduct)">
+            <summary>
+            Delete Product
+            </summary>
+            <param name="model"></param>
+            <returns>Delete Product.</returns>
+            <response code="200">Delete Product was successfully</response>
+            <response code="500">Server Error.</response>
+            
+        </member>
+        <member name="M:iNetEcommerce.Controllers.ProductsController.AddEditProduct(iNet.Entities.ApiProduct,Microsoft.AspNetCore.Http.IFormFile,Microsoft.AspNetCore.Http.IFormFile,Microsoft.AspNetCore.Http.IFormFile,Microsoft.AspNetCore.Http.IFormFile)">
+            <summary>
+            Add/Edit Product
+            </summary>
+            <param name="model"></param>
+            <returns>The requested Product.</returns>
+            <response code="200">Product was successfully</response>
             <response code="500">Server Error.</response>
             
         </member>
