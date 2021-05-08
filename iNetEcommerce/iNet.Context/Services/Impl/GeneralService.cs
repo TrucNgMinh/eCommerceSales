@@ -66,5 +66,30 @@ namespace iNet.Context.Services.Impl
             }
 
         }
+
+        public async Task<ApiResponseModel> GetSetting()
+        {
+            var result = new ApiResponseModel();
+            try
+            {
+                var config = await _configRepo.FirstOrDefaultAsync(null);
+                if (config == null)
+                {
+                    config = new Config();
+                    await _configRepo.InsertAsync(config);
+                }
+
+                result.Data = config.ToModel();
+                result.HttpStatusCode = HttpStatusCode.OK;
+                return result;
+            }
+            catch (Exception ex)
+            {
+                result.Error = ex.ToString();
+                result.HttpStatusCode = HttpStatusCode.InternalServerError;
+                return result;
+            }
+
+        }
     }
 }

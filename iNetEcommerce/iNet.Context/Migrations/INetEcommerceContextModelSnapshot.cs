@@ -125,13 +125,22 @@ namespace iNet.Context.Migrations
                     b.Property<DateTimeOffset?>("DateTimeProcessed")
                         .HasColumnType("timestamp");
 
+                    b.Property<string>("FavIcon")
+                        .HasColumnType("text");
+
                     b.Property<bool>("IsDeactivate")
                         .HasColumnType("tinyint(1)");
 
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("tinyint(1)");
 
+                    b.Property<string>("Logo")
+                        .HasColumnType("text");
+
                     b.Property<string>("PrimaryColor")
+                        .HasColumnType("text");
+
+                    b.Property<string>("WebTitle")
                         .HasColumnType("text");
 
                     b.HasKey("Id");
@@ -144,6 +153,9 @@ namespace iNet.Context.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
+
+                    b.Property<string>("Abstract")
+                        .HasColumnType("text");
 
                     b.Property<string>("Content")
                         .HasColumnType("text");
@@ -163,15 +175,54 @@ namespace iNet.Context.Migrations
                     b.Property<string>("Name")
                         .HasColumnType("text");
 
-                    b.Property<string>("Price")
-                        .HasColumnType("text");
+                    b.Property<decimal>("Price")
+                        .HasColumnType("decimal(18, 2)");
 
-                    b.Property<string>("SellPrice")
+                    b.Property<decimal>("SellPrice")
+                        .HasColumnType("decimal(18, 2)");
+
+                    b.Property<decimal>("SellPriceMax")
+                        .HasColumnType("decimal(18, 2)");
+
+                    b.Property<string>("Unit")
                         .HasColumnType("text");
 
                     b.HasKey("Id");
 
                     b.ToTable("product");
+                });
+
+            modelBuilder.Entity("iNet.Entities.ProductCategoryMap", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("DateTime")
+                        .HasColumnType("datetime");
+
+                    b.Property<DateTimeOffset?>("DateTimeProcessed")
+                        .HasColumnType("timestamp");
+
+                    b.Property<bool>("IsDeactivate")
+                        .HasColumnType("tinyint(1)");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("tinyint(1)");
+
+                    b.Property<int>("ProductGroupId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("ProductId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ProductGroupId");
+
+                    b.HasIndex("ProductId");
+
+                    b.ToTable("productcategorymap");
                 });
 
             modelBuilder.Entity("iNet.Entities.ProductGroup", b =>
@@ -315,6 +366,36 @@ namespace iNet.Context.Migrations
                         .IsRequired();
 
                     b.Navigation("User");
+                });
+
+            modelBuilder.Entity("iNet.Entities.ProductCategoryMap", b =>
+                {
+                    b.HasOne("iNet.Entities.ProductGroup", "ProductGroup")
+                        .WithMany()
+                        .HasForeignKey("ProductGroupId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("iNet.Entities.Product", "Product")
+                        .WithMany()
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Product");
+
+                    b.Navigation("ProductGroup");
+                });
+
+            modelBuilder.Entity("iNet.Entities.ProductImage", b =>
+                {
+                    b.HasOne("iNet.Entities.Product", "Product")
+                        .WithMany()
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Product");
                 });
 #pragma warning restore 612, 618
         }

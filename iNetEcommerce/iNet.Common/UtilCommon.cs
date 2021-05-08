@@ -129,46 +129,6 @@ namespace iNet.Common
 
             return new JwtSecurityTokenHandler().WriteToken(token);
         }
-        public static DateTime ConvertDateTime(object value, string dateTimeFormat)
-        {
-            try
-            {
-                var defaultValue = DateTime.MinValue;
-
-                if (value == null || value == DBNull.Value)
-                {
-                    return defaultValue;
-                }
-
-                DateTime.TryParseExact(value.ToString(), dateTimeFormat, CultureInfo.InvariantCulture,
-                              DateTimeStyles.None, out defaultValue);
-
-                return defaultValue;
-
-            }
-            catch (Exception)
-            {
-                return DateTime.MinValue;
-            }
-
-        }
-
-        public static DateTime ConvertTimeByTimeZone(DateTime dateTime, TimeZoneInfo timeZone)
-        {
-            if (timeZone == null)
-                return dateTime;
-
-            var time = TimeZoneInfo.ConvertTime(dateTime, TimeZoneInfo.Utc, timeZone);
-            return time;
-        }
-
-        public static DateTime GetLocalTimeNow(TimeZoneInfo timeZone)
-        {
-            if (timeZone == null)
-                return DateTime.Now;
-
-            return TimeZoneInfo.ConvertTime(DateTime.UtcNow, TimeZoneInfo.Utc, timeZone);
-        }
 
         public static string GeneratePasscode(string passcode, string salt)
         {
@@ -251,22 +211,12 @@ namespace iNet.Common
             return string.Empty;
         }
 
-        //public static string GetDisplayImageUrl(string imageName)
-        //{
-        //    if (string.IsNullOrWhiteSpace(imageName))
-        //        return string.Empty;
-
-        //    var imageLink = Constants.ImageDisplayPrefix.Replace(@"\", "/") + "/" + imageName;
-
-        //    return imageLink;
-        //}
-
-        public static string GetDisplayImageUrl(string folderDir, string imageName)
+        public static string ToImageResource(this string imageName)
         {
-            if (string.IsNullOrWhiteSpace(folderDir) || string.IsNullOrWhiteSpace(imageName))
+            if (string.IsNullOrWhiteSpace(imageName))
                 return string.Empty;
 
-            var imageLink = Path.Combine(folderDir, imageName);
+            var imageLink = Path.Combine(DataConstants.IdentitySettings.ResourceUrl, imageName);
 
             return imageLink;
         }

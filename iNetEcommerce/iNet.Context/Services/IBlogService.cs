@@ -10,5 +10,7 @@ namespace iNet.Context.Services.Impl
     {
         Task<ApiResponseModel> GetListBlogs(RequestGetBlogPost model);
         Task<ApiResponseModel> AddEditBlog(RequestBlogPost model, UserTokenModel userToken, IFormFile image);
+
+        Task<ApiResponseModel> DeleteBlog(RequestBlogPost model);
     }
 }

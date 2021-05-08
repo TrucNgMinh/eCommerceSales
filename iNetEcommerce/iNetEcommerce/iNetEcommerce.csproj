@@ -7,7 +7,7 @@
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <DocumentationFile>C:\Project\iNetEcommerce\iNetEcommerce\iNetEcommerce\iNetEcommerce.xml</DocumentationFile>
+    <DocumentationFile>..\iNetEcommerce.xml</DocumentationFile>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">

@@ -4,76 +4,10 @@
         <name>iNetEcommerce</name>
     </assembly>
     <members>
-        <member name="M:iNetEcommerce.Controllers.BlogController.GetListBlog(iNet.Entities.RequestGetBlogPost)">
-            <summary>
-            Get blogs
-            </summary>
-            <param name="model"></param>
-            <returns>The requested blogs.</returns>
-            <response code="200">Get blogs was successfully</response>
-            <response code="500">Server Error.</response>
-            
-        </member>
-        <member name="M:iNetEcommerce.Controllers.BlogController.AddEditBlog(iNet.Entities.RequestBlogPost,Microsoft.AspNetCore.Http.IFormFile)">
-            <summary>
-            Add/Edit Blog
-            </summary>
-            <param name="model"></param>
-            <returns>The requested Blog.</returns>
-            <response code="200">Blog was successfully</response>
-            <response code="500">Server Error.</response>
-            
-        </member>
-        <member name="T:iNetEcommerce.Controllers.HomeController">
+        <member name="T:iNetEcommerce.Controllers.OrdersController">
             <summary>
             Represents a RESTful service of General.
             </summary>
-        </member>
-        <member name="M:iNetEcommerce.Controllers.HomeController.UpdateBanner(Microsoft.AspNetCore.Http.IFormFile,Microsoft.AspNetCore.Http.IFormFile,Microsoft.AspNetCore.Http.IFormFile,Microsoft.AspNetCore.Http.IFormFile)">
-            <summary>
-            Update User ID
-            </summary>
-        </member>
-        <member name="M:iNetEcommerce.Controllers.ProductsController.GetProductGroups">
-            <summary>
-            Get product groups
-            </summary>
-            <param name="model"></param>
-            <returns>The requested Product Group.</returns>
-            <response code="200">Get Product Group was successfully</response>
-            <response code="500">Server Error.</response>
-            
-        </member>
-        <member name="M:iNetEcommerce.Controllers.ProductsController.AddEditProductGroup(iNet.Entities.ApiProductGroup)">
-            <summary>
-            Add/Edit Product Group
-            </summary>
-            <param name="model"></param>
-            <returns>The requested Product Group.</returns>
-            <response code="200">Product Group was successfully</response>
-            <response code="500">Server Error.</response>
-            
-        </member>
-        <member name="M:iNetEcommerce.Controllers.ProductsController.DeleteProductGroup(iNet.Entities.ApiProductGroup)">
-            <summary>
-            Delete Product Group
-            </summary>
-            <param name="model"></param>
-            <returns>Delete Product Group.</returns>
-            <response code="200">Delete Product Group was successfully</response>
-            <response code="500">Server Error.</response>
-            
-        </member>
-        <member name="M:iNetEcommerce.Controllers.UserController.Login(iNet.Entities.RequestUserLogin)">
-            <summary>
-            Get user token
-            </summary>
-            <param name="user">The requested user identifier.</param>
-            <returns>The requested user.</returns>
-            <response code="200">The user was successfully retrieved.</response>
-            <response code="400">The user is not found</response>
-            <response code="500">Server Error.</response>
-            
         </member>
         <member name="M:iNetEcommerce.Startup.#ctor(Microsoft.AspNetCore.Hosting.IHostingEnvironment)">
             <summary>

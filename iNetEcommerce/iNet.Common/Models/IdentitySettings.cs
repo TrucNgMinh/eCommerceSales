@@ -10,5 +10,7 @@ namespace iNet.Common
         public int MaxContentImageSizeUpload { get; set; }
         public int MaxContentVideoSizeUpload { get; set; }
         public string INetEcommerceDatabase { get; set; }
+        public string ResourceUrl { get; set; }
+        
     }
 }

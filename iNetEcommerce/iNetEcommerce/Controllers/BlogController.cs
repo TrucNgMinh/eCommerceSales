@@ -84,5 +84,32 @@ namespace iNetEcommerce.Controllers
                 return GetServerErrorResult(ex.ToString());
             }
         }
+
+        /// <summary>
+        /// Delete Blog
+        /// </summary>
+        /// 
+        [HttpPost]
+        [MapToApiVersion("1.0")]
+        [Produces("application/json")]
+        [ProducesResponseType(typeof(bool), Status200OK)]
+        [ProducesResponseType(Status400BadRequest)]
+        [ProducesResponseType(Status500InternalServerError)]
+        [Route("[action]")]
+        [Authorize]
+        public async Task<IActionResult> DeleteBlog([FromBody] RequestBlogPost model)
+        {
+            try
+            {
+                var result = await _blogService.DeleteBlog(model);
+
+                return GetResult(result);
+            }
+            catch (Exception ex)
+            {
+                return GetServerErrorResult(ex.ToString());
+            }
+        }
+
     }
 }

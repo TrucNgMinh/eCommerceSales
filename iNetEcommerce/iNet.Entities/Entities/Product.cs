@@ -11,8 +11,11 @@ namespace iNet.Entities
     public class Product : BaseEntity
     {
           public string Name { get; set; }
-          public string Price { get; set; }
-          public string SellPrice { get; set; }
+          public string Unit { get; set; }
+          public decimal Price { get; set; }
+          public decimal SellPrice { get; set; }
+          public decimal SellPriceMax { get; set; }
           public string Content { get; set; }
+          public string Abstract { get; set; }
     }
 }

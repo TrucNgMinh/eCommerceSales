@@ -22,6 +22,7 @@ namespace iNet.Context
         public DbSet<Config> ProductOverlayDescription { get; set; }
         public DbSet<BlogPost> BlogPost { get; set; }
         public DbSet<Company> Company { get; set; }
+        public DbSet<ProductCategoryMap> ProductCategoryMap { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

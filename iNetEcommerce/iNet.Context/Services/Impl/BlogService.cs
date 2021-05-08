@@ -90,5 +90,14 @@ namespace iNet.Context.Services.Impl
             return response;
         }
 
+        public async Task<ApiResponseModel> DeleteBlog(RequestBlogPost model)
+        {
+            var response = new ApiResponseModel();
+
+            await _blogRepository.DeleteAsync(model.Id);
+
+            response.HttpStatusCode = System.Net.HttpStatusCode.OK;
+            return response;
+        }
     }
 }

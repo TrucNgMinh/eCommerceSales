@@ -7,13 +7,14 @@ using System.Threading.Tasks;
 
 namespace iNet.Entities
 {
-    [Table("productimage")]
-    public class ProductImage : BaseEntity
+    [Table("productcategorymap")]
+    public class ProductCategoryMap : BaseEntity
     {
-        public int ProductId { get; set; }
-
+		public int ProductId { get; set; }
         [ForeignKey("ProductId")]
         public Product Product { get; set; }
-        public string Image { get; set; }
+        public int ProductGroupId { get; set; }
+        [ForeignKey("ProductGroupId")]
+        public ProductGroup ProductGroup { get; set; }
     }
 }
