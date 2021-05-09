@@ -18,6 +18,7 @@ export class AdminProductDetailComponent implements OnInit, OnDestroy, AfterView
   productGroupDropList: ProductGroup[] = [];
   productGroupDropListSelected: ProductGroup[] = [];
   productGroupDropListSettings: IDropdownSettings = {};
+  files: File[] = [];
   constructor(private productGroupService: ProductGroupService) { }
   ngAfterViewInit(): void {
     this.getProductGroups();
@@ -55,5 +56,14 @@ export class AdminProductDetailComponent implements OnInit, OnDestroy, AfterView
   }
   onSelectAll(items: any) {
     console.log(items);
+  }
+  onSelect(event: any) {
+    console.log(event);
+    this.files.push(...event.addedFiles);
+  }
+  
+  onRemove(event: any) {
+    console.log(event);
+    this.files.splice(this.files.indexOf(event), 1);
   }
 }

@@ -3,20 +3,15 @@ import { Component } from '@angular/core';
 import { Subject } from 'rxjs-compat';
 import { datatableLanguageOptions } from 'src/app/app.constants';
 import { ProductGroup } from 'src/app/models/product-group.model';
-import { Product } from 'src/app/models/product.model';
 let AdminProductComponent = class AdminProductComponent {
     constructor(productGroupService, modalService) {
         this.productGroupService = productGroupService;
         this.modalService = modalService;
-        this.productGroupDropList = [];
-        this.productGroupDropListSelected = [];
-        this.productGroupDropListSettings = {};
         this.productGroups = [];
         this.products = [];
         this.dtOptions = {};
         this.dtTrigger = new Subject();
         this.productGroupModel = new ProductGroup();
-        this.productModel = new Product();
     }
     ngAfterViewInit() {
     }
@@ -29,26 +24,10 @@ let AdminProductComponent = class AdminProductComponent {
             language: datatableLanguageOptions,
         };
         this.getProductGroups(true);
-        this.productGroupDropListSettings = {
-            singleSelection: false,
-            idField: 'id',
-            textField: 'name',
-            selectAllText: 'Select All',
-            unSelectAllText: 'UnSelect All',
-            itemsShowLimit: 4,
-            allowSearchFilter: false
-        };
-    }
-    onItemSelect(item) {
-        console.log(item);
-    }
-    onSelectAll(items) {
-        console.log(items);
     }
     getProductGroups(isTrigger = false) {
         this.productGroupService.getProductGroups().subscribe((res) => {
             this.productGroups = res;
-            this.productGroupDropList = res;
             if (isTrigger)
                 this.dtTrigger.next();
         });
@@ -76,8 +55,6 @@ let AdminProductComponent = class AdminProductComponent {
         this.modalService.open(content, { ariaLabelledBy: 'modal-basic-title' }).result.then((res) => {
             console.log("modal opened");
         });
-    }
-    addProduct(form) {
     }
 };
 AdminProductComponent = __decorate([

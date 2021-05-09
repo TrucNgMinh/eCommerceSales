@@ -45,6 +45,19 @@
                             </div>
                         </div>
                     </div>
+                    <div class="form-group row m-b-20">
+                        <div class="col-12">
+                            <p class="font-16 m-b-10">
+                                Ảnh sản phẩm
+                            </p>
+                            <ngx-dropzone (change)="onSelect($event)">
+                                <ngx-dropzone-label>Kéo thả (hoặc click) vào đây để tải ảnh lên</ngx-dropzone-label>
+                                <ngx-dropzone-image-preview ngProjectAs="ngx-dropzone-preview" [removable]="true" (removed)="onRemove(f)" *ngFor="let f of files" [file]="f">
+                                    <ngx-dropzone-label>{{ f.name }} ({{ f.type }})</ngx-dropzone-label>
+                                </ngx-dropzone-image-preview>
+                            </ngx-dropzone>
+                        </div>
+                    </div>
                 </form>
                 <button type="button" class="btn btn-custom waves-effect waves-light" (click)="addProduct(addProductForm)">Xác nhận</button>
             </div>

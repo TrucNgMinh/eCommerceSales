@@ -71,7 +71,7 @@ const routes = [
                 component: AdminProductGroupComponent
             },
             {
-                path: 'admin-product-detail',
+                path: 'admin-product-add',
                 component: AdminProductDetailComponent
             },
             {

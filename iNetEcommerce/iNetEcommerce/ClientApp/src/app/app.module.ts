@@ -35,6 +35,7 @@ import { NewsAdminComponent } from './components/admin-components/news/news-admi
 import { NewsDetailComponent } from './components/admin-components/news/news-detail/news-detail.component';
 import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
 import { NgxEditorModule } from 'ngx-editor';
+import { NgxDropzoneModule } from 'ngx-dropzone';
 
 @NgModule({
   declarations: [
@@ -75,6 +76,7 @@ import { NgxEditorModule } from 'ngx-editor';
     NgMultiSelectDropDownModule.forRoot(),
     FormsModule,
     DataTablesModule,
+    NgxDropzoneModule,
     NgxEditorModule,
     NgbModule
   ],
