@@ -1,1 +1,53 @@
-<p>admin-product-detail works!</p>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="card-box">
+                <h4 class="m-t-0 header-title">QUẢN LÝ SẢN PHẨM</h4>
+                <p class="text-muted mb-2 font-18">
+                    Thêm sản phẩm mới.
+                </p>
+                <form #addProductForm="ngForm" autocomplete="off">
+                    <div class="form-group row m-b-20">
+                        <div class="col-12 col-sm-6 col-md-6">
+                            <app-text-box type="text" title="Tên sản phẩm" name="productname" placeholder="Nhập tên sản phẩm" required="true" [(ngModel)]="productModel.name">
+                                <div invalidmessage="productname">
+                                    <p *invalidType="'required'">Bạn vui lòng nhập tên sản phẩm!</p>
+                                </div>
+                            </app-text-box>
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-6">
+                            <p class="label icm-lable text-dark">Danh mục</p>
+
+                            <ng-multiselect-dropdown name="choseCategory" class="multi-select-dropdown-custom" [placeholder]="'Chọn danh mục ...'" [settings]="productGroupDropListSettings" [data]="productGroupDropList" [(ngModel)]="productGroupDropListSelected" (onSelect)="onItemSelect($event)"
+                                (onSelectAll)="onSelectAll($event)">
+                            </ng-multiselect-dropdown>
+                        </div>
+                    </div>
+                    <div class="form-group row m-b-20">
+                        <div class="col-12">
+                            <app-text-box type="number" title="Giá gốc" name="price" placeholder="Nhập giá gốc" [(ngModel)]="productModel.price">
+                            </app-text-box>
+                        </div>
+                    </div>
+                    <div class="form-group row m-b-20">
+                        <div class="col-12">
+                            <div class="label split-label mb-1 text-dark">Khoảng giá bán <br></div>
+                            <input type="number" class="form-control split-text-box split-left" name="sellPrice" placeholder="Giá bán thấp nhất" [(ngModel)]="productModel.sellPrice">
+                            <input type="number" class="form-control split-text-box split-right" name="sellPriceMax" placeholder="Giá bán cao nhất" [(ngModel)]="productModel.sellPriceMax">
+                        </div>
+                    </div>
+                    <div class="form-group row m-b-20">
+                        <div class="col-12">
+                            <div class="label split-label mb-1 text-dark">Mô tả <br></div>
+                            <div class="NgxEditor__Wrapper">
+                                <ngx-editor-menu [editor]="editor"> </ngx-editor-menu>
+                                <ngx-editor [editor]="editor" name="desc" [ngModel]="html" [disabled]="false" [placeholder]="'Type here...'"></ngx-editor>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                <button type="button" class="btn btn-custom waves-effect waves-light" (click)="addProduct(addProductForm)">Xác nhận</button>
+            </div>
+        </div>
+    </div>
+</div>

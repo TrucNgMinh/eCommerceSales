@@ -3,5 +3,6 @@ export class Product {
     name: any;
     price: any;
     sellPrice: any;
+    sellPriceMax: any;
     content: any;
 }

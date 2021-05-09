@@ -69,7 +69,7 @@
                     </tbody>
                 </table>
             </div>
-            <button (click)="triggerModal(modalAddProduct)" style="position: absolute; top: 10px; right: 25px;" class="btn btn-custom waves-effect waves-light product-add-btn"><i class="mdi mdi-plus-circle mr-3"></i> Thêm sản phẩm mới</button>
+            <button routerLink="/admin/admin-product-add" style="position: absolute; top: 10px; right: 25px;" class="btn btn-custom waves-effect waves-light product-add-btn"><i class="mdi mdi-plus-circle mr-3"></i> Thêm sản phẩm mới</button>
         </div>
     </div>
 
@@ -104,48 +104,5 @@
     </form>
     <div class="modal-footer">
         <button type="button" class="btn btn-custom waves-effect waves-light" (click)="addProductGroup(addProductGroupForm)" type="submit">Xác nhận</button>
-    </div>
-</ng-template>
-
-<ng-template #modalAddProduct let-modal>
-    <div class="modal-header">
-        <h4 class="modal-title" id="modal-basic-title">Thêm sản phẩm</h4>
-        <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
-        <span aria-hidden="true">×</span>
-      </button>
-    </div>
-    <form #addProductForm="ngForm" (submit)="addProductGroup(addProductForm)" autocomplete="off">
-        <div class="modal-body">
-            <div class="form-group row m-b-20">
-                <div class="col-12">
-                    <app-text-box type="text" title="Tên sản phẩm" name="productname" placeholder="Nhập tên sản phẩm" required="true" [(ngModel)]="productGroupModel.name">
-                        <div invalidmessage="productname">
-                            <p *invalidType="'required'">Bạn vui lòng nhập tên sản phẩm!</p>
-                        </div>
-                    </app-text-box>
-                </div>
-            </div>
-            <div class="form-group row m-b-20">
-                <div class="col-12">
-                    <app-text-box type="number" title="Giá gốc" name="price" placeholder="Nhập giá gốc" [(ngModel)]="productGroupModel.unit">
-                    </app-text-box>
-                </div>
-            </div>
-            <div class="form-group row m-b-20">
-                <div class="col-12">
-                    <app-text-box type="number" title="Giá bán" name="sellprice" placeholder="Nhập giá bán" [(ngModel)]="productGroupModel.unit">
-                    </app-text-box>
-                </div>
-            </div>
-            <div class="form-group row m-b-20">
-                <div class="col-12">
-                    <app-text-box type="text" title="Mô tả" name="desc" placeholder="Nhập mô tả" [(ngModel)]="productGroupModel.unit">
-                    </app-text-box>
-                </div>
-            </div>
-        </div>
-    </form>
-    <div class="modal-footer">
-        <button type="button" class="btn btn-custom waves-effect waves-light" (click)="addProduct(addProductForm)">Xác nhận</button>
     </div>
 </ng-template>

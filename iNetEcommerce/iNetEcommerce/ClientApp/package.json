@@ -28,6 +28,8 @@
     "datatables.net-dt": "^1.10.20",
     "file-saver": "^2.0.5",
     "jquery": "^3.4.1",
+    "ng-multiselect-dropdown": "^0.3.4",
+    "ngx-editor": "^9.0.1",
     "rxjs": "~6.6.0",
     "rxjs-compat": "^6.0.0-rc.1",
     "tslib": "^2.0.0",

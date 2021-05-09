@@ -216,3 +216,42 @@ a.fc-more {
 .dataTables_wrapper {
     padding-bottom: 10px !important;
 }
+
+.split-label {
+    display: block;
+}
+
+.split-left,
+.split-right {
+    width: 49.5% !important;
+}
+
+.split-left {
+    float: left;
+    box-sizing: border-box;
+}
+
+.split-right {
+    float: right;
+    box-sizing: border-box;
+}
+
+.multi-select-dropdown-custom {
+    font-size: 14px;
+}
+
+.multiselect-dropdown .dropdown-btn {
+    border: 1px solid #d9e3e9 !important;
+    height: 38px !important;
+}
+
+.icm-lable {
+    font-size: 20px;
+    padding-bottom: 0.5em;
+    height: 40px;
+}
+
+.multiselect-dropdown .dropdown-btn .selected-item {
+    border: 1px solid #337ab7 !important;
+    background: #02c0ce !important;
+}

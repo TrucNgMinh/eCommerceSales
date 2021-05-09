@@ -8,6 +8,9 @@ let AdminProductComponent = class AdminProductComponent {
     constructor(productGroupService, modalService) {
         this.productGroupService = productGroupService;
         this.modalService = modalService;
+        this.productGroupDropList = [];
+        this.productGroupDropListSelected = [];
+        this.productGroupDropListSettings = {};
         this.productGroups = [];
         this.products = [];
         this.dtOptions = {};
@@ -26,10 +29,26 @@ let AdminProductComponent = class AdminProductComponent {
             language: datatableLanguageOptions,
         };
         this.getProductGroups(true);
+        this.productGroupDropListSettings = {
+            singleSelection: false,
+            idField: 'id',
+            textField: 'name',
+            selectAllText: 'Select All',
+            unSelectAllText: 'UnSelect All',
+            itemsShowLimit: 4,
+            allowSearchFilter: false
+        };
+    }
+    onItemSelect(item) {
+        console.log(item);
+    }
+    onSelectAll(items) {
+        console.log(items);
     }
     getProductGroups(isTrigger = false) {
         this.productGroupService.getProductGroups().subscribe((res) => {
             this.productGroups = res;
+            this.productGroupDropList = res;
             if (isTrigger)
                 this.dtTrigger.next();
         });

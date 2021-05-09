@@ -33,6 +33,7 @@ import { DataTablesModule } from 'angular-datatables';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NewsAdminComponent } from './components/admin-components/news/news-admin/news-admin.component';
 import { NewsDetailComponent } from './components/admin-components/news/news-detail/news-detail.component';
+import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
 let AppModule = class AppModule {
 };
 AppModule = __decorate([
@@ -69,6 +70,7 @@ AppModule = __decorate([
             AppRoutingModule,
             HttpClientModule,
             BrowserAnimationsModule,
+            NgMultiSelectDropDownModule.forRoot(),
             FormsModule,
             DataTablesModule,
             NgbModule
