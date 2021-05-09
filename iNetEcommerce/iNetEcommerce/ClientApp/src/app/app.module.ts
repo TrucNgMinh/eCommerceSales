@@ -34,8 +34,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NewsAdminComponent } from './components/admin-components/news/news-admin/news-admin.component';
 import { NewsDetailComponent } from './components/admin-components/news/news-detail/news-detail.component';
 import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
-import { NgxEditorModule } from 'ngx-editor';
 import { NgxDropzoneModule } from 'ngx-dropzone';
+import { AngularEditorModule } from '@kolkov/angular-editor';
 
 @NgModule({
   declarations: [
@@ -77,7 +77,7 @@ import { NgxDropzoneModule } from 'ngx-dropzone';
     FormsModule,
     DataTablesModule,
     NgxDropzoneModule,
-    NgxEditorModule,
+    AngularEditorModule,
     NgbModule
   ],
   providers: [

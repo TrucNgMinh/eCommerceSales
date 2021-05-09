@@ -6,7 +6,7 @@
                 <p class="text-muted mb-2 font-18">
                     Thêm sản phẩm mới.
                 </p>
-                <form #addProductForm="ngForm" autocomplete="off">
+                <form #addProductForm="ngForm" autocomplete="off" ngNativeValidate>
                     <div class="form-group row m-b-20">
                         <div class="col-12 col-sm-6 col-md-6">
                             <app-text-box type="text" title="Tên sản phẩm" name="productname" placeholder="Nhập tên sản phẩm" required="true" [(ngModel)]="productModel.name">
@@ -18,31 +18,36 @@
                         <div class="col-12 col-sm-6 col-md-6">
                             <p class="label icm-lable text-dark">Danh mục</p>
 
-                            <ng-multiselect-dropdown name="choseCategory" class="multi-select-dropdown-custom" [placeholder]="'Chọn danh mục ...'" [settings]="productGroupDropListSettings" [data]="productGroupDropList" [(ngModel)]="productGroupDropListSelected" (onSelect)="onItemSelect($event)"
-                                (onSelectAll)="onSelectAll($event)">
+                            <ng-multiselect-dropdown name="choseCategory" class="multi-select-dropdown-custom" [placeholder]="'Chọn danh mục ...'" [settings]="productGroupDropListSettings" [data]="productGroupDropList" [(ngModel)]="productGroupDropListSelected" required="true">
                             </ng-multiselect-dropdown>
                         </div>
                     </div>
                     <div class="form-group row m-b-20">
-                        <div class="col-12">
-                            <app-text-box type="number" title="Giá gốc" name="price" placeholder="Nhập giá gốc" [(ngModel)]="productModel.price">
+                        <div class="col-12 col-sm-6 col-md-6">
+                            <app-text-box type="text" title="Giá gốc" name="price" placeholder="Nhập giá gốc" [(ngModel)]="productModel.price">
                             </app-text-box>
                         </div>
-                    </div>
-                    <div class="form-group row m-b-20">
-                        <div class="col-12">
-                            <div class="label split-label mb-1 text-dark">Khoảng giá bán <br></div>
+                        <div class="col-12 col-sm-6 col-md-6">
+                            <div class="label split-label icm-lable text-dark">Khoảng giá bán <br></div>
                             <input type="number" class="form-control split-text-box split-left" name="sellPrice" placeholder="Giá bán thấp nhất" [(ngModel)]="productModel.sellPrice">
                             <input type="number" class="form-control split-text-box split-right" name="sellPriceMax" placeholder="Giá bán cao nhất" [(ngModel)]="productModel.sellPriceMax">
                         </div>
                     </div>
                     <div class="form-group row m-b-20">
+                        <div class="col-12 col-sm-6 col-md-6">
+                            <app-text-box type="text" title="Mô tả tóm tắt" name="short-desc" placeholder="Nhập mô tả" [(ngModel)]="productModel.abstract">
+                            </app-text-box>
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-6">
+                            <app-text-box type="text" title="Đơn vị bán" name="unit" placeholder="Nhập đơn vị thanh toán" [(ngModel)]="productModel.unit">
+                            </app-text-box>
+                        </div>
+
+                    </div>
+                    <div class="form-group row m-b-20">
                         <div class="col-12">
                             <div class="label split-label mb-1 text-dark">Mô tả <br></div>
-                            <div class="NgxEditor__Wrapper">
-                                <ngx-editor-menu [editor]="editor"> </ngx-editor-menu>
-                                <ngx-editor [editor]="editor" name="desc" [ngModel]="html" [disabled]="false" [placeholder]="'Type here...'"></ngx-editor>
-                            </div>
+                            <angular-editor name="desc" [config]="editorConfig" [(ngModel)]="productModel.content"></angular-editor>
                         </div>
                     </div>
                     <div class="form-group row m-b-20">
@@ -52,14 +57,15 @@
                             </p>
                             <ngx-dropzone (change)="onSelect($event)">
                                 <ngx-dropzone-label>Kéo thả (hoặc click) vào đây để tải ảnh lên</ngx-dropzone-label>
-                                <ngx-dropzone-image-preview ngProjectAs="ngx-dropzone-preview" [removable]="true" (removed)="onRemove(f)" *ngFor="let f of files" [file]="f">
+                                <ngx-dropzone-image-preview ngProjectAs="ngx-dropzone-preview" [removable]="true" *ngFor="let f of files" [file]="f">
                                     <ngx-dropzone-label>{{ f.name }} ({{ f.type }})</ngx-dropzone-label>
                                 </ngx-dropzone-image-preview>
                             </ngx-dropzone>
                         </div>
                     </div>
+
+                    <button type="button" class="btn btn-custom waves-effect waves-light float-right" (click)="addProduct(addProductForm)">Xác nhận</button>
                 </form>
-                <button type="button" class="btn btn-custom waves-effect waves-light" (click)="addProduct(addProductForm)">Xác nhận</button>
             </div>
         </div>
     </div>

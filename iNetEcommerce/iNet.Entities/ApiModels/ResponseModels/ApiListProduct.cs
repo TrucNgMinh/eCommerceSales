@@ -12,6 +12,7 @@ namespace iNet.Entities
         public string Name { get; set; }
         public string Unit { get; set; }
         public decimal SellPrice { get; set; }
+        public decimal Price { get; set; }
         public decimal SellPriceMax { get; set; }
         public string Abstract { get; set; }
         public List<string> Images { get; set; }
@@ -26,6 +27,7 @@ namespace iNet.Entities
                 Id = entity.Id,
                 Name = entity.Name,
                 Unit = entity.Unit,
+                Price = entity.Price,
                 SellPrice = entity.SellPrice,
                 SellPriceMax = entity.SellPriceMax,
                 Abstract = entity.Abstract,

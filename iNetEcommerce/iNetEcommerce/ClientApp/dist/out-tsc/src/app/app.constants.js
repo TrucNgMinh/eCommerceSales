@@ -27,12 +27,25 @@ export const FORMAT_DATE_CONSTANT = {
     date_format_mm_dd_yyyy_HH_mm_ss: 'MM/dd/yyyy HH:mm:ss',
 };
 export const API_ENDPOINT = {
+    //HOME
+    GET_SETTINGS: "/Home/GetSetting",
+    UPDATE_BANNER: "/Home/UpdateBanner",
+    //PRODUCT GROUP
     ADD_EDIT_PRODUCT_GROUP: "/Products/AddEditProductGroup",
     DELETE_PRODUCT_GROUP: "/Products/DeleteProductGroup",
     GET_PRODUCT_GROUP: "/Products/GetProductGroups",
+    //LOGIN
     LOG_IN: "/User/Login",
+    //BLOG
     ADD_EDIT_BLOG: "/Blog/AddEditBlog",
-    GET_BLOGS: "/Blog/GetListBlog"
+    GET_BLOGS: "/Blog/GetListBlog",
+    DELETE_BLOG: "/Blog/DeleteBlog",
+    //PRODUCT
+    GET_PRODUCTS: "/Products/GetProducts",
+    ADD_EDIT_PRODUCT: "/Products/AddEditProduct",
+    GET_PRODUCT_BY_ID: "/Products/GetProduct",
+    GET_PRODUCT_ADMIN: "/Products/GetProductAdmin",
+    DELETE_PRODUCT: "/Products/DeleteProduct",
 };
 export const ADMIN_CONST = '1';
 export const jsFileForMainLayout = [
@@ -65,5 +78,49 @@ export const datatableLanguageOptions = {
         next: "Trang kế",
         last: "Trang cuối"
     }
+};
+export const ngEditorOptions = {
+    editable: true,
+    spellcheck: true,
+    height: '150px',
+    minHeight: '0',
+    maxHeight: 'auto',
+    width: 'auto',
+    minWidth: '0',
+    translate: 'yes',
+    enableToolbar: true,
+    showToolbar: true,
+    placeholder: 'Nhập vào đây ...',
+    defaultParagraphSeparator: '',
+    defaultFontName: '',
+    defaultFontSize: '',
+    fonts: [
+        { class: 'arial', name: 'Arial' },
+        { class: 'times-new-roman', name: 'Times New Roman' },
+        { class: 'calibri', name: 'Calibri' },
+        { class: 'comic-sans-ms', name: 'Comic Sans MS' }
+    ],
+    customClasses: [
+        {
+            name: 'quote',
+            class: 'quote',
+        },
+        {
+            name: 'redText',
+            class: 'redText'
+        },
+        {
+            name: 'titleText',
+            class: 'titleText',
+            tag: 'h1',
+        },
+    ],
+    uploadWithCredentials: false,
+    sanitize: true,
+    toolbarPosition: 'top',
+    toolbarHiddenButtons: [
+        ['bold', 'italic'],
+        ['fontSize']
+    ]
 };
 //# sourceMappingURL=app.constants.js.map

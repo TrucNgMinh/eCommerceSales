@@ -59,6 +59,7 @@ export class TextBoxComponent implements ControlValueAccessor {
       return false;
     }
     const control = this.ngForm.form.get(this.name);
+    
     return control && control.invalid && (control.dirty || this.ngForm.submitted);
   }
 

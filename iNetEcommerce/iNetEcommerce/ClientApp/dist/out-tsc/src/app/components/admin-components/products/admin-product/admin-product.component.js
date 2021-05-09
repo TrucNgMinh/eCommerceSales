@@ -4,9 +4,10 @@ import { Subject } from 'rxjs-compat';
 import { datatableLanguageOptions } from 'src/app/app.constants';
 import { ProductGroup } from 'src/app/models/product-group.model';
 let AdminProductComponent = class AdminProductComponent {
-    constructor(productGroupService, modalService) {
+    constructor(productGroupService, modalService, productService) {
         this.productGroupService = productGroupService;
         this.modalService = modalService;
+        this.productService = productService;
         this.productGroups = [];
         this.products = [];
         this.dtOptions = {};
@@ -30,6 +31,12 @@ let AdminProductComponent = class AdminProductComponent {
             this.productGroups = res;
             if (isTrigger)
                 this.dtTrigger.next();
+            this.getProducts();
+        });
+    }
+    getProducts() {
+        this.productService.getProducts().subscribe((res) => {
+            this.products = res;
         });
     }
     addProductGroup(form) {

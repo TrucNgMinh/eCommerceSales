@@ -1,24 +1,26 @@
 import { __decorate } from "tslib";
 import { Component } from '@angular/core';
-import { Editor } from 'ngx-editor';
+import { ngEditorOptions } from 'src/app/app.constants';
 import { Product } from 'src/app/models/product.model';
 let AdminProductDetailComponent = class AdminProductDetailComponent {
-    constructor(productGroupService) {
+    constructor(productGroupService, productService, router) {
         this.productGroupService = productGroupService;
-        this.editor = new Editor();
-        this.html = '';
+        this.productService = productService;
+        this.router = router;
         this.productModel = new Product();
         this.productGroupDropList = [];
         this.productGroupDropListSelected = [];
         this.productGroupDropListSettings = {};
+        this.files = [];
+        this.htmlContent = '';
     }
     ngAfterViewInit() {
         this.getProductGroups();
     }
     ngOnDestroy() {
-        this.editor.destroy();
     }
     ngOnInit() {
+        this.editorConfig = ngEditorOptions;
         this.productGroupDropListSettings = {
             singleSelection: false,
             idField: 'id',
@@ -36,13 +38,17 @@ let AdminProductDetailComponent = class AdminProductDetailComponent {
         });
     }
     addProduct(form) {
-        console.log("a");
+        if (!form.valid)
+            return;
+        this.productModel.productGroups = this.productGroupDropListSelected.map(({ id }) => id);
+        console.log(this.productModel.productGroups);
+        this.productService.addEditProduct(this.productModel).subscribe((res) => {
+            this.router.navigate(['/admin/admin-product']);
+        });
     }
-    onItemSelect(item) {
-        console.log(item);
-    }
-    onSelectAll(items) {
-        console.log(items);
+    onSelect(event) {
+        console.log(event);
+        this.files.push(...event.addedFiles);
     }
 };
 AdminProductDetailComponent = __decorate([

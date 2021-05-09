@@ -34,12 +34,29 @@ export const FORMAT_DATE_CONSTANT = {
 }
 
 export const API_ENDPOINT = {
+    //HOME
+    GET_SETTINGS:"/Home/GetSetting",
+    UPDATE_BANNER: "/Home/UpdateBanner",
+
+    //PRODUCT GROUP
     ADD_EDIT_PRODUCT_GROUP: "/Products/AddEditProductGroup",
     DELETE_PRODUCT_GROUP: "/Products/DeleteProductGroup",
     GET_PRODUCT_GROUP: "/Products/GetProductGroups",
+
+    //LOGIN
     LOG_IN: "/User/Login",
+
+    //BLOG
     ADD_EDIT_BLOG: "/Blog/AddEditBlog",
-    GET_BLOGS: "/Blog/GetListBlog"
+    GET_BLOGS: "/Blog/GetListBlog",
+    DELETE_BLOG:"/Blog/DeleteBlog",
+
+    //PRODUCT
+    GET_PRODUCTS: "/Products/GetProducts",
+    ADD_EDIT_PRODUCT: "/Products/AddEditProduct",
+    GET_PRODUCT_BY_ID: "/Products/GetProduct",
+    GET_PRODUCT_ADMIN: "/Products/GetProductAdmin",
+    DELETE_PRODUCT:"/Products/DeleteProduct",
 }
 
 export const ADMIN_CONST = '1';
@@ -59,20 +76,65 @@ export const jsFileForMainLayout = [
     }
 ];
 
-export const datatableLanguageOptions =  {
+export const datatableLanguageOptions = {
     processing: "Đang xử lý...",
-        search: "Tìm kiếm:",
-        lengthMenu: "Hiển thị _MENU_ mục mỗi trang",
-        info: "Hiển thị _PAGE_ của _PAGES_ trang ( _MAX_ sản phẩm )",
-        infoEmpty: "Hiển thị trang 1 của 0 gồm 0 sản phẩm",
-        infoFiltered: "( lọc từ _MAX_ mục )",
-        loadingRecords: "Đang tải lên...",
-        zeroRecords: "Không có danh mục nào",
-        emptyTable: "Không có danh mục nào",
-        paginate: {
-          first: "Trang đầu",
-          previous: "Trang trước",
-          next: "Trang kế",
-          last: "Trang cuối"
-        }
+    search: "Tìm kiếm:",
+    lengthMenu: "Hiển thị _MENU_ mục mỗi trang",
+    info: "Hiển thị _PAGE_ của _PAGES_ trang ( _MAX_ sản phẩm )",
+    infoEmpty: "Hiển thị trang 1 của 0 gồm 0 sản phẩm",
+    infoFiltered: "( lọc từ _MAX_ mục )",
+    loadingRecords: "Đang tải lên...",
+    zeroRecords: "Không có danh mục nào",
+    emptyTable: "Không có danh mục nào",
+    paginate: {
+        first: "Trang đầu",
+        previous: "Trang trước",
+        next: "Trang kế",
+        last: "Trang cuối"
+    }
+}
+
+export const ngEditorOptions = {
+    editable: true,
+    spellcheck: true,
+    height: '150px',
+    minHeight: '0',
+    maxHeight: 'auto',
+    width: 'auto',
+    minWidth: '0',
+    translate: 'yes',
+    enableToolbar: true,
+    showToolbar: true,
+    placeholder: 'Nhập vào đây ...',
+    defaultParagraphSeparator: '',
+    defaultFontName: '',
+    defaultFontSize: '',
+    fonts: [
+        { class: 'arial', name: 'Arial' },
+        { class: 'times-new-roman', name: 'Times New Roman' },
+        { class: 'calibri', name: 'Calibri' },
+        { class: 'comic-sans-ms', name: 'Comic Sans MS' }
+    ],
+    customClasses: [
+        {
+            name: 'quote',
+            class: 'quote',
+        },
+        {
+            name: 'redText',
+            class: 'redText'
+        },
+        {
+            name: 'titleText',
+            class: 'titleText',
+            tag: 'h1',
+        },
+    ],
+    uploadWithCredentials: false,
+    sanitize: true,
+    toolbarPosition: 'top',
+    toolbarHiddenButtons: [
+        ['bold', 'italic'],
+        ['fontSize']
+    ]
 }

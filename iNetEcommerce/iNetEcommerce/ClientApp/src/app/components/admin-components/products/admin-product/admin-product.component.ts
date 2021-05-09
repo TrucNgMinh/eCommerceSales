@@ -1,13 +1,13 @@
 import { AfterViewInit, Component, OnDestroy, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { ModalDismissReasons, NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { IDropdownSettings } from 'ng-multiselect-dropdown';
-import { Editor } from 'ngx-editor';
+import { ActivatedRoute } from '@angular/router';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Subject } from 'rxjs-compat';
 import { datatableLanguageOptions } from 'src/app/app.constants';
 import { ProductGroup } from 'src/app/models/product-group.model';
 import { Product } from 'src/app/models/product.model';
 import { ProductGroupService } from 'src/app/services/product-group.service';
+import { ProductService } from 'src/app/services/product.service';
 declare var $: any;
 
 @Component({
@@ -20,16 +20,23 @@ export class AdminProductComponent implements OnInit, OnDestroy, AfterViewInit {
   productGroups: ProductGroup[] = [];
   products: Product[] =[];
   dtOptions: DataTables.Settings = {};
+  productId: any;
   dtTrigger: Subject<any> = new Subject<any>();
   productGroupModel: ProductGroup = new ProductGroup();
  
 
   constructor(private productGroupService: ProductGroupService,
-    private modalService: NgbModal) { }
+    private modalService: NgbModal,
+    private productService: ProductService,
+    private route: ActivatedRoute) { }
     ngAfterViewInit(): void {
     }
 
   ngOnInit(): void {
+    this.route.paramMap.subscribe(params => {
+      this.productId = params.get('id');
+      console.log(this.productId);
+    })
     this.dtOptions = {
       pagingType: 'full_numbers',
       pageLength: 10,
@@ -49,7 +56,15 @@ export class AdminProductComponent implements OnInit, OnDestroy, AfterViewInit {
       this.productGroups = res;
       if (isTrigger)
         this.dtTrigger.next();
+
+      this.getProducts();
     })
+  }
+
+  getProducts():void {
+    this.productService.getProducts().subscribe((res) => {
+        this.products = res;
+    });
   }
 
   addProductGroup(form: NgForm):void {

@@ -248,7 +248,7 @@ namespace iNetEcommerce.Controllers
         [ProducesResponseType(Status400BadRequest)]
         [ProducesResponseType(Status500InternalServerError)]
         [Route("[action]")]
-        [Authorize]
+        //[Authorize]
         public async Task<IActionResult> AddEditProduct([FromForm] ApiProduct model, IFormFile image1, IFormFile image2, IFormFile image3, IFormFile image4)
         {
             try
