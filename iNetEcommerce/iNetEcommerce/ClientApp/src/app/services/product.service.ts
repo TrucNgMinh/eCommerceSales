@@ -31,13 +31,13 @@ export class ProductService extends BaseService {
     return result;
   }
 
-  getProductById(): Observable<Product[]>{
-    var result = this.get(API_ENDPOINT.GET_PRODUCT_BY_ID, null, true);
+  getProductById(id : number): Observable<Product>{
+    var result = this.get(API_ENDPOINT.GET_PRODUCT_BY_ID, {productId : id}, true);
     return result;
   }
 
-  getProductAdmin(): Observable<Product[]>{
-    var result = this.get(API_ENDPOINT.GET_PRODUCT_ADMIN, null, true);
+  getProductAdmin(id : number): Observable<Product>{
+    var result = this.get(API_ENDPOINT.GET_PRODUCT_ADMIN, {productId : id}, true);
     return result;
   }
 

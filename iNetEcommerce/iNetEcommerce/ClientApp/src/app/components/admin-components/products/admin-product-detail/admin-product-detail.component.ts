@@ -1,6 +1,6 @@
-import { AfterViewInit, Component, OnDestroy, OnInit } from '@angular/core';
+import { AfterViewInit, ChangeDetectorRef, Component, OnDestroy, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { IDropdownSettings } from 'ng-multiselect-dropdown';
 import { ngEditorOptions } from 'src/app/app.constants';
 import { ProductGroup } from 'src/app/models/product-group.model';
@@ -21,11 +21,14 @@ export class AdminProductDetailComponent implements OnInit, OnDestroy, AfterView
   files: File[] = [];
   editorConfig: any;
   htmlContent: string = '';
+  productId: any;
 
   constructor(
     private productGroupService: ProductGroupService,
     private productService: ProductService,
-    private router: Router) { }
+    private router: Router,
+    private route: ActivatedRoute,
+    private cd: ChangeDetectorRef) { }
 
   ngAfterViewInit(): void {
     this.getProductGroups();
@@ -34,7 +37,24 @@ export class AdminProductDetailComponent implements OnInit, OnDestroy, AfterView
   }
 
   ngOnInit(): void {
+
+    this.route.params.subscribe(params => {
+      this.productId = +params['id'];
+
+      if (this.productId > 0) {
+        this.productService.getProductAdmin(this.productId).subscribe((res) => {
+          this.productModel = res;
+          this.getProductGroups();
+        })
+      }
+      else {
+        this.getProductGroups();
+      }
+
+    })
+
     this.editorConfig = ngEditorOptions;
+
     this.productGroupDropListSettings = {
       singleSelection: false,
       idField: 'id',
@@ -42,22 +62,23 @@ export class AdminProductDetailComponent implements OnInit, OnDestroy, AfterView
       selectAllText: 'Chọn tất cả',
       unSelectAllText: 'Hủy chọn tất cả',
       itemsShowLimit: 4,
-      allowSearchFilter: false
+      allowSearchFilter: true
     };
-    this.getProductGroups();
   }
   getProductGroups(): void {
     this.productGroupService.getProductGroups().subscribe((res) => {
       this.productGroupDropList = res;
+      if (this.productId > 0 && this.productGroupDropList.length > 0) {
+        this.productGroupDropListSelected = this.productGroupDropList.filter(x => this.productModel.productGroups.includes(x.id));
+        this.cd.detectChanges();
+      }
     })
   }
 
   addProduct(form: NgForm): void {
-    if (!form.valid) 
+    if (!form.valid)
       return;
     this.productModel.productGroups = this.productGroupDropListSelected.map(({ id }) => id);
-    console.log(this.productModel.productGroups);
-
     this.productService.addEditProduct(this.productModel).subscribe((res) => {
       this.router.navigate(['/admin/admin-product']);
     });

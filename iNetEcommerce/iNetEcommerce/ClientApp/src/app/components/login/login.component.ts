@@ -23,14 +23,11 @@ export class LoginComponent implements OnInit {
 
   login(form: NgForm) {
     if (form.invalid) {
-      console.log("invalid");
       return;
     }
 
     this.authService.login(this.model)
       .subscribe(data => {
-
-        console.log(data);
 
         if (data && data.token) {
           LocalService.setAccessToken(data.token);

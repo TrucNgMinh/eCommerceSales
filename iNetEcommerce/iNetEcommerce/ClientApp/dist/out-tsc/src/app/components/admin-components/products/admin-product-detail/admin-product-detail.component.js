@@ -17,8 +17,7 @@ let AdminProductDetailComponent = class AdminProductDetailComponent {
     ngAfterViewInit() {
         this.getProductGroups();
     }
-    ngOnDestroy() {
-    }
+    ngOnDestroy() {}
     ngOnInit() {
         this.editorConfig = ngEditorOptions;
         this.productGroupDropListSettings = {
@@ -41,7 +40,6 @@ let AdminProductDetailComponent = class AdminProductDetailComponent {
         if (!form.valid)
             return;
         this.productModel.productGroups = this.productGroupDropListSelected.map(({ id }) => id);
-        console.log(this.productModel.productGroups);
         this.productService.addEditProduct(this.productModel).subscribe((res) => {
             this.router.navigate(['/admin/admin-product']);
         });

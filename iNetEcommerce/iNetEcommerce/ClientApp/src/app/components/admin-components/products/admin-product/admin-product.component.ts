@@ -20,7 +20,6 @@ export class AdminProductComponent implements OnInit, OnDestroy, AfterViewInit {
   productGroups: ProductGroup[] = [];
   products: Product[] =[];
   dtOptions: DataTables.Settings = {};
-  productId: any;
   dtTrigger: Subject<any> = new Subject<any>();
   productGroupModel: ProductGroup = new ProductGroup();
  
@@ -33,10 +32,6 @@ export class AdminProductComponent implements OnInit, OnDestroy, AfterViewInit {
     }
 
   ngOnInit(): void {
-    this.route.paramMap.subscribe(params => {
-      this.productId = params.get('id');
-      console.log(this.productId);
-    })
     this.dtOptions = {
       pagingType: 'full_numbers',
       pageLength: 10,
@@ -91,7 +86,6 @@ export class AdminProductComponent implements OnInit, OnDestroy, AfterViewInit {
 
   triggerModal(content: any) {
     this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title'}).result.then((res) => {
-      console.log("modal opened");
     })
   }
 

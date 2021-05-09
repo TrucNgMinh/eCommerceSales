@@ -14,8 +14,7 @@ let AdminProductComponent = class AdminProductComponent {
         this.dtTrigger = new Subject();
         this.productGroupModel = new ProductGroup();
     }
-    ngAfterViewInit() {
-    }
+    ngAfterViewInit() {}
     ngOnInit() {
         this.dtOptions = {
             pagingType: 'full_numbers',
@@ -59,9 +58,7 @@ let AdminProductComponent = class AdminProductComponent {
         this.dtTrigger.unsubscribe();
     }
     triggerModal(content) {
-        this.modalService.open(content, { ariaLabelledBy: 'modal-basic-title' }).result.then((res) => {
-            console.log("modal opened");
-        });
+        this.modalService.open(content, { ariaLabelledBy: 'modal-basic-title' }).result.then((res) => {});
     }
 };
 AdminProductComponent = __decorate([
