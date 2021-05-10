@@ -62,7 +62,8 @@ export class AdminProductDetailComponent implements OnInit, OnDestroy, AfterView
       selectAllText: 'Chọn tất cả',
       unSelectAllText: 'Hủy chọn tất cả',
       itemsShowLimit: 4,
-      allowSearchFilter: true
+      allowSearchFilter: true,
+      searchPlaceholderText: 'Tìm kiếm'
     };
   }
   getProductGroups(): void {
@@ -87,6 +88,11 @@ export class AdminProductDetailComponent implements OnInit, OnDestroy, AfterView
   onSelect(event: any) {
     console.log(event);
     this.files.push(...event.addedFiles);
+  }
+
+  onRemove(event: any) {
+    console.log(event);
+    this.files.splice(this.files.indexOf(event), 1);
   }
 
 }
