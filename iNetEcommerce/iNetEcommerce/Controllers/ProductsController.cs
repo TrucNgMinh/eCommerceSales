@@ -71,7 +71,7 @@ namespace iNetEcommerce.Controllers
         [ProducesResponseType(Status400BadRequest)]
         [ProducesResponseType(Status500InternalServerError)]
         [Route("[action]")]
-        [Authorize]
+        //[Authorize]
         public async Task<IActionResult> AddEditProductGroup([FromBody] ApiProductGroup model)
         {
             try
@@ -100,7 +100,7 @@ namespace iNetEcommerce.Controllers
         [ProducesResponseType(Status400BadRequest)]
         [ProducesResponseType(Status500InternalServerError)]
         [Route("[action]")]
-        [Authorize]
+        //[Authorize]
         public async Task<IActionResult> DeleteProductGroup([FromBody] ApiProductGroup model)
         {
             try
@@ -188,7 +188,7 @@ namespace iNetEcommerce.Controllers
         [ProducesResponseType(Status400BadRequest)]
         [ProducesResponseType(Status500InternalServerError)]
         [Route("[action]")]
-        [Authorize]
+        //[Authorize]
         public async Task<IActionResult> GetProductAdmin(int productId)
         {
             try
@@ -218,7 +218,7 @@ namespace iNetEcommerce.Controllers
         [ProducesResponseType(Status400BadRequest)]
         [ProducesResponseType(Status500InternalServerError)]
         [Route("[action]")]
-        [Authorize]
+        //[Authorize]
         public async Task<IActionResult> DeleteProduct([FromBody] ApiProduct model)
         {
             try

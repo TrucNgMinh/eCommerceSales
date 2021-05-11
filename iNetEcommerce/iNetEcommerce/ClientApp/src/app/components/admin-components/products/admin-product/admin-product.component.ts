@@ -21,6 +21,7 @@ export class AdminProductComponent implements OnInit, OnDestroy, AfterViewInit {
   products: Product[] =[];
   dtOptions: DataTables.Settings = {};
   dtTrigger: Subject<any> = new Subject<any>();
+  dtTriggerProduct: Subject<any> = new Subject<any>();
   productGroupModel: ProductGroup = new ProductGroup();
  
 
@@ -52,13 +53,15 @@ export class AdminProductComponent implements OnInit, OnDestroy, AfterViewInit {
       if (isTrigger)
         this.dtTrigger.next();
 
-      this.getProducts();
+      this.getProducts(isTrigger);
     })
   }
 
-  getProducts():void {
+  getProducts(isTrigger = false):void {
     this.productService.getProducts().subscribe((res) => {
         this.products = res;
+        if (isTrigger)
+          this.dtTriggerProduct.next();
     });
   }
 
@@ -80,8 +83,17 @@ export class AdminProductComponent implements OnInit, OnDestroy, AfterViewInit {
     });
   }
 
+  removeProduct(id: Number): void {
+    let model = new Product();
+    model.id = id;
+    this.productService.deleteProduct(model).subscribe((res : any) => {
+      this.getProducts();
+    });
+  }
+
   ngOnDestroy(): void {
     this.dtTrigger.unsubscribe();
+    this.dtTriggerProduct.unsubscribe();
   }
 
   triggerModal(content: any) {

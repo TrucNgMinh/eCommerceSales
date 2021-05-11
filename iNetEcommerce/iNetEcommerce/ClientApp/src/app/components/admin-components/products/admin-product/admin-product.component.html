@@ -43,7 +43,7 @@
                     Thêm, sửa hoặc xóa sản phẩm.
                 </p>
 
-                <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="row-border hover">
+                <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTriggerProduct" class="row-border hover">
                     <thead>
                         <tr>
                             <th>STT</th>
@@ -65,7 +65,7 @@
                             <td>{{ product.unit }}</td>
                             <td>
                                 <button class="btn btn-warning btn-sm btn-icon mr-2" [routerLink]="['/admin/admin-product-add', product.id]" title="Chỉnh sửa"><i class="fa fa-pencil"></i></button>
-                                <button class="btn btn-danger btn-sm btn-icon" title="Xóa"><i class="fa fa-times"></i></button>
+                                <button class="btn btn-danger btn-sm btn-icon" (click)="removeProduct(product.id)" title="Xóa"><i class="fa fa-times"></i></button>
                             </td>
                         </tr>
                     </tbody>
