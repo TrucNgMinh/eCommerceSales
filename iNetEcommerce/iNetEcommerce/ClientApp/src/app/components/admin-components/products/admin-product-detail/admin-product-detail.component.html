@@ -57,7 +57,10 @@
                             </p>
                             <ngx-dropzone (change)="onSelect($event)">
                                 <ngx-dropzone-label>Kéo thả (hoặc click) vào đây để tải ảnh lên</ngx-dropzone-label>
-                                <ngx-dropzone-image-preview ngProjectAs="ngx-dropzone-preview" [removable]="true" (removed)="onRemove(f)" *ngFor="let f of files" [file]="f">
+                                <ngx-dropzone-image-preview *ngIf="productId === 0" ngProjectAs="ngx-dropzone-preview" [removable]="true" (removed)="onRemove(f)" *ngFor="let f of files" [file]="f">
+                                    <ngx-dropzone-label>{{ f.name }} ({{ f.type }})</ngx-dropzone-label>
+                                </ngx-dropzone-image-preview>
+                                <ngx-dropzone-image-preview *ngIf="productId !== 0" ngProjectAs="ngx-dropzone-preview" [removable]="true" (removed)="onRemove(f)" *ngFor="let f of files" [file]="f">
                                     <ngx-dropzone-label>{{ f.name }} ({{ f.type }})</ngx-dropzone-label>
                                 </ngx-dropzone-image-preview>
                             </ngx-dropzone>

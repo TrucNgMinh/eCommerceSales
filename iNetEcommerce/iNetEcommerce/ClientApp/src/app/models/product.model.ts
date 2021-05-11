@@ -9,4 +9,9 @@ export class Product {
     abstract: any;
     productGroups: number[] = [];
     images: string[] = [];
+    
+    image1: File = new File([], "");
+    image2: File = new File([], "");
+    image3: File = new File([], "");
+    image4: File = new File([], "");
 }

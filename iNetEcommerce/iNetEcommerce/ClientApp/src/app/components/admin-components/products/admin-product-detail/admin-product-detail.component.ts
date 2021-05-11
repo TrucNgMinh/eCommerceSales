@@ -44,6 +44,7 @@ export class AdminProductDetailComponent implements OnInit, OnDestroy, AfterView
       if (this.productId > 0) {
         this.productService.getProductAdmin(this.productId).subscribe((res) => {
           this.productModel = res;
+          console.log(this.productModel);
           this.getProductGroups();
         })
       }
@@ -80,6 +81,32 @@ export class AdminProductDetailComponent implements OnInit, OnDestroy, AfterView
     if (!form.valid)
       return;
     this.productModel.productGroups = this.productGroupDropListSelected.map(({ id }) => id);
+
+    let fileLength = this.files.length > 4 ? 4 : this.files.length;
+
+    switch(fileLength) {
+      case 1:
+        this.productModel.image1 = this.files[0];
+        break;
+      case 2:
+        this.productModel.image1 = this.files[0];
+        this.productModel.image2 = this.files[1];
+        break;
+      case 3:
+        this.productModel.image1 = this.files[0];
+        this.productModel.image2 = this.files[1];
+        this.productModel.image3 = this.files[2];
+        break;
+      case 4:
+        this.productModel.image1 = this.files[0];
+        this.productModel.image2 = this.files[1];
+        this.productModel.image3 = this.files[2];
+        this.productModel.image4 = this.files[3];
+        break;
+      default:
+        break;
+    }
+
     this.productService.addEditProduct(this.productModel).subscribe((res) => {
       this.router.navigate(['/admin/admin-product']);
     });
@@ -87,7 +114,9 @@ export class AdminProductDetailComponent implements OnInit, OnDestroy, AfterView
 
   onSelect(event: any) {
     console.log(event);
-    this.files.push(...event.addedFiles);
+    if (this.files.length <= 4) {
+      this.files.push(...event.addedFiles);
+    }
   }
 
   onRemove(event: any) {
