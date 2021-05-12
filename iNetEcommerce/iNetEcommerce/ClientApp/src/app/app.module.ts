@@ -36,12 +36,18 @@ import { NewsDetailComponent } from './components/admin-components/news/news-det
 import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
 import { NgxDropzoneModule } from 'ngx-dropzone';
 import { AngularEditorModule } from '@kolkov/angular-editor';
+import { ImagePipe } from './pipes/image.pipe';
+import { AppNumberPipe } from './pipes/number.pipe';
 
 @NgModule({
   declarations: [
 
     //controls
     TextBoxComponent,
+
+    //pipes
+    ImagePipe,
+    AppNumberPipe,
 
     //Directives
     InvalidTypeDirective,

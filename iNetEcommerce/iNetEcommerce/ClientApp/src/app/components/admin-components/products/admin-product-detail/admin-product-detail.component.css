@@ -6,3 +6,7 @@
 .card-box {
     height: 102%;
 }
+
+.fileupload .thumbnail {
+    text-align: left;
+}

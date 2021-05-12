@@ -14,6 +14,16 @@
             <response code="500">Server Error.</response>
             
         </member>
+        <member name="M:iNetEcommerce.Controllers.BlogController.GetBlogById(System.Int32)">
+            <summary>
+            Get blogs
+            </summary>
+            <param name="model"></param>
+            <returns>Get blog by Id.</returns>
+            <response code="200">Get blogs was successfully</response>
+            <response code="500">Server Error.</response>
+            
+        </member>
         <member name="M:iNetEcommerce.Controllers.BlogController.AddEditBlog(iNet.Entities.RequestBlogPost,Microsoft.AspNetCore.Http.IFormFile)">
             <summary>
             Add/Edit Blog

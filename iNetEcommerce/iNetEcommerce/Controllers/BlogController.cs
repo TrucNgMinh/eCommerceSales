@@ -103,12 +103,12 @@ namespace iNetEcommerce.Controllers
         [ProducesResponseType(Status500InternalServerError)]
         [Route("[action]")]
         [Authorize]
-        public async Task<IActionResult> AddEditBlog([FromBody] RequestBlogPost model, IFormFile image)
+        public async Task<IActionResult> AddEditBlog([FromForm] RequestBlogPost model, IFormFile imageUploaded)
         {
             try
             {
                 var userToken = GetUserIdentify();
-                var result = await _blogService.AddEditBlog(model, userToken, image);
+                var result = await _blogService.AddEditBlog(model, userToken, imageUploaded);
 
                 return GetResult(result);
             }

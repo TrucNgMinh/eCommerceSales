@@ -51,16 +51,69 @@
                         </div>
                     </div>
                     <div class="form-group row m-b-20">
-                        <div class="col-12">
-                            <p class="font-16 m-b-10">
-                                Ảnh sản phẩm
-                            </p>
-                            <ngx-dropzone (change)="onSelect($event)">
-                                <ngx-dropzone-label>Kéo thả (hoặc click) vào đây để tải ảnh lên</ngx-dropzone-label>
-                                <ngx-dropzone-image-preview ngProjectAs="ngx-dropzone-preview" [removable]="true" (removed)="onRemove(f)" *ngFor="let f of files" [file]="f">
-                                    <ngx-dropzone-label>{{ f.name }} ({{ f.type }})</ngx-dropzone-label>
-                                </ngx-dropzone-image-preview>
-                            </ngx-dropzone>
+                        <div class="col-3">
+                            <div class="label split-label icm-lable text-dark">Ảnh sản phẩm</div>
+                            <div class="fileupload fileupload-new" data-provides="fileupload">
+                                <div class="fileupload-new thumbnail" style="width: 200px; height: 150px;">
+                                    <img [src]="productModel.images[0] | image" alt="image" class="img-fluid" />
+                                </div>
+                                <div class="fileupload-preview fileupload-exists thumbnail" style="max-width: 200px; max-height: 150px; line-height: 20px;"></div>
+                                <div>
+                                    <button type="button" class="btn btn-custom btn-file">
+                                        <span class="fileupload-new"><i class="fa fa-paper-clip"></i> Chọn ảnh</span>
+                                        <span class="fileupload-exists"><i class="fa fa-undo"></i> Đổi ảnh khác</span>
+                                        <input type="file" (change)="onChangeProductImage($event, 1)" class="btn-light" />
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <div class="label split-label icm-lable text-dark"></div>
+                            <div class="fileupload fileupload-new" data-provides="fileupload">
+                                <div class="fileupload-new thumbnail" style="width: 200px; height: 150px;">
+                                    <img [src]="productModel.images[1] | image" alt="image" class="img-fluid" />
+                                </div>
+                                <div class="fileupload-preview fileupload-exists thumbnail" style="max-width: 200px; max-height: 150px; line-height: 20px;"></div>
+                                <div>
+                                    <button type="button" class="btn btn-custom btn-file">
+                                        <span class="fileupload-new"><i class="fa fa-paper-clip"></i> Chọn ảnh</span>
+                                        <span class="fileupload-exists"><i class="fa fa-undo"></i> Đổi ảnh khác</span>
+                                        <input type="file" (change)="onChangeProductImage($event, 2)" class="btn-light" />
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <div class="label split-label icm-lable text-dark"></div>
+                            <div class="fileupload fileupload-new" data-provides="fileupload">
+                                <div class="fileupload-new thumbnail" style="width: 200px; height: 150px;">
+                                    <img [src]="productModel.images[2] | image" alt="image" class="img-fluid" />
+                                </div>
+                                <div class="fileupload-preview fileupload-exists thumbnail" style="max-width: 200px; max-height: 150px; line-height: 20px;"></div>
+                                <div>
+                                    <button type="button" class="btn btn-custom btn-file">
+                                        <span class="fileupload-new"><i class="fa fa-paper-clip"></i> Chọn ảnh</span>
+                                        <span class="fileupload-exists"><i class="fa fa-undo"></i> Đổi ảnh khác</span>
+                                        <input type="file" (change)="onChangeProductImage($event, 3)" class="btn-light" />
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <div class="label split-label icm-lable text-dark"></div>
+                            <div class="fileupload fileupload-new" data-provides="fileupload">
+                                <div class="fileupload-new thumbnail" style="width: 200px; height: 150px;">
+                                    <img [src]="productModel.images[3] | image" alt="image" class="img-fluid" />
+                                </div>
+                                <div class="fileupload-preview fileupload-exists thumbnail" style="max-width: 200px; max-height: 150px; line-height: 20px;"></div>
+                                <div>
+                                    <button type="button" class="btn btn-custom btn-file">
+                                        <span class="fileupload-new"><i class="fa fa-paper-clip"></i> Chọn ảnh</span>
+                                        <span class="fileupload-exists"><i class="fa fa-undo"></i> Đổi ảnh khác</span>
+                                        <input type="file" (change)="onChangeProductImage($event, 4)" class="btn-light" />
+                                    </button>
+                                </div>
+                            </div>
                         </div>
                     </div>
 

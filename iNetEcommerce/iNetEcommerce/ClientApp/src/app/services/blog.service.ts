@@ -18,7 +18,7 @@ export class BlogService extends BaseService {
   }
 
   addEditBlog(model: Blog): Observable<any> {
-    return this.post(API_ENDPOINT.ADD_EDIT_BLOG, model, false);
+    return this.postFormData(API_ENDPOINT.ADD_EDIT_BLOG, model, false);
   }
 
   getBlogs(): Observable<Blog[]>{

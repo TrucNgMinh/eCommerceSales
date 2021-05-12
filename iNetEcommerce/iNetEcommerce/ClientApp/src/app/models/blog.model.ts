@@ -6,4 +6,5 @@ export class Blog {
     abstract: string = "";
     image: string = "";
     dateTimeCreate: Date = new Date();
+    imageUploaded: File = new File([], '');
 }

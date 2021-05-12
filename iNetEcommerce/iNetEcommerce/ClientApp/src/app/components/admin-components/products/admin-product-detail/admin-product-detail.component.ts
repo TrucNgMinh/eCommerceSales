@@ -18,7 +18,6 @@ export class AdminProductDetailComponent implements OnInit, OnDestroy, AfterView
   productGroupDropList: ProductGroup[] = [];
   productGroupDropListSelected: ProductGroup[] = [];
   productGroupDropListSettings: IDropdownSettings = {};
-  files: File[] = [];
   editorConfig: any;
   productId: any;
 
@@ -80,47 +79,30 @@ export class AdminProductDetailComponent implements OnInit, OnDestroy, AfterView
     if (!form.valid)
       return;
     this.productModel.productGroups = this.productGroupDropListSelected.map(({ id }) => id);
-
-    let fileLength = this.files.length > 4 ? 4 : this.files.length;
-
-    switch(fileLength) {
-      case 1:
-        this.productModel.image1 = this.files[0];
-        break;
-      case 2:
-        this.productModel.image1 = this.files[0];
-        this.productModel.image2 = this.files[1];
-        break;
-      case 3:
-        this.productModel.image1 = this.files[0];
-        this.productModel.image2 = this.files[1];
-        this.productModel.image3 = this.files[2];
-        break;
-      case 4:
-        this.productModel.image1 = this.files[0];
-        this.productModel.image2 = this.files[1];
-        this.productModel.image3 = this.files[2];
-        this.productModel.image4 = this.files[3];
-        break;
-      default:
-        break;
-    }
-
     this.productService.addEditProduct(this.productModel).subscribe((res) => {
       this.router.navigate(['/admin/admin-product']);
     });
   }
 
-  onSelect(event: any) {
-    console.log(event);
-    if (this.files.length <= 4) {
-      this.files.push(...event.addedFiles);
+  onChangeProductImage(event: any, imageIndex: number) {
+    const filesUpload: File = event.target.files[0];
+    const reader = new FileReader();
+    reader.readAsDataURL(filesUpload);
+    switch (imageIndex) {
+      case 1:
+        this.productModel.image1 = filesUpload;
+        break;
+      case 2:
+        this.productModel.image2 = filesUpload;
+        break;
+      case 3:
+        this.productModel.image3 = filesUpload;
+        break;
+      case 4:
+        this.productModel.image4 = filesUpload;
+        break;
+      default:
+        break;
     }
   }
-
-  onRemove(event: any) {
-    console.log(event);
-    this.files.splice(this.files.indexOf(event), 1);
-  }
-
 }
