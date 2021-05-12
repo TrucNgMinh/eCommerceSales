@@ -8,7 +8,20 @@ declare var $:any;
 })
 
 export class HomeUserComponent implements OnInit, AfterViewInit {
-
+  images2 = [
+    {
+        path: '/assets/images/photo-1445452916036-9022dfd33aa8.jfif',
+    },
+    {
+        path: '/assets/images/photo-1443996104801-80c82e789b18.jfif',
+    },
+    {
+        path: '/assets/images/photo-1505839673365-e3971f8d9184.jfif',
+    },
+    {
+        path: '/assets/images/photo-1545420333-23a22b18b8fa.jfif',
+    },
+];
   constructor() { }
   ngAfterViewInit(): void {
     $("#readmore").on("click", function() {

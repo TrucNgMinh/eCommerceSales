@@ -48,10 +48,6 @@
     width: 100%;
 }
 
-.vc_custom_1573120821134 {
-    padding-top: 10px!important;
-}
-
 .vc_column-inner::after,
 .vc_column-inner::before {
     content: " ";
@@ -436,4 +432,12 @@ i {
 
 .btn-reason span {
     color: GRAY;
+}
+
+.carousel .carousel-arrows-outside .carousel-arrow-prev {
+    left: 10px !important;
+}
+
+.carousel .carousel-arrows-outside .carousel-arrow-next {
+    right: 10px !important;
 }
