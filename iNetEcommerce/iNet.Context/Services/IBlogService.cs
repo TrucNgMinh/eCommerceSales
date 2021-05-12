@@ -9,6 +9,7 @@ namespace iNet.Context.Services.Impl
     public interface IBlogService
     {
         Task<ApiResponseModel> GetListBlogs(RequestGetBlogPost model);
+        Task<ApiResponseModel> GetBlogById(int id);
         Task<ApiResponseModel> AddEditBlog(RequestBlogPost model, UserTokenModel userToken, IFormFile image);
 
         Task<ApiResponseModel> DeleteBlog(RequestBlogPost model);

@@ -57,6 +57,37 @@ namespace iNetEcommerce.Controllers
         }
 
         /// <summary>
+        /// Get blogs
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns>Get blog by Id.</returns>
+        /// <response code="200">Get blogs was successfully</response>
+        /// <response code="500">Server Error.</response>
+        /// 
+        [HttpGet]
+        [MapToApiVersion("1.0")]
+        [Produces("application/json")]
+        [ProducesResponseType(typeof(List<ApiBlogPost>), Status200OK)]
+        [ProducesResponseType(Status400BadRequest)]
+        [ProducesResponseType(Status500InternalServerError)]
+        [Route("[action]")]
+        public async Task<IActionResult> GetBlogById(int blogId)
+        {
+            try
+            {
+                var model = new RequestGetBlogPost();
+
+                var result = await _blogService.GetBlogById(blogId);
+
+                return GetResult(result);
+            }
+            catch (Exception ex)
+            {
+                return GetServerErrorResult(ex.ToString());
+            }
+        }
+
+        /// <summary>
         /// Add/Edit Blog
         /// </summary>
         /// <param name="model"></param>

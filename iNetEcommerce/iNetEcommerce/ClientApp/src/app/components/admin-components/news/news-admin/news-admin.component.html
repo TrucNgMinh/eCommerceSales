@@ -25,14 +25,14 @@
                             <td>{{ blog.abstract }}</td>
                             <td>{{ blog.dateTimeCreate }}</td>
                             <td>
-                                <button class="btn btn-warning btn-sm btn-icon mr-2" title="Chỉnh sửa"><i class="fa fa-pencil"></i></button>
+                                <button class="btn btn-warning btn-sm btn-icon mr-2" [routerLink]="['/admin/admin-news-detail', blog.id]" title="Chỉnh sửa"><i class="fa fa-pencil"></i></button>
                                 <button class="btn btn-danger btn-sm btn-icon" (click)="removeBlogs(blog.id)" title="Xóa"><i class="fa fa-times"></i></button>
                             </td>
                         </tr>
                     </tbody>
                 </table>
             </div>
-            <button style="position: absolute; top: 10px; right: 25px;" class="btn btn-custom waves-effect waves-light product-add-btn"><i class="mdi mdi-plus-circle mr-3"></i> Thêm bài viết mới</button>
+            <button style="position: absolute; top: 10px; right: 25px;" [routerLink]="['/admin/admin-news-detail', 0]" class="btn btn-custom waves-effect waves-light "><i class="mdi mdi-plus-circle mr-3"></i> Thêm bài viết mới</button>
 
         </div>
     </div>

@@ -2,23 +2,40 @@
     <div class="row">
         <div class="col-sm-12">
             <div class="card-box">
-                <h4 class="m-t-0 header-title">THÊM/CHỈNH SỬA BÀI VIẾT</h4>
+                <h4 *ngIf="blogId === 0" class="m-t-0 header-title">TẠO BÀI VIẾT MỚI</h4>
+                <h4 *ngIf="blogId !== 0" class="m-t-0 header-title">CHỈNH SỬA BÀI VIẾT</h4>
                 <form #form="ngForm">
                     <div class="form-group row m-b-20">
-                        <div class="col-12">
+                        <div class="col-sm-6 col-md-6 col-lg-6">
                             <app-text-box type="text" title="Tiêu đề" name="title" placeholder="Nhập tiêu đề" autocomplete="none" required="true" [(ngModel)]="blog.title">
                                 <div invalidmessage="title">
                                     <p *invalidType="'required'">Bạn vui lòng nhập tiêu đề bài viết</p>
                                 </div>
                             </app-text-box>
                         </div>
+                        <div class="col-sm-6 col-md-6 col-lg-6">
+                            <p class="label icm-lable text-dark">Ảnh bài viết</p>
+                            <div class="fileupload fileupload-new" data-provides="fileupload">
+                                <button type="button" class="btn btn-custom btn-file">
+                                        <span class="fileupload-new"><i class="fa fa-paper-clip"></i> Chọn ảnh</span>
+                                        <span class="fileupload-exists"><i class="fa fa-undo"></i> Đổi ảnh khác</span>
+                                        <input type="file" class="btn-light" />
+                                    </button>
+                                <span class="fileupload-preview" style="margin-left:5px;"></span>
+                                <a href="#" class="close fileupload-exists" data-dismiss="fileupload" style="float: none; margin-left:5px;"></a>
+                            </div>
+                        </div>
                     </div>
                     <div class="form-group row m-b-20">
                         <div class="col-12">
-                            <h4 class="m-b-30 m-t-0 header-title">Example</h4>
-                            <form method="post">
-                                <textarea id="elm1" name="area"></textarea>
-                            </form>
+                            <app-text-box type="text" title="Nội dung tóm tắt" name="abstract" placeholder="Nhập nội dung" autocomplete="none" [(ngModel)]="blog.abstract">
+                            </app-text-box>
+                        </div>
+                    </div>
+                    <div class="form-group row m-b-20">
+                        <div class="col-12">
+                            <p class="label icm-lable text-dark">Nội dung bài viết</p>
+                            <angular-editor name="desc" [config]="editorConfig" [(ngModel)]="blog.body"></angular-editor>
                         </div>
                     </div>
                 </form>

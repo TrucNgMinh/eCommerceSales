@@ -82,7 +82,7 @@ const routes: Routes = [
         component: NewsAdminComponent
       },
       {
-        path:'admin-news-detail',
+        path:'admin-news-detail/:id',
         component: NewsDetailComponent
       }
     ]

@@ -99,5 +99,17 @@ namespace iNet.Context.Services.Impl
             response.HttpStatusCode = System.Net.HttpStatusCode.OK;
             return response;
         }
+
+        public async Task<ApiResponseModel> GetBlogById(int id)
+        {
+            var response = new ApiResponseModel();
+
+            var result = await _blogRepository.GetByIdAsync(id);
+
+            response.Data = result.ToModel();
+            response.HttpStatusCode = System.Net.HttpStatusCode.OK;
+
+            return response;
+        }
     }
 }

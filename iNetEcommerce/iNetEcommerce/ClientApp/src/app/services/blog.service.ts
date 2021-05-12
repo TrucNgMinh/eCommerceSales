@@ -26,4 +26,9 @@ export class BlogService extends BaseService {
     return result;
   }
 
+  getBlogById(id : number): Observable<Blog>{
+    var result = this.get(API_ENDPOINT.GET_BLOG_BY_ID, {blogId : id}, false);
+    return result;
+  }
+
 }

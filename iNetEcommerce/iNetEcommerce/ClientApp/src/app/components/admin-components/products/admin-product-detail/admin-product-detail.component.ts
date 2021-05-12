@@ -20,7 +20,6 @@ export class AdminProductDetailComponent implements OnInit, OnDestroy, AfterView
   productGroupDropListSettings: IDropdownSettings = {};
   files: File[] = [];
   editorConfig: any;
-  htmlContent: string = '';
   productId: any;
 
   constructor(
