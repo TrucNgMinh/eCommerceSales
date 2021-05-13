@@ -42,7 +42,6 @@ export class AdminProductDetailComponent implements OnInit, OnDestroy, AfterView
       if (this.productId > 0) {
         this.productService.getProductAdmin(this.productId).subscribe((res) => {
           this.productModel = res;
-          console.log(this.productModel);
           this.getProductGroups();
         })
       }
