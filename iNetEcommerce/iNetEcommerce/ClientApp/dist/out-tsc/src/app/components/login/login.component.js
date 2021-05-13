@@ -12,12 +12,10 @@ let LoginComponent = class LoginComponent {
     }
     login(form) {
         if (form.invalid) {
-            console.log("invalid");
             return;
         }
         this.authService.login(this.model)
             .subscribe(data => {
-            console.log(data);
             if (data && data.token) {
                 LocalService.setAccessToken(data.token);
                 LocalService.setLogStatus(true);
