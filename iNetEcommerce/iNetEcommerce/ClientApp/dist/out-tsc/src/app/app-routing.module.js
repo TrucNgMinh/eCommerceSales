@@ -71,7 +71,7 @@ const routes = [
                 component: AdminProductGroupComponent
             },
             {
-                path: 'admin-product-add',
+                path: 'admin-product-add/:id',
                 component: AdminProductDetailComponent
             },
             {
@@ -79,7 +79,7 @@ const routes = [
                 component: NewsAdminComponent
             },
             {
-                path: 'admin-news-detail',
+                path: 'admin-news-detail/:id',
                 component: NewsDetailComponent
             }
         ]

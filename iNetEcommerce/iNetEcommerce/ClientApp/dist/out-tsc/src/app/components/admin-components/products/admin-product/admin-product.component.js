@@ -3,18 +3,22 @@ import { Component } from '@angular/core';
 import { Subject } from 'rxjs-compat';
 import { datatableLanguageOptions } from 'src/app/app.constants';
 import { ProductGroup } from 'src/app/models/product-group.model';
+import { Product } from 'src/app/models/product.model';
 let AdminProductComponent = class AdminProductComponent {
-    constructor(productGroupService, modalService, productService) {
+    constructor(productGroupService, modalService, productService, route) {
         this.productGroupService = productGroupService;
         this.modalService = modalService;
         this.productService = productService;
+        this.route = route;
         this.productGroups = [];
         this.products = [];
         this.dtOptions = {};
         this.dtTrigger = new Subject();
+        this.dtTriggerProduct = new Subject();
         this.productGroupModel = new ProductGroup();
     }
-    ngAfterViewInit() {}
+    ngAfterViewInit() {
+    }
     ngOnInit() {
         this.dtOptions = {
             pagingType: 'full_numbers',
@@ -30,12 +34,14 @@ let AdminProductComponent = class AdminProductComponent {
             this.productGroups = res;
             if (isTrigger)
                 this.dtTrigger.next();
-            this.getProducts();
+            this.getProducts(isTrigger);
         });
     }
-    getProducts() {
+    getProducts(isTrigger = false) {
         this.productService.getProducts().subscribe((res) => {
             this.products = res;
+            if (isTrigger)
+                this.dtTriggerProduct.next();
         });
     }
     addProductGroup(form) {
@@ -54,11 +60,20 @@ let AdminProductComponent = class AdminProductComponent {
             this.getProductGroups();
         });
     }
+    removeProduct(id) {
+        let model = new Product();
+        model.id = id;
+        this.productService.deleteProduct(model).subscribe((res) => {
+            this.getProducts();
+        });
+    }
     ngOnDestroy() {
         this.dtTrigger.unsubscribe();
+        this.dtTriggerProduct.unsubscribe();
     }
     triggerModal(content) {
-        this.modalService.open(content, { ariaLabelledBy: 'modal-basic-title' }).result.then((res) => {});
+        this.modalService.open(content, { ariaLabelledBy: 'modal-basic-title' }).result.then((res) => {
+        });
     }
 };
 AdminProductComponent = __decorate([

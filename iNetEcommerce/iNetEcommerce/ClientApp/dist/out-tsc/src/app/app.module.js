@@ -36,6 +36,9 @@ import { NewsDetailComponent } from './components/admin-components/news/news-det
 import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
 import { NgxDropzoneModule } from 'ngx-dropzone';
 import { AngularEditorModule } from '@kolkov/angular-editor';
+import { ImagePipe } from './pipes/image.pipe';
+import { AppNumberPipe } from './pipes/number.pipe';
+import { IvyCarouselModule } from 'angular-responsive-carousel';
 let AppModule = class AppModule {
 };
 AppModule = __decorate([
@@ -43,6 +46,9 @@ AppModule = __decorate([
         declarations: [
             //controls
             TextBoxComponent,
+            //pipes
+            ImagePipe,
+            AppNumberPipe,
             //Directives
             InvalidTypeDirective,
             InvalidmessageDirective,
@@ -77,7 +83,8 @@ AppModule = __decorate([
             DataTablesModule,
             NgxDropzoneModule,
             AngularEditorModule,
-            NgbModule
+            NgbModule,
+            IvyCarouselModule
         ],
         providers: [
             ErrorService,

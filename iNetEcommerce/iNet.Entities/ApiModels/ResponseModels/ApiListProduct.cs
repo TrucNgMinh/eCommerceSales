@@ -16,11 +16,12 @@ namespace iNet.Entities
         public decimal SellPriceMax { get; set; }
         public string Abstract { get; set; }
         public List<string> Images { get; set; }
+        public List<int> Groups { get; set; }
     }
 
     public static class ApiProductsEmm
     {
-        public static ApiListProduct ToListProductModel(this Product entity, List<string> images)
+        public static ApiListProduct ToListProductModel(this Product entity, List<string> images, List<int> groups)
         {
             return new ApiListProduct
             {
@@ -31,7 +32,8 @@ namespace iNet.Entities
                 SellPrice = entity.SellPrice,
                 SellPriceMax = entity.SellPriceMax,
                 Abstract = entity.Abstract,
-                Images = images
+                Images = images,
+                Groups = groups
             };
         }
     }

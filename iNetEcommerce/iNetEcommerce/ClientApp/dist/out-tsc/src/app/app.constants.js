@@ -39,6 +39,7 @@ export const API_ENDPOINT = {
     //BLOG
     ADD_EDIT_BLOG: "/Blog/AddEditBlog",
     GET_BLOGS: "/Blog/GetListBlog",
+    GET_BLOG_BY_ID: "/Blog/GetBlogById",
     DELETE_BLOG: "/Blog/DeleteBlog",
     //PRODUCT
     GET_PRODUCTS: "/Products/GetProducts",

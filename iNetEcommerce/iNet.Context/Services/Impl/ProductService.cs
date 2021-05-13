@@ -118,7 +118,8 @@ namespace iNet.Context.Services.Impl
             foreach (var product in products)
             {
                 var images = await _productImageRepo.GetAllAsync(p => p.ProductId == product.Id);
-                resuilts.Add(product.ToListProductModel(images.Select(p => p.Image.ToImageResource()).ToList()));
+                var groups = (await _productCategoryRepo.GetAllAsync(p => p.ProductId == product.Id)).Select(p => p.ProductGroupId).ToList();
+                resuilts.Add(product.ToListProductModel(images.Select(p => p.Image.ToImageResource()).ToList(), groups));
             }
 
             response.Data = resuilts;
