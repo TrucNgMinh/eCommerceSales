@@ -11,7 +11,7 @@ namespace iNet.Context
         {
             using (var context = new INetEcommerceContext())
             {
-                return context.Set<BlogPost>().Where(p=> p.IsDeactivate == includeDeactivate).Skip(skip).Take(take)
+                return context.Set<BlogPost>().Where(p=> p.IsDeactivate == includeDeactivate && !p.IsDeleted)
                                                 .Include(s => s.User)
                                                 .ToList();
             }

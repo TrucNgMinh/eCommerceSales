@@ -31,4 +31,8 @@ export class BlogService extends BaseService {
     return result;
   }
 
+  deleteBlog(model: Blog): Observable<any> {
+    return this.post(API_ENDPOINT.DELETE_BLOG, model, true);
+  }
+
 }

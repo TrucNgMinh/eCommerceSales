@@ -16,7 +16,7 @@ namespace iNet.Entities
         public decimal SellPriceMax { get; set; }
         public string Abstract { get; set; }
         public List<string> Images { get; set; }
-        public List<int> Groups { get; set; }
+        public List<int> ProductGroups { get; set; }
     }
 
     public static class ApiProductsEmm
@@ -33,7 +33,7 @@ namespace iNet.Entities
                 SellPriceMax = entity.SellPriceMax,
                 Abstract = entity.Abstract,
                 Images = images,
-                Groups = groups
+                ProductGroups = groups
             };
         }
     }

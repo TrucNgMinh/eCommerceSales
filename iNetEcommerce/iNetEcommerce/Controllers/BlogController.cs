@@ -102,7 +102,7 @@ namespace iNetEcommerce.Controllers
         [ProducesResponseType(Status400BadRequest)]
         [ProducesResponseType(Status500InternalServerError)]
         [Route("[action]")]
-        [Authorize]
+        //[Authorize]
         public async Task<IActionResult> AddEditBlog([FromForm] RequestBlogPost model, IFormFile imageUploaded)
         {
             try

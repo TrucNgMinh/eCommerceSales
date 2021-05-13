@@ -12,7 +12,7 @@ import { BlogService } from 'src/app/services/blog.service';
 })
 export class NewsDetailComponent implements OnInit {
 
-  blog: Blog = new Blog();
+  blog: Blog = new Blog(0);
   editorConfig: any;
   blogId: any;
 

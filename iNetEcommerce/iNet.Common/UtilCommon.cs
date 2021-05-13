@@ -216,7 +216,7 @@ namespace iNet.Common
             if (string.IsNullOrWhiteSpace(imageName))
                 return string.Empty;
 
-            var imageLink = Path.Combine(Directory.GetCurrentDirectory(), ApiConstants.FOLDELUPLOAD, imageName);
+            var imageLink = Path.Combine(DataConstants.IdentitySettings.ResourceUrl, "Resources", imageName);
 
             return imageLink;
         }

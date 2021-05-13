@@ -16,8 +16,11 @@ export class NewsAdminComponent implements OnInit, OnDestroy {
   blogs : Blog[] = [];
 
   constructor(private blogService: BlogService) { }
+  
   ngOnDestroy(): void {
+
     this.dtTrigger.unsubscribe();
+
   }
 
   ngOnInit(): void {
@@ -29,19 +32,33 @@ export class NewsAdminComponent implements OnInit, OnDestroy {
       language: datatableLanguageOptions,
     };
 
-    this.getBlogs();
+    this.getBlogs(true);
   }
 
-  getBlogs() {
+  getBlogs(isTrigger: boolean) {
+
     this.blogService.getBlogs().subscribe( (res) => {
+
       this.blogs = res;
-      this.dtTrigger.next();
+
+      if (isTrigger)
+
+        this.dtTrigger.next();
+        
     })
+
   }
 
   removeBlogs(id: number):void {
-   let model = new Blog();
-   model.id = id;
+
+   let model = new Blog(id);
+
+   this.blogService.deleteBlog(model).subscribe( (res) => {
+
+     this.getBlogs(false);
+
+   });
+
   }
 
 }

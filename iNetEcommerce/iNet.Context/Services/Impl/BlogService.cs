@@ -44,7 +44,7 @@ namespace iNet.Context.Services.Impl
         {
             var response = new ApiResponseModel();
             ApiBlogPost result = null;
-            var user = await _userRepository.GetByIdAsync(userToken.UserId);
+            var user = await _userRepository.GetByIdAsync(1);
 
             if (model.Id != 0)
             {
@@ -71,7 +71,7 @@ namespace iNet.Context.Services.Impl
                 {
                     Title = model.Title,
                     Body = model.Body,
-                    UserId = userToken.UserId,
+                    UserId = user.Id,
                     DateTimeCreate = DateTime.Now,
                     IsDeactivate = false,
                     Abstract = model.Abstract
