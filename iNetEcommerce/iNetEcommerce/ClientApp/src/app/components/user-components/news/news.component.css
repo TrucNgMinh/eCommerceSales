@@ -1,3 +1,25 @@
 .container {
     padding: 30px;
 }
+
+.card-title {
+    font-size: 20px;
+    font-weight: bold !important;
+    text-transform: uppercase;
+}
+
+.card-img-top.img-fluid {
+    height: 150px;
+    object-fit: cover;
+}
+
+.card-body {
+    height: 300px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.card-text {
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

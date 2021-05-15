@@ -54,7 +54,7 @@
                     </li>
 
                     <li class="has-submenu">
-                        <a>SẢN PHẨM</a>
+                        <a [routerLink]="['/products', 0]">SẢN PHẨM</a>
                         <ul class="submenu">
                             <li *ngFor="let productGroup of productGroups"><a [routerLink]="['/products', productGroup.id]"> {{ productGroup.name }}</a></li>
                         </ul>

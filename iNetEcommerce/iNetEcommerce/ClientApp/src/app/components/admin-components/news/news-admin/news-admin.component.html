@@ -14,7 +14,7 @@
                         <tr>
                             <th>STT</th>
                             <th>Tiêu đề</th>
-                            <th>Ngày đăng</th>
+                            <th>Tóm tắt</th>
                             <th>Ngày cập nhật</th>
                             <th>Tác vụ</th>
                         </tr>
@@ -24,7 +24,7 @@
                             <td>{{ i + 1 }}</td>
                             <td>{{ blog.title }}</td>
                             <td>{{ blog.abstract }}</td>
-                            <td>{{ blog.dateTimeCreate }}</td>
+                            <td>{{ blog.dateTimeCreate | date:'d/M/yy, h:mm' }}</td>
                             <td>
                                 <button class="btn btn-warning btn-sm btn-icon mr-2" [routerLink]="['/admin/admin-news-detail', blog.id]" title="Chỉnh sửa"><i class="fa fa-pencil"></i></button>
                                 <button class="btn btn-danger btn-sm btn-icon" (click)="removeBlogs(blog.id)" title="Xóa"><i class="fa fa-times"></i></button>

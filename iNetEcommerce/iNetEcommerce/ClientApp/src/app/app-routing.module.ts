@@ -17,6 +17,7 @@ import { AdminProductGroupComponent } from './components/admin-components/produc
 import { AdminProductDetailComponent } from './components/admin-components/products/admin-product-detail/admin-product-detail.component';
 import { NewsAdminComponent } from './components/admin-components/news/news-admin/news-admin.component';
 import { NewsDetailComponent } from './components/admin-components/news/news-detail/news-detail.component';
+import { NewsUserDetailComponent } from './components/user-components/news-user-detail/news-user-detail.component';
 
 const routes: Routes = [
   {
@@ -54,6 +55,10 @@ const routes: Routes = [
       {
         path: 'product-detail/:id',
         component: ProductDetailComponent
+      },
+      {
+        path: 'news-user-detail/:id',
+        component: NewsUserDetailComponent
       }
 
     ]
