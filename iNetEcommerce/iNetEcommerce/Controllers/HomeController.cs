@@ -35,13 +35,13 @@ namespace iNetEcommerce.Controllers
         [Produces("application/json")]
         [Route("[action]")]
         [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
-        public async Task<IActionResult> UpdateBanner(IFormFile banner1, IFormFile banner2, IFormFile banner3, IFormFile banner4)
+        public async Task<IActionResult> UpdateBanner(IFormFile bannerFile1, IFormFile bannerFile2, IFormFile bannerFile3, IFormFile bannerFile4)
         {
             try
             {
-                if (banner1 != null|| banner2 != null|| banner3 != null|| banner4 != null)
+                if (bannerFile1 != null|| bannerFile2 != null|| bannerFile3 != null|| bannerFile4 != null)
                 {
-                    return GetResult(await _generalService.UpdateBanner(banner1, banner2, banner3, banner4));
+                    return GetResult(await _generalService.UpdateBanner(bannerFile1, bannerFile2, bannerFile3, bannerFile4));
                 }
                 else
                 {

@@ -2,173 +2,24 @@
     <div class="row">
         <div class="col-xs-12 col-lg-12">
             <div class="row">
-                <div class="col-xs-12 col-sm-12 col-lg-5 details-product">
-                    <div class="owl-carousel owl-theme product-images large-image owl-loaded owl-drag">
-                        <div class="owl-stage-outer">
-                            <div class="owl-stage" style="transform: translate3d(0px, 0px, 0px); transition: all 0.25s ease 0s; width: 1365px;">
-                                <div class="owl-item active" style="width: 445px; margin-right: 10px;">
-                                    <div class="item">
-                                        <a href="//bizweb.dktcdn.net/thumb/large/100/183/149/products/pcb40-xi-mang-long-son.jpg?v=1552555942807" data-image="//bizweb.dktcdn.net/thumb/large/100/183/149/products/pcb40-xi-mang-long-son.jpg?v=1552555942807" data-zoom-image="//bizweb.dktcdn.net/thumb/large/100/183/149/products/pcb40-xi-mang-long-son.jpg?v=1552555942807">
-                                            <img src="//bizweb.dktcdn.net/thumb/large/100/183/149/products/pcb40-xi-mang-long-son.jpg?v=1552555942807" alt="">
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="owl-item" style="width: 445px; margin-right: 10px;">
-                                    <div class="item">
-                                        <a href="//bizweb.dktcdn.net/thumb/large/100/183/149/products/longson2.jpg?v=1552555956003" data-image="//bizweb.dktcdn.net/thumb/large/100/183/149/products/longson2.jpg?v=1552555956003" data-zoom-image="//bizweb.dktcdn.net/thumb/large/100/183/149/products/longson2.jpg?v=1552555956003">
-                                            <img src="//bizweb.dktcdn.net/thumb/large/100/183/149/products/longson2.jpg?v=1552555956003" alt="">
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="owl-item" style="width: 445px; margin-right: 10px;">
-                                    <div class="item">
-                                        <a href="//bizweb.dktcdn.net/thumb/large/100/183/149/products/ximang-ximanglongson1.jpg?v=1552555964397" data-image="//bizweb.dktcdn.net/thumb/large/100/183/149/products/ximang-ximanglongson1.jpg?v=1552555964397" data-zoom-image="//bizweb.dktcdn.net/thumb/large/100/183/149/products/ximang-ximanglongson1.jpg?v=1552555964397">
-                                            <img src="//bizweb.dktcdn.net/thumb/large/100/183/149/products/ximang-ximanglongson1.jpg?v=1552555964397" alt="">
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="owl-nav">
-                            <div class="owl-prev disabled"><i class="fa fa-chevron-left" aria-hidden="true"></i></div>
-                            <div class="owl-next"><i class="fa fa-chevron-right" aria-hidden="true"></i></div>
-                        </div>
-                        <div class="owl-dots disabled"></div>
-                    </div>
-                    <div class="owl-carousel owl-theme thumbnail-product owl-loaded owl-drag">
-                        <div class="owl-stage-outer">
-                            <div class="owl-stage" style="transform: translate3d(0px, 0px, 0px); transition: all 0s ease 0s; width: 349px;">
-                                <div class="owl-item active" style="width: 96.25px; margin-right: 20px;">
-                                    <div class="item">
-                                        <img src="//bizweb.dktcdn.net/thumb/small/100/183/149/products/pcb40-xi-mang-long-son.jpg?v=1552555942807" alt="">
-                                    </div>
-                                </div>
-                                <div class="owl-item active" style="width: 96.25px; margin-right: 20px;">
-                                    <div class="item">
-                                        <img src="//bizweb.dktcdn.net/thumb/small/100/183/149/products/longson2.jpg?v=1552555956003" alt="">
-                                    </div>
-                                </div>
-                                <div class="owl-item active" style="width: 96.25px; margin-right: 20px;">
-                                    <div class="item">
-                                        <img src="//bizweb.dktcdn.net/thumb/small/100/183/149/products/ximang-ximanglongson1.jpg?v=1552555964397" alt="">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="owl-nav disabled">
-                            <div class="owl-prev"></div>
-                            <div class="owl-next"></div>
-                        </div>
-                        <div class="owl-dots disabled"></div>
-                    </div>
+                <div class="col-xs-12 col-sm-12 col-lg-4 details-product">
+                    <carousel [images]="images" [cellWidth]="'100%'" [height]="400" [autoplay]="true" [dots]="true" [loop]="true">
+                    </carousel>
                 </div>
 
-                <div class="product-shop col-xs-12 col-sm-12 col-lg-7 details-product">
-                    <h1 class="product-name" itemprop="name">Xi măng Long Sơn PCB40</h1>
+                <div class="product-shop col-xs-12 col-sm-12 col-lg-8 details-product">
+                    <h1 class="product-name" itemprop="name">{{product.name}}</h1>
                     <ul class="info-model-pro">
-                        <li itemprop="brand"><span><b>Thương hiệu:</b> Long Sơn</span></li>
-                        <li>
-                            <b>Tình Trạng:&nbsp;</b>
-
-                            <span class="availability in-stock">Còn hàng </span>
-
-                        </li>
+                        <li><span>{{product.abstract}}</span></li>
                     </ul>
-
-
                     <div class="price-box">
-
-
-
-
-                        <div class="special-price"><span class="price product-price">73.000₫</span> </div>
-                        <!-- Giá -->
-
-
-
-
+                        <div class="special-price"><span class="price product-price">{{product.sellPrice}}đ - {{product.sellPriceMax}}đ</span> </div>
                     </div>
-
-
-                    <div class="product-description product_description rte">
-                        <p><span style="font-size:16px;">Chất lượng xi măng Dân dụng Long Sơn PCB40 luôn đảm bảo ổn
-                                định. Đặc biệt, cường đô xi măng luôn có độ dư mác lớn, tiết kiệm lượng xi măng sử
-                                dụng.</span></p>
-                        <p><span style="font-size:16px;">LONG SƠN PCB40&nbsp; - NÂNG CAO TỐI ĐA CHẤT LƯỢNG NỀN MÓNG CÔNG
-                                TRÌNH</span></p>
+                    <div class="product-description product_description rte" [innerHTML]="product.content">
                     </div>
 
 
                 </div>
-                <!-- <div class="col-xs-12">
-                    <ul class="nav nav-tabs nav-tab-detailspro" role="tablist">
-                        <li class="nav-item">
-                            <a class="nav-link active" data-toggle="tab" href="#home" role="tab">THÔNG TIN SẢN PHẨM</a>
-                        </li>
-
-
-                    </ul>
-                    <div class="tab-content tab-content-detailspro">
-                        <div class="tab-pane fade in active rte" id="home" role="tabpanel">
-                            <h2 style="text-align: center;"><u><span style="font-size:16px;"><a
-                                            href="http://ximanghuydong.vn/xi-mang-holcim-da-dung-power-s-5836124.html"><span
-                                                style="color:#3498db;">Xi măng&nbsp;</span></a><span
-                                            style="color:#3498db;">Long Sơn PCB40</span></span></u></h2>
-                            <p style="text-align: center;"><span style="font-size:16px;">Trọng lượng: 50Kg</span></p>
-                            <p style="text-align: center;"><span style="font-size:16px;">TCVN 6260: 2009</span></p>
-                            <p style="text-align: center;"><span style="font-size:16px;"><img data-thumb="original"
-                                        original-height="320" original-width="273"
-                                        src="//bizweb.dktcdn.net/100/183/149/files/pcb40-xi-mang-long-son.jpg?v=1552554323552"></span>
-                            </p>
-                            <p>&nbsp;</p>
-                            <ul>
-                                <li><span style="font-size:16px;">Sản phẩm xi măng Poóclăng hỗn hợp Dân dụng PCB 40 Long
-                                        Sơn giúp làm tăng độ dẻo của bê tông, tăng cường tính chống thấm, chống xâm thực
-                                        đối với môi trường, tăng độ bền vững theo thời gian, rất phù hợp với khí hậu
-                                        nhiệt đới của Việt Nam. Ưu điểm của xi măng Poóclăng hỗn hợp Dân dụng PCB 40
-                                        Long Sơn.</span></li>
-                            </ul>
-                            <ul>
-                                <li><span style="font-size:16px;">Chất lượng xi măng Dân dụng Long Sơn PCB40 luôn đảm
-                                        bảo ổn định. Đặc biệt, cường đô xi măng luôn có độ dư mác lớn, tiết kiệm lượng
-                                        xi măng sử dụng.</span></li>
-                            </ul>
-                            <ul>
-                                <li><span style="font-size:16px;">Xi măng Long Sơn có tốc độ phát triển cường độ ban đầu
-                                        (R3, R7) nhanh, giúp tháo ván khuôn sớm hơn, rút ngắn thời gian thi công, bê
-                                        tông có cường độ cuối cùng cao.</span></li>
-                            </ul>
-                            <ul>
-                                <li><span style="font-size:16px;">Sản phẩm PCB 40 có khả năng chống lại xâm thực Sunfat
-                                        có lợi hơn cho viêc xây dựng các công trình ngầm dưới mặt đất, mặt nước &amp;
-                                        những vùng nhiễm mặn. Mặt khác độ tỏa nhiệt khi thi công thấp, thuận lợi cho thi
-                                        công bê tông khối lớn.</span></li>
-                            </ul>
-                            <ul>
-                                <li><span style="font-size:16px;">Hàm lượng Vôi tự do &amp; MgO trong xi măng thấp nên
-                                        không bị trương nở thể tích sau khi thi công, sản phẩm bê tông vữa xây trát sau
-                                        khi sử dụng xi măng Long Sơn sẽ không có hiện tượng nứt vỡ khối bê tông &amp;
-                                        kết cấu tường ngăn sau khi đưa vào sử dụng . Hàm lượng tổng kiềm R2O trong xi
-                                        măng rất thấp &lt; 0.6 % loại bỏ được nguyên nhân ăn mòn &amp; phá hủy cấu trúc
-                                        bê tông &amp; tường xây cho các công trình.</span><br> &nbsp;
-                                </li>
-                                <li><span style="font-size:16px;"><img data-thumb="original" original-height="454"
-                                            original-width="801"
-                                            src="//bizweb.dktcdn.net/100/183/149/files/thong-so-ky-thuat-ls-png.png?v=1552555828329"></span>
-                                </li>
-                            </ul>
-                            <p>&nbsp;</p>
-                            <p><span style="font-size:16px;">Xi măng Long Sơn PCB 40 phù hợp với cho việc đổ <strong>bê
-                                        tông mái, dầm, cột với độ bền cao.</strong></span></p>
-                            <h4 style="line-height: 200%; text-align: justify;"><span style="font-size:16px;">Xi măng
-                                    Long Sơn&nbsp;PCB40&nbsp;được phân phối chính thức bởi&nbsp;<a
-                                        href="http://ximanghuydong.vn/">Nhà phân phối Xi măng</a>&nbsp;Huy Đồng</span>
-                            </h4>
-                        </div>
-
-
-                    </div>
-                </div> -->
             </div>
         </div>
     </div>

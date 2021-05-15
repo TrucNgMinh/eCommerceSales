@@ -10,12 +10,12 @@
                             </div>
                             <ul class="category-list">
                                 <li>
-                                    <a class="active">
+                                    <a class="category-list-item active" [attr.data-groupid]="0">
                                         Tất cả
                                     </a>
                                 </li>
                                 <li *ngFor="let product of productGroups">
-                                    <a>
+                                    <a class="category-list-item" [attr.data-groupid]="product.id" (click)="loadByGroup(product.id)">
                                         {{product.name}}
                                     </a>
                                 </li>
@@ -29,7 +29,7 @@
                         <div *ngFor="let product of products" class="shop-item col-lg-4 col-md-6 col-sm-6 col-xs-12">
                             <div class="inner-box">
                                 <div class="image">
-                                    <a> <img [src]="product.images[0] | image" alt="" style="width: 348px;height: auto;"></a>
+                                    <a [routerLink]="['/product-detail', product.id]"> <img [src]="product.images[0] | image" alt="" style="width: 348px;height: auto;"></a>
                                 </div>
                                 <div class="lower-content">
                                     <h3><a> {{product.name}} </a></h3>
@@ -38,7 +38,7 @@
                         </div>
                     </div>
                     <div *ngIf="products?.length === 0" class="row clearfix">
-                        <div class="shop-item col-lg-4 col-md-6 col-sm-6 col-xs-12">
+                        <div class="shop-item  col-xs-12">
                             <div class="inner-box">
                                 <h2>Không có sản phẩm nào!!!</h2>
                             </div>

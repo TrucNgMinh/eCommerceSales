@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { ImageModel } from 'src/app/models/image.model';
 import { Product } from 'src/app/models/product.model';
 import { ProductService } from 'src/app/services/product.service';
 
@@ -12,6 +13,7 @@ export class ProductDetailComponent implements OnInit {
 
   productId: any;
   product: Product = new Product();
+  images: ImageModel[] = [];
 
   constructor(
     private productService: ProductService,
@@ -25,9 +27,16 @@ export class ProductDetailComponent implements OnInit {
     
   }
 
+  generateImageCasoul():void {
+    this.product.images.forEach(element => {
+      this.images.push( new ImageModel(element));
+    });
+  }
+
   getProduct(id:number): void {
     this.productService.getProductById(id).subscribe ( (result) => {
       this.product = result;
+      this.generateImageCasoul();
     })
   }
 

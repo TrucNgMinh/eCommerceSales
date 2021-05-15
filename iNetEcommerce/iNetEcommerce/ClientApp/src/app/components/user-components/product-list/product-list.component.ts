@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { ProductGroup } from 'src/app/models/product-group.model';
+import { Product } from 'src/app/models/product.model';
 import { ProductGroupService } from 'src/app/services/product-group.service';
 import { ProductService } from 'src/app/services/product.service';
 
@@ -8,11 +10,11 @@ import { ProductService } from 'src/app/services/product.service';
   templateUrl: './product-list.component.html',
   styleUrls: ['./product-list.component.css']
 })
-export class ProductListComponent implements OnInit {
+export class ProductListComponent implements OnInit, AfterViewInit {
 
-  productGroups: any;
-  productsSrc: any;
-  products: any;
+  productGroups: ProductGroup[] = [];
+  productsSrc: Product[] = [];
+  products: Product[] = [];
   productGroupId: any;
 
   constructor(
@@ -21,6 +23,16 @@ export class ProductListComponent implements OnInit {
     private router: Router,
     private route: ActivatedRoute
     ) { }
+
+  ngAfterViewInit(): void {
+    let that = this;
+    $(".category-list-item").on("click", function(){
+      let $listItem = $(".category-list-item");
+      $.each( $listItem, function( key, value ) {
+        $(value).removeClass("active");
+      });
+    })
+  }
 
   ngOnInit(): void {
 
@@ -50,7 +62,7 @@ export class ProductListComponent implements OnInit {
 
         this.productsSrc = prods;
 
-        this.loadByGroup();
+        this.loadByGroup(this.productGroupId);
 
       });
 
@@ -58,9 +70,8 @@ export class ProductListComponent implements OnInit {
 
   }
 
-  loadByGroup():void {
-    console.log(this.productsSrc);
-    this.products = this.productsSrc;
+  loadByGroup(groupId: number):void {
+    this.products = this.productsSrc.filter(p=>p.productGroups.includes(groupId));
   }
 
 }

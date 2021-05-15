@@ -6968,3 +6968,8 @@ img {
 .carousel {
     z-index: 0 !important;
 }
+
+.details-product .carousel .carousel-container {
+    border: 1px dashed !important;
+    border-radius: 10px !important;
+}
