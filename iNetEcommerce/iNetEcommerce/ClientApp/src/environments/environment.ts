@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiHost: 'https://localhost:44381/',
+  apiHost: 'http://vandung.baohoxemay.com/',
   apiPrefix: 'api/v1'
 };
 
