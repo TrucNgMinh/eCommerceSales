@@ -25,7 +25,6 @@ let AdminProductDetailComponent = class AdminProductDetailComponent {
             if (this.productId > 0) {
                 this.productService.getProductAdmin(this.productId).subscribe((res) => {
                     this.productModel = res;
-                    console.log(this.productModel);
                     this.getProductGroups();
                 });
             }
@@ -34,6 +33,7 @@ let AdminProductDetailComponent = class AdminProductDetailComponent {
             }
         });
         this.editorConfig = ngEditorOptions;
+        this.editorConfigAbstract = ngEditorOptions;
         this.productGroupDropListSettings = {
             singleSelection: false,
             idField: 'id',

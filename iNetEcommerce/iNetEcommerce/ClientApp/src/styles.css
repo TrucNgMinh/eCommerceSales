@@ -255,3 +255,98 @@ a.fc-more {
     border: 1px solid #337ab7 !important;
     background: #02c0ce !important;
 }
+
+.underline
+{
+    display: inline-block;
+    width: 160px;
+    height: 2px;
+    background-color: red;
+    margin-bottom: 10px;
+}
+.main_heading h3
+{
+	font-size:28px;
+    font-weight: 300;
+    text-align: center;
+    line-height: 35px;
+    color: #007dc5;
+}
+.features-div
+{
+	text-align: center;
+    font-style: normal !important;
+    -webkit-transition: all .15s linear;
+    -moz-transition: all .15s linear;
+    -ms-transition: all .15s linear;
+    -o-transition: all .15s linear;
+    transition: all .15s linear;
+}
+.features-div .fa
+{
+    font-style: normal !important;
+}
+.features-div .h4
+{
+    line-height: 55px;
+}
+.features-div:hover
+{
+	margin-top: -10px;
+}
+.features-div i
+{
+	font-size: 35px;
+    font-weight: 300;
+    color: #65CD00;
+}
+.features-div h4
+{
+    color: #393939;
+    font-weight: 400;
+}
+.features-div p
+{
+    color: #636363;
+    font-size: 17px;
+    font-weight: 300;
+    line-height: 25px;
+}
+@media (min-width: 1200px) {
+    .features-div
+    {
+        text-align: center;
+        -webkit-transition: all .15s linear;
+        -moz-transition: all .15s linear;
+        -ms-transition: all .15s linear;
+        -o-transition: all .15s linear;
+        transition: all .15s linear;
+    }
+    
+    .features-div:hover
+    {
+        margin-top: -10px;
+    }
+    
+    
+    .features-div i
+    {
+        font-size: 35px;
+        font-weight: 300;
+        color: #65CD00;
+    }
+    
+    .features-div h4
+    {
+        color: #393939;
+        font-weight: 400;
+    }
+    
+    .features-div p
+    {
+        color: #636363;
+        font-size: 17px;
+        font-weight: 300;
+        line-height: 25px;
+    }
+}

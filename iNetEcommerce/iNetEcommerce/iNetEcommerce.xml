@@ -4,10 +4,147 @@
         <name>iNetEcommerce</name>
     </assembly>
     <members>
-        <member name="T:iNetEcommerce.Controllers.OrdersController">
+        <member name="M:iNetEcommerce.Controllers.BlogController.GetListBlog">
+            <summary>
+            Get blogs
+            </summary>
+            <param name="model"></param>
+            <returns>The requested blogs.</returns>
+            <response code="200">Get blogs was successfully</response>
+            <response code="500">Server Error.</response>
+            
+        </member>
+        <member name="M:iNetEcommerce.Controllers.BlogController.GetBlogById(System.Int32)">
+            <summary>
+            Get blogs
+            </summary>
+            <param name="model"></param>
+            <returns>Get blog by Id.</returns>
+            <response code="200">Get blogs was successfully</response>
+            <response code="500">Server Error.</response>
+            
+        </member>
+        <member name="M:iNetEcommerce.Controllers.BlogController.AddEditBlog(iNet.Entities.RequestBlogPost,Microsoft.AspNetCore.Http.IFormFile)">
+            <summary>
+            Add/Edit Blog
+            </summary>
+            <param name="model"></param>
+            <returns>The requested Blog.</returns>
+            <response code="200">Blog was successfully</response>
+            <response code="500">Server Error.</response>
+            
+        </member>
+        <member name="M:iNetEcommerce.Controllers.BlogController.DeleteBlog(iNet.Entities.RequestBlogPost)">
+            <summary>
+            Delete Blog
+            </summary>
+            
+        </member>
+        <member name="T:iNetEcommerce.Controllers.HomeController">
             <summary>
             Represents a RESTful service of General.
             </summary>
+        </member>
+        <member name="M:iNetEcommerce.Controllers.HomeController.UpdateBanner(Microsoft.AspNetCore.Http.IFormFile,Microsoft.AspNetCore.Http.IFormFile,Microsoft.AspNetCore.Http.IFormFile,Microsoft.AspNetCore.Http.IFormFile)">
+            <summary>
+            Update Banner
+            </summary>
+        </member>
+        <member name="M:iNetEcommerce.Controllers.HomeController.GetSetting">
+            <summary>
+            Get Setting ApiSettingModel
+            </summary>
+        </member>
+        <member name="M:iNetEcommerce.Controllers.ProductsController.GetProductGroups">
+            <summary>
+            Get product groups
+            </summary>
+            <param name="model"></param>
+            <returns>The requested Product Group.</returns>
+            <response code="200">Get Product Group was successfully</response>
+            <response code="500">Server Error.</response>
+            
+        </member>
+        <member name="M:iNetEcommerce.Controllers.ProductsController.AddEditProductGroup(iNet.Entities.ApiProductGroup)">
+            <summary>
+            Add/Edit Product Group
+            </summary>
+            <param name="model"></param>
+            <returns>The requested Product Group.</returns>
+            <response code="200">Product Group was successfully</response>
+            <response code="500">Server Error.</response>
+            
+        </member>
+        <member name="M:iNetEcommerce.Controllers.ProductsController.DeleteProductGroup(iNet.Entities.ApiProductGroup)">
+            <summary>
+            Delete Product Group
+            </summary>
+            <param name="model"></param>
+            <returns>Delete Product Group.</returns>
+            <response code="200">Delete Product Group was successfully</response>
+            <response code="500">Server Error.</response>
+            
+        </member>
+        <member name="M:iNetEcommerce.Controllers.ProductsController.GetProducts">
+            <summary>
+            Get products
+            </summary>
+            <param name="model"></param>
+            <returns>The requested Product.</returns>
+            <response code="200">Get Product was successfully</response>
+            <response code="500">Server Error.</response>
+            
+        </member>
+        <member name="M:iNetEcommerce.Controllers.ProductsController.GetProduct(System.Int32)">
+            <summary>
+            Get product
+            </summary>
+            <param name="model"></param>
+            <returns>The requested Product.</returns>
+            <response code="200">Get Product was successfully</response>
+            <response code="500">Server Error.</response>
+            
+        </member>
+        <member name="M:iNetEcommerce.Controllers.ProductsController.GetProductAdmin(System.Int32)">
+            <summary>
+            Get product
+            </summary>
+            <param name="model"></param>
+            <returns>The requested Product.</returns>
+            <response code="200">Get Product was successfully</response>
+            <response code="500">Server Error.</response>
+            
+        </member>
+        <member name="M:iNetEcommerce.Controllers.ProductsController.DeleteProduct(iNet.Entities.ApiProduct)">
+            <summary>
+            Delete Product
+            </summary>
+            <param name="model"></param>
+            <returns>Delete Product.</returns>
+            <response code="200">Delete Product was successfully</response>
+            <response code="500">Server Error.</response>
+            
+        </member>
+        <member name="M:iNetEcommerce.Controllers.ProductsController.AddEditProduct(iNet.Entities.ApiProduct,Microsoft.AspNetCore.Http.IFormFile,Microsoft.AspNetCore.Http.IFormFile,Microsoft.AspNetCore.Http.IFormFile,Microsoft.AspNetCore.Http.IFormFile)">
+            <summary>
+            Add/Edit Product
+            </summary>
+            <param name="model"></param>
+            <returns>The requested Product.</returns>
+            <response code="200">Product was successfully</response>
+            <response code="500">Server Error.</response>
+            
+        </member>
+        <member name="M:iNetEcommerce.Controllers.UserController.Login(iNet.Entities.RequestUserLogin)">
+            <summary>
+            Get user token
+            </summary>
+            <param name="user">The requested user identifier.</param>
+            <returns>The requested user.</returns>
+            <response code="200">The user was successfully retrieved.</response>
+            <response code="400">The user is not found</response>
+            <response code="500">Server Error.</response>
+            
         </member>
         <member name="M:iNetEcommerce.Startup.#ctor(Microsoft.AspNetCore.Hosting.IHostingEnvironment)">
             <summary>
