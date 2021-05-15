@@ -48,7 +48,6 @@
                         <tr>
                             <th>STT</th>
                             <th>TÊN SẢN PHẨM</th>
-                            <th>MÔ TẢ</th>
                             <th>GIÁ GỐC</th>
                             <th>GIÁ BÁN</th>
                             <th>Đơn vị</th>
@@ -59,7 +58,6 @@
                         <tr *ngFor="let product of products; index as i;">
                             <td>{{ i + 1}}</td>
                             <td>{{ product.name }}</td>
-                            <td>{{ product.abstract }}</td>
                             <td>{{ product.price }}</td>
                             <td>{{ product.sellPrice }} - {{ product.sellPriceMax }}</td>
                             <td>{{ product.unit }}</td>

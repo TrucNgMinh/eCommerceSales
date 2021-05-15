@@ -9,8 +9,8 @@
                                 <h2>Danh Mục</h2>
                             </div>
                             <ul class="category-list">
-                                <li>
-                                    <a class="category-list-item active" [attr.data-groupid]="0">
+                                <li (click)="loadByGroup(0)">
+                                    <a class="category-list-item active" (click)="loadByGroup(0)" [attr.data-groupid]="0">
                                         Tất cả
                                     </a>
                                 </li>

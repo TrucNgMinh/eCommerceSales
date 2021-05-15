@@ -35,14 +35,16 @@
                     </div>
                     <div class="form-group row m-b-20">
                         <div class="col-12 col-sm-6 col-md-6">
-                            <app-text-box type="text" title="Mô tả tóm tắt" name="short-desc" placeholder="Nhập mô tả" [(ngModel)]="productModel.abstract">
-                            </app-text-box>
-                        </div>
-                        <div class="col-12 col-sm-6 col-md-6">
                             <app-text-box type="text" title="Đơn vị bán" name="unit" placeholder="Nhập đơn vị thanh toán" [(ngModel)]="productModel.unit">
                             </app-text-box>
                         </div>
 
+                    </div>
+                    <div class="form-group row m-b-20">
+                        <div class="col-12">
+                            <div class="label split-label mb-1 text-dark">Mô tả tóm tắt <br></div>
+                            <angular-editor name="abstract" [config]="editorConfigAbstract" [(ngModel)]="productModel.abstract"></angular-editor>
+                        </div>
                     </div>
                     <div class="form-group row m-b-20">
                         <div class="col-12">

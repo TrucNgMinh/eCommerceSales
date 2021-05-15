@@ -25,13 +25,7 @@ export class ProductListComponent implements OnInit, AfterViewInit {
     ) { }
 
   ngAfterViewInit(): void {
-    let that = this;
-    $(".category-list-item").on("click", function(){
-      let $listItem = $(".category-list-item");
-      $.each( $listItem, function( key, value ) {
-        $(value).removeClass("active");
-      });
-    })
+
   }
 
   ngOnInit(): void {
@@ -71,7 +65,11 @@ export class ProductListComponent implements OnInit, AfterViewInit {
   }
 
   loadByGroup(groupId: number):void {
-    this.products = this.productsSrc.filter(p=>p.productGroups.includes(groupId));
+    if (groupId == 0) {
+      this.products = this.productsSrc;
+    }else {
+      this.products = this.productsSrc.filter(p=>p.productGroups.includes(groupId));
+    }
   }
 
 }

@@ -19,6 +19,7 @@ export class AdminProductDetailComponent implements OnInit, OnDestroy, AfterView
   productGroupDropListSelected: ProductGroup[] = [];
   productGroupDropListSettings: IDropdownSettings = {};
   editorConfig: any;
+  editorConfigAbstract: any;
   productId: any;
 
   constructor(
@@ -52,6 +53,8 @@ export class AdminProductDetailComponent implements OnInit, OnDestroy, AfterView
     })
 
     this.editorConfig = ngEditorOptions;
+
+    this.editorConfigAbstract = ngEditorOptions;
 
     this.productGroupDropListSettings = {
       singleSelection: false,
