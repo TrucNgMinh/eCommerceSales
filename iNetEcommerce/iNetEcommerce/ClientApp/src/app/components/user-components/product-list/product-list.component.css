@@ -438,3 +438,7 @@ img {
     display: flex;
     justify-content: center;
 }
+
+.carousel-cells .carousel-cell {
+    border-radius: 20px !important;
+}
