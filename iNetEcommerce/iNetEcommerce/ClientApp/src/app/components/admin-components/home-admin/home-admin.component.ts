@@ -29,7 +29,6 @@ export class HomeAdminComponent implements OnInit, AfterViewInit {
   getHomeSetting(): void {
     this.homeService.getSetting().subscribe((result) => {
       this.homeModel = result;
-      console.log(this.homeModel);
     })
   }
 
