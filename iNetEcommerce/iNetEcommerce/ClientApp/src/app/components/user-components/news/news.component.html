@@ -1,4 +1,17 @@
 <div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="page-title-box">
+                <div class="btn-group float-right">
+                    <ol class="breadcrumb hide-phone p-0 m-0">
+                        <li class="breadcrumb-item"><a routerLink="/">Trang chủ</a></li>
+                        <li class="breadcrumb-item active">Tin tức</li>
+                    </ol>
+                </div>
+                <!-- <h4 class="page-title">Cards</h4> -->
+            </div>
+        </div>
+    </div>
     <div *ngIf="blogs.length !== 0" class="row m-b-30">
         <div *ngFor="let blog of blogs" class="col-12 col-xs-6 col-md-6 col-lg-6 mb-5">
             <div class="card-deck-wrapper">

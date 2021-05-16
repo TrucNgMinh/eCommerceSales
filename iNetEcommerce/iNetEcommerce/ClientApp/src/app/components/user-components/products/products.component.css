@@ -140,6 +140,7 @@ img {
     padding-right: 80px;
     border: 1px solid #dddddd;
     border-top: 0;
+    height: 95px;
 }
 
 .service-block .lower-content:before {

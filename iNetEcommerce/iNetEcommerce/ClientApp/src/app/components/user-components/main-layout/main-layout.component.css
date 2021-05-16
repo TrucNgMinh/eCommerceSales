@@ -1062,6 +1062,13 @@ svg rect {
 
 @media (max-width: 1499px) {
     #topnav .navigation-menu>li>a {
-        font-size: 12px;
+        font-size: 15px;
+    }
+    #topnav .navbar-custom.active {
+        height: 60px;
+    }
+    #topnav .navigation-menu>li>a {
+        padding-top: 13px;
+        padding-bottom: 20px;
     }
 }

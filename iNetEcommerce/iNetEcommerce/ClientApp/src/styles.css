@@ -255,3 +255,36 @@ a.fc-more {
     border: 1px solid #337ab7 !important;
     background: #02c0ce !important;
 }
+
+div.info-title {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    text-align: left;
+    position: relative;
+}
+
+div.info-title h2 {
+    display: block;
+    position: relative;
+    height: auto;
+    font-family: robotoC;
+    color: #0364b5;
+    font-size: 24px;
+    margin: 20px 0px;
+    text-transform: uppercase;
+    padding-left: 0px;
+    box-sizing: border-box;
+    display: inline-block;
+    margin-top: 0px;
+}
+
+.info-title h2:before {
+    content: '';
+    position: absolute;
+    width: 2000px;
+    height: 1px;
+    background: #ccc;
+    right: -2010px;
+    top: 18px;
+}

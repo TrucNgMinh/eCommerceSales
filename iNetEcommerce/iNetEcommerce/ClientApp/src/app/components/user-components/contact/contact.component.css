@@ -1,3 +1,7 @@
+.container {
+    padding-top: 20px;
+}
+
 .vc_row.wpb_row.vc_row-fluid {
     border-bottom-width: 1px!important;
     border-bottom-color: #7a7a7a!important;
@@ -20,9 +24,7 @@
 .vc_col-has-fill>.vc_column-inner,
 .vc_row-has-fill+.vc_row-full-width+.vc_row>.vc_column_container>.vc_column-inner,
 .vc_row-has-fill+.vc_row>.vc_column_container>.vc_column-inner,
-.vc_row-has-fill>.vc_column_container>.vc_column-inner {
-    padding-top: 35px;
-}
+.vc_row-has-fill>.vc_column_container>.vc_column-inner {}
 
 .vc_column_container>.vc_column-inner {
     box-sizing: border-box;
