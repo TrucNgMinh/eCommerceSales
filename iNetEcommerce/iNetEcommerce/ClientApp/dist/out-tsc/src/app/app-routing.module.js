@@ -16,6 +16,7 @@ import { AdminProductGroupComponent } from './components/admin-components/produc
 import { AdminProductDetailComponent } from './components/admin-components/products/admin-product-detail/admin-product-detail.component';
 import { NewsAdminComponent } from './components/admin-components/news/news-admin/news-admin.component';
 import { NewsDetailComponent } from './components/admin-components/news/news-detail/news-detail.component';
+import { NewsUserDetailComponent } from './components/user-components/news-user-detail/news-user-detail.component';
 const routes = [
     {
         path: '',
@@ -26,7 +27,7 @@ const routes = [
                 component: HomeUserComponent
             },
             {
-                path: 'products',
+                path: 'products/:id',
                 component: ProductListComponent
             },
             {
@@ -50,8 +51,12 @@ const routes = [
                 component: ContactComponent
             },
             {
-                path: 'product-detail',
+                path: 'product-detail/:id',
                 component: ProductDetailComponent
+            },
+            {
+                path: 'news-user-detail/:id',
+                component: NewsUserDetailComponent
             }
         ]
     },

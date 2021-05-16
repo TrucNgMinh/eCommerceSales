@@ -1,8 +1,17 @@
 import { __decorate } from "tslib";
 import { Component } from '@angular/core';
 let NewsComponent = class NewsComponent {
-    constructor() { }
+    constructor(blogService) {
+        this.blogService = blogService;
+        this.blogs = [];
+    }
     ngOnInit() {
+        this.getBlogs();
+    }
+    getBlogs() {
+        this.blogService.getBlogs().subscribe((res) => {
+            this.blogs = res;
+        });
     }
 };
 NewsComponent = __decorate([

@@ -1,3 +1,4 @@
+using iNet.Common;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -47,7 +48,7 @@ namespace iNet.Entities
                 Title = entity.Title,
                 Body = entity.Body,
                 Abstract = entity.Abstract,
-                Image = entity.Image,
+                Image = entity.Image?.ToImageResource(),
                 DateTimeCreate = entity.DateTimeCreate,
                 Creator = entity.User?.FullName,
             };

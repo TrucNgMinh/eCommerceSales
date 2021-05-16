@@ -1,7 +1,10 @@
 import { __decorate } from "tslib";
 import { Component } from '@angular/core';
+import { Home } from 'src/app/models/home.model';
 let HomeAdminComponent = class HomeAdminComponent {
-    constructor() { }
+    constructor() {
+        this.homeModel = new Home();
+    }
     ngAfterViewInit() {
         $('.colorpicker-default').colorpicker({
             format: 'hex'
@@ -9,6 +12,27 @@ let HomeAdminComponent = class HomeAdminComponent {
         $('.colorpicker-rgba').colorpicker();
     }
     ngOnInit() {
+    }
+    onChangeBanner(event, index) {
+        const filesUpload = event.target.files[0];
+        const reader = new FileReader();
+        reader.readAsDataURL(filesUpload);
+        switch (index) {
+            case 1:
+                this.homeModel.bannerFile1 = filesUpload;
+                break;
+            case 2:
+                this.homeModel.bannerFile2 = filesUpload;
+                break;
+            case 3:
+                this.homeModel.bannerFile3 = filesUpload;
+                break;
+            case 4:
+                this.homeModel.bannerFile4 = filesUpload;
+                break;
+            default:
+                break;
+        }
     }
 };
 HomeAdminComponent = __decorate([

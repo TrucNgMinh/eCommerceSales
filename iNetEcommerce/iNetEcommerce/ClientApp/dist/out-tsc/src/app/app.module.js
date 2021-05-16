@@ -39,6 +39,7 @@ import { AngularEditorModule } from '@kolkov/angular-editor';
 import { ImagePipe } from './pipes/image.pipe';
 import { AppNumberPipe } from './pipes/number.pipe';
 import { IvyCarouselModule } from 'angular-responsive-carousel';
+import { NewsUserDetailComponent } from './components/user-components/news-user-detail/news-user-detail.component';
 let AppModule = class AppModule {
 };
 AppModule = __decorate([
@@ -71,7 +72,8 @@ AppModule = __decorate([
             AdminProductGroupComponent,
             AdminProductDetailComponent,
             NewsAdminComponent,
-            NewsDetailComponent
+            NewsDetailComponent,
+            NewsUserDetailComponent
         ],
         imports: [
             BrowserModule,
