@@ -1,4 +1,7 @@
 import { AfterViewInit, Component, OnInit } from '@angular/core';
+import { Home } from 'src/app/models/home.model';
+import { ImageModel } from 'src/app/models/image.model';
+import { HomeService } from 'src/app/services/home.service';
 declare var $:any;
 
 @Component({
@@ -8,18 +11,12 @@ declare var $:any;
 })
 
 export class HomeUserComponent implements OnInit, AfterViewInit {
-  images2 = [
-    {
-        path: '/assets/images/photo-1445452916036-9022dfd33aa8.jfif',
-    },
-    {
-        path: '/assets/images/photo-1444065707204-12decac917e8.jfif',
-    },
-    {
-        path: '/assets/images/photo-1505839673365-e3971f8d9184.jfif',
-    }
-];
-  constructor() { }
+  images: ImageModel[] = [];
+  homeModel: Home = new Home();
+  constructor(
+    private homeService: HomeService
+  ) { }
+
   ngAfterViewInit(): void {
     $("#readmore").on("click", function() {
       let dots = $("#dots");
@@ -39,8 +36,29 @@ export class HomeUserComponent implements OnInit, AfterViewInit {
   }
 
   ngOnInit(): void {
+    this.getHomeSetting();
   }
 
-  
+  generateImageCasoul():void {
+    if( this.homeModel.banner1 ) {
+      this.images.push( new ImageModel(this.homeModel.banner1));
+    }
+    if( this.homeModel.banner2 ) {
+      this.images.push( new ImageModel(this.homeModel.banner2));
+    }
+    if( this.homeModel.banner3 ) {
+      this.images.push( new ImageModel(this.homeModel.banner3));
+    }
+    if( this.homeModel.banner4 ) {
+      this.images.push( new ImageModel(this.homeModel.banner4));
+    }
+  }
+
+  getHomeSetting():void {
+    this.homeService.getSetting().subscribe((res)=> {
+      this.homeModel = res;
+      this.generateImageCasoul();
+    })
+  }
 
 }

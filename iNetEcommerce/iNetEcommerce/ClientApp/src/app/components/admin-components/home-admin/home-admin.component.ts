@@ -1,6 +1,8 @@
 import { AfterViewInit, Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { Home } from 'src/app/models/home.model';
 import { Product } from 'src/app/models/product.model';
+import { HomeService } from 'src/app/services/home.service';
 @Component({
   selector: 'app-home-admin',
   templateUrl: './home-admin.component.html',
@@ -10,7 +12,9 @@ export class HomeAdminComponent implements OnInit, AfterViewInit {
 
   homeModel: Home = new Home();
 
-  constructor() { }
+  constructor(
+    private homeService: HomeService
+  ) { }
   ngAfterViewInit(): void {
     (<any>$('.colorpicker-default')).colorpicker({
       format: 'hex'
@@ -22,7 +26,7 @@ export class HomeAdminComponent implements OnInit, AfterViewInit {
   }
 
   onChangeBanner(event: any, index: number): void {
-    
+
     const filesUpload: File = event.target.files[0];
 
     const reader = new FileReader();
@@ -48,4 +52,11 @@ export class HomeAdminComponent implements OnInit, AfterViewInit {
 
   }
 
+  updateBanner(form: NgForm): void {
+    this.homeService.updateBanner(this.homeModel).subscribe((res) => {
+      this.homeService.getSetting().subscribe((result) => {
+        this.homeModel = result;
+      })
+    });
+  }
 }
