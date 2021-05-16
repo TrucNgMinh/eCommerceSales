@@ -53,16 +53,16 @@
                                     <div class="col-xs-12 col-sm-12 col-lg-4 details-product">
                                         <carousel [cellWidth]="'100%'" [height]="400" [autoplay]="true" [dots]="true" [loop]="true">
                                             <div class="carousel-cell">
-                                                <img style="object-fit: cover;" [src]="images[0]">
+                                                <img style="object-fit: cover;" [src]="product.images[0]">
                                             </div>
                                             <div class="carousel-cell">
-                                                <img style="object-fit: cover;" [src]="images[1]">
+                                                <img style="object-fit: cover;" [src]="product.images[1]">
                                             </div>
                                             <div class="carousel-cell">
-                                                <img style="object-fit: cover;" [src]="images[2]">
+                                                <img style="object-fit: cover;" [src]="product.images[2]">
                                             </div>
                                             <div class="carousel-cell">
-                                                <img style="object-fit: cover;" [src]="images[3]">
+                                                <img style="object-fit: cover;" [src]="product.images[3]">
                                             </div>
                                         </carousel>
                                     </div>
@@ -99,4 +99,38 @@
             </div>
         </section>
     </div>
+</div>
+
+<div class="row mb-5" style="width: 90%; margin:auto;">
+    <carousel [objectFit]="'cover'" [arrowsOutside]="true" [height]="150" [margin]="30  " [autoplay]="true" [borderRadius]="40" [dots]="true" [cellsToShow]="6" [loop]="true">
+        <div class="carousel-cell">
+            <img style="object-fit: cover;" src="/assets/images/brand/logo1.png">
+        </div>
+        <div class="carousel-cell">
+            <img style="object-fit: cover;" src="/assets/images/brand/logo2.jpg">
+        </div>
+        <div class="carousel-cell">
+            <img style="object-fit: cover;" src="/assets/images/brand/logo3.png">
+        </div>
+        <div class="carousel-cell">
+            <img style="object-fit: cover;" src="/assets/images/brand/logo4.png">
+        </div>
+        <div class="carousel-cell">
+            <img style="object-fit: cover;" src="/assets/images/brand/logo5.jpg">
+        </div>
+        <div class="carousel-cell">
+            <img style="object-fit: cover;" src="/assets/images/brand/logo6.jpg">
+        </div>
+        <div class="carousel-cell">
+            <img style="object-fit: cover;" src="/assets/images/brand/logo7.jpg">
+        </div>
+        <div class="carousel-cell">
+            <img style="object-fit: cover;" src="/assets/images/brand/logo8.jpg">
+        </div>
+        <div class="carousel-cell">
+            <img style="object-fit: cover;" src="/assets/images/brand/logo9.jpg">
+        </div>
+
+
+    </carousel>
 </div>
