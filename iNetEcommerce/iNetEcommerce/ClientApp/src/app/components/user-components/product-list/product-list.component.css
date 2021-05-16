@@ -298,6 +298,7 @@ a {
     display: block;
     width: 100%;
     min-height: 355px;
+    height: 360px !important
 }
 
 img {
