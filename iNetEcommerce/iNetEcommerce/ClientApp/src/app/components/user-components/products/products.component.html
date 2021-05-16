@@ -3,17 +3,16 @@
         <div class="auto-container">
 
             <div class="row clearfix">
-                <div *ngFor="let prod of products" class="service-block col-md-4 col-sm-6 col-xs-12">
-                    <div class="inner-box">
-                        <div class="image-box">
-                            <div class="image">
-                                <a> <img [src]="prod.images[0]" style="width: 348px;height: 450px" alt=""></a>
+                <div *ngFor="let product of products" class="service-block col-md-4 col-sm-6 col-xs-12">
+                    <div class="product_list">
+                        <div class="product_img"> <img class="img-responsive" [routerLink]="['/product-detail', product.id]" [src]="product.images[0] | image" alt=""> </div>
+                        <div class="product_detail_btm">
+                            <div class="center">
+                                <h4><a [routerLink]="['/product-detail', product.id]">{{product.name}}</a></h4>
                             </div>
-                        </div>
-                        <div class="lower-content">
-                            <div class="icon-box"><a><span class="icon fa fa-angle-right"></span></a></div>
-                            <h3><a> {{prod.name}} </a></h3>
-
+                            <div class="product_price text-center">
+                                <p><span class="new_price">{{product.sellPrice | appNumber}}đ - </span><span class="new_price"> {{product.sellPriceMax | appNumber}}đ</span></p>
+                            </div>
                         </div>
                     </div>
                 </div>
