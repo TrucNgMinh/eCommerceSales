@@ -23,6 +23,13 @@ export class HomeAdminComponent implements OnInit, AfterViewInit {
   }
 
   ngOnInit(): void {
+    this.getHomeSetting();
+  }
+
+  getHomeSetting(): void {
+    this.homeService.getSetting().subscribe((result) => {
+      this.homeModel = result;
+    })
   }
 
   onChangeBanner(event: any, index: number): void {
@@ -52,11 +59,9 @@ export class HomeAdminComponent implements OnInit, AfterViewInit {
 
   }
 
-  updateBanner(form: NgForm): void {
+  updateBanner(): void {
     this.homeService.updateBanner(this.homeModel).subscribe((res) => {
-      this.homeService.getSetting().subscribe((result) => {
-        this.homeModel = result;
-      })
+      this.getHomeSetting();
     });
   }
 }
