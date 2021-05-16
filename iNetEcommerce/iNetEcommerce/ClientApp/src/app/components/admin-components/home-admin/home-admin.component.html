@@ -44,73 +44,76 @@
         <div class="col-12">
 
             <div class="card-box">
-                <h4 class="header-title m-t-0">Cấu hình hình ảnh</h4>
-                <div class="row">
-                    <div class="col-3">
-                        <div class="label split-label icm-lable text-dark">Ảnh banner</div>
-                        <div class="fileupload fileupload-new" data-provides="fileupload">
-                            <div class="fileupload-new thumbnail" style="width: 200px; height: 150px;">
-                                <img [src]="homeModel.banner1 | image" alt="image" class="img-fluid" />
-                            </div>
-                            <div class="fileupload-preview fileupload-exists thumbnail" style="max-width: 200px; max-height: 150px; line-height: 20px;"></div>
-                            <div>
-                                <button type="button" class="btn btn-custom btn-file">
+                <form #form="ngForm" autocomplete="off" ngNativeValidate>
+                    <h4 class="header-title m-t-0">Cấu hình hình ảnh</h4>
+                    <div class="row">
+                        <div class="col-3">
+                            <div class="label split-label icm-lable text-dark">Ảnh banner</div>
+                            <div class="fileupload fileupload-new" data-provides="fileupload">
+                                <div class="fileupload-new thumbnail" style="width: 200px; height: 150px;">
+                                    <img [src]="homeModel.banner1 | image" alt="image" class="img-fluid" />
+                                </div>
+                                <div class="fileupload-preview fileupload-exists thumbnail" style="max-width: 200px; max-height: 150px; line-height: 20px;"></div>
+                                <div>
+                                    <button type="button" class="btn btn-custom btn-file">
                                     <span class="fileupload-new"><i class="fa fa-paper-clip"></i> Chọn ảnh</span>
                                     <span class="fileupload-exists"><i class="fa fa-undo"></i> Đổi ảnh khác</span>
                                     <input type="file" (change)="onChangeBanner($event, 1)" class="btn-light" />
                                 </button>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-3">
-                        <div class="label split-label icm-lable text-dark"></div>
-                        <div class="fileupload fileupload-new" data-provides="fileupload">
-                            <div class="fileupload-new thumbnail" style="width: 200px; height: 150px;">
-                                <img [src]="homeModel.banner2 | image" alt="image" class="img-fluid" />
-                            </div>
-                            <div class="fileupload-preview fileupload-exists thumbnail" style="max-width: 200px; max-height: 150px; line-height: 20px;"></div>
-                            <div>
-                                <button type="button" class="btn btn-custom btn-file">
+                        <div class="col-3">
+                            <div class="label split-label icm-lable text-dark"></div>
+                            <div class="fileupload fileupload-new" data-provides="fileupload">
+                                <div class="fileupload-new thumbnail" style="width: 200px; height: 150px;">
+                                    <img [src]="homeModel.banner2 | image" alt="image" class="img-fluid" />
+                                </div>
+                                <div class="fileupload-preview fileupload-exists thumbnail" style="max-width: 200px; max-height: 150px; line-height: 20px;"></div>
+                                <div>
+                                    <button type="button" class="btn btn-custom btn-file">
                                     <span class="fileupload-new"><i class="fa fa-paper-clip"></i> Chọn ảnh</span>
                                     <span class="fileupload-exists"><i class="fa fa-undo"></i> Đổi ảnh khác</span>
                                     <input type="file" (change)="onChangeBanner($event, 2)" class="btn-light" />
                                 </button>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-3">
-                        <div class="label split-label icm-lable text-dark"></div>
-                        <div class="fileupload fileupload-new" data-provides="fileupload">
-                            <div class="fileupload-new thumbnail" style="width: 200px; height: 150px;">
-                                <img [src]="homeModel.banner3 | image" alt="image" class="img-fluid" />
-                            </div>
-                            <div class="fileupload-preview fileupload-exists thumbnail" style="max-width: 200px; max-height: 150px; line-height: 20px;"></div>
-                            <div>
-                                <button type="button" class="btn btn-custom btn-file">
+                        <div class="col-3">
+                            <div class="label split-label icm-lable text-dark"></div>
+                            <div class="fileupload fileupload-new" data-provides="fileupload">
+                                <div class="fileupload-new thumbnail" style="width: 200px; height: 150px;">
+                                    <img [src]="homeModel.banner3 | image" alt="image" class="img-fluid" />
+                                </div>
+                                <div class="fileupload-preview fileupload-exists thumbnail" style="max-width: 200px; max-height: 150px; line-height: 20px;"></div>
+                                <div>
+                                    <button type="button" class="btn btn-custom btn-file">
                                     <span class="fileupload-new"><i class="fa fa-paper-clip"></i> Chọn ảnh</span>
                                     <span class="fileupload-exists"><i class="fa fa-undo"></i> Đổi ảnh khác</span>
                                     <input type="file" (change)="onChangeBanner($event, 3)" class="btn-light" />
                                 </button>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-3">
-                        <div class="label split-label icm-lable text-dark"></div>
-                        <div class="fileupload fileupload-new" data-provides="fileupload">
-                            <div class="fileupload-new thumbnail" style="width: 200px; height: 150px;">
-                                <img [src]="homeModel.banner4 | image" alt="image" class="img-fluid" />
-                            </div>
-                            <div class="fileupload-preview fileupload-exists thumbnail" style="max-width: 200px; max-height: 150px; line-height: 20px;"></div>
-                            <div>
-                                <button type="button" class="btn btn-custom btn-file">
+                        <div class="col-3">
+                            <div class="label split-label icm-lable text-dark"></div>
+                            <div class="fileupload fileupload-new" data-provides="fileupload">
+                                <div class="fileupload-new thumbnail" style="width: 200px; height: 150px;">
+                                    <img [src]="homeModel.banner4 | image" alt="image" class="img-fluid" />
+                                </div>
+                                <div class="fileupload-preview fileupload-exists thumbnail" style="max-width: 200px; max-height: 150px; line-height: 20px;"></div>
+                                <div>
+                                    <button type="button" class="btn btn-custom btn-file">
                                     <span class="fileupload-new"><i class="fa fa-paper-clip"></i> Chọn ảnh</span>
                                     <span class="fileupload-exists"><i class="fa fa-undo"></i> Đổi ảnh khác</span>
                                     <input type="file" (change)="onChangeBanner($event, 4)" class="btn-light" />
                                 </button>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
+                    <button type="button" class="btn btn-custom waves-effect waves-light float-right" (click)="updateBanner(form)">Xác nhận</button>
+                </form>
 
 
             </div>
