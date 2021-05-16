@@ -312,6 +312,7 @@ img {
 
 img {
     border: 0;
+    border-radius: 20px;
 }
 
 .shop-item .lower-content {
@@ -437,4 +438,8 @@ img {
     width: 100%;
     display: flex;
     justify-content: center;
+}
+
+.carousel-cells .carousel-cell {
+    border-radius: 20px !important;
 }
