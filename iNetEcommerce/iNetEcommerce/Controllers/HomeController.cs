@@ -35,7 +35,7 @@ namespace iNetEcommerce.Controllers
         [Produces("application/json")]
         [Route("[action]")]
         [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
-        public async Task<IActionResult> UpdateBanner(IFormFile bannerFile1, IFormFile bannerFile2, IFormFile bannerFile3, IFormFile bannerFile4)
+        public async Task<IActionResult> UpdateBanner([FromForm]IFormFile bannerFile1, IFormFile bannerFile2, IFormFile bannerFile3, IFormFile bannerFile4)
         {
             try
             {

@@ -1,7 +1,12 @@
 .container-fluid {
     padding-top: 30px;
+    padding-bottom: 30px;
 }
 
 .fileupload .thumbnail {
     text-align: left;
+}
+
+.card-box {
+    height: 102%;
 }
