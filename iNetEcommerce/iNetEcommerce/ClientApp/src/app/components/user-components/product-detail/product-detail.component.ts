@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ImageModel } from 'src/app/models/image.model';
+import { ProductGroup } from 'src/app/models/product-group.model';
 import { Product } from 'src/app/models/product.model';
+import { ProductGroupService } from 'src/app/services/product-group.service';
 import { ProductService } from 'src/app/services/product.service';
 
 @Component({
@@ -14,17 +16,29 @@ export class ProductDetailComponent implements OnInit {
   productId: any;
   product: Product = new Product();
   images: ImageModel[] = [];
+  productGroups: ProductGroup[] = [];
 
   constructor(
+    private productGroupService: ProductGroupService,
     private productService: ProductService,
-    private route: ActivatedRoute,
-    private router: Router
+    private route: ActivatedRoute
   ) { }
 
   ngOnInit(): void {
 
     this.getQueryParams();
     
+    this.getProductGroups();
+  }
+
+  getProductGroups():void {
+
+    this.productGroupService.getProductGroups().subscribe((res)=>{
+
+      this.productGroups = res;
+
+    });
+
   }
 
   generateImageCasoul():void {

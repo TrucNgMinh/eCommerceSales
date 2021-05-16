@@ -7,7 +7,8 @@
 }
 
 .page-title-box {
-    padding: 22px 0;
+    padding-bottom: 3rem;
+    font-size: 15px;
 }
 
 #topnav {
@@ -826,10 +827,6 @@ a:focus {
 .card-box .form-group label {
     font-size: 20px;
     padding-bottom: 0.5em;
-}
-
-.page-title-box {
-    font-size: 13px;
 }
 
 .page-title-box .breadcrumb {
@@ -6972,4 +6969,13 @@ img {
 .details-product .carousel .carousel-container {
     border: 1px dashed !important;
     border-radius: 10px !important;
+}
+
+.breadcrumb-item a {
+    color: #aaaaaa !important;
+}
+
+.breadcrumb-item.active {
+    color: cornflowerblue;
+    cursor: pointer;
 }

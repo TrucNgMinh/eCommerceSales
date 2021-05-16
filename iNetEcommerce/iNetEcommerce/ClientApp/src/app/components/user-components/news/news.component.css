@@ -1,5 +1,5 @@
 .container {
-    padding: 30px;
+    padding: 20px;
 }
 
 .card-title {
@@ -14,7 +14,7 @@
 }
 
 .card-body {
-    height: 300px;
+    height: auto;
     overflow: hidden;
     text-overflow: ellipsis;
 }

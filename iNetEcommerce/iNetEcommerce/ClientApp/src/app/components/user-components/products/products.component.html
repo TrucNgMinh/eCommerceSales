@@ -3,52 +3,21 @@
         <div class="auto-container">
 
             <div class="row clearfix">
-                <!-- Services Block -->
-                <div class="service-block col-md-4 col-sm-6 col-xs-12">
+                <div *ngFor="let prod of products" class="service-block col-md-4 col-sm-6 col-xs-12">
                     <div class="inner-box">
                         <div class="image-box">
                             <div class="image">
-                                <a> <img src="https://hoangphatcompany.vn/uploads/imageProducts/1Wcr_PG21_image 2.png" style="width: 348px;height: 450px" alt=""></a>
+                                <a> <img [src]="prod.images[0]" style="width: 348px;height: 450px" alt=""></a>
                             </div>
                         </div>
                         <div class="lower-content">
                             <div class="icon-box"><a><span class="icon fa fa-angle-right"></span></a></div>
-                            <h3><a> Xi măng  Phúc Sơn </a></h3>
+                            <h3><a> {{prod.name}} </a></h3>
 
                         </div>
                     </div>
                 </div>
 
-                <div class="service-block col-md-4 col-sm-6 col-xs-12">
-                    <div class="inner-box">
-                        <div class="image-box">
-                            <div class="image">
-                                <a> <img src="https://vlxdthaohien.com/wp-content/uploads/2019/01/thanglong.png" style="width: 348px;height: 450px" alt=""></a>
-                            </div>
-                        </div>
-                        <div class="lower-content">
-                            <div class="icon-box"><a><span class="icon fa fa-angle-right"></span></a></div>
-                            <h3><a>  Xi măng Thăng Long </a></h3>
-
-                        </div>
-                    </div>
-                </div>
-                <div class="service-block col-md-4 col-sm-6 col-xs-12">
-                    <div class="inner-box">
-                        <div class="image-box">
-                            <div class="image">
-                                <a> <img src="http://ximangphucnguyen.com/timthumb.php?src=upload/sanpham/xm-insee-da-dung-power-s-1554878269.png&w=600&h=487&zc=2&q=80" style="width: 348px;height: 450px" alt=""></a>
-                            </div>
-                        </div>
-                        <div class="lower-content">
-                            <div class="icon-box"><a><span class="icon fa fa-angle-right"></span></a></div>
-                            <h3><a>  Xi măng INSEE Đa Dụng </a></h3>
-
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Services Block -->
             </div>
         </div>
     </section>
