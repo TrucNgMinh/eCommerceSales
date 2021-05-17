@@ -341,3 +341,10 @@ img {
 .carousel-cells .carousel-cell {
     border-radius: 20px !important;
 }
+
+@media (max-width: 991px) {
+    .carousel {
+        height: 150px !important;
+        padding-bottom: 30px;
+    }
+}

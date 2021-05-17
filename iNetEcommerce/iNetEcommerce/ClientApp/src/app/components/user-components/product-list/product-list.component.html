@@ -81,8 +81,42 @@
 
 </div>
 
-<div class="row mb-5" style="width: 90%; margin:auto;">
+<div *ngIf="!isMobile" class="row mb-5" style="width: 90%; margin:auto;">
     <carousel [objectFit]="'cover'" [arrowsOutside]="true" [height]="150" [margin]="30  " [autoplay]="true" [borderRadius]="40" [dots]="true" [cellsToShow]="6" [loop]="true">
+        <div class="carousel-cell">
+            <img style="object-fit: cover;" src="/assets/images/brand/logo1.png">
+        </div>
+        <div class="carousel-cell">
+            <img style="object-fit: cover;" src="/assets/images/brand/logo2.jpg">
+        </div>
+        <div class="carousel-cell">
+            <img style="object-fit: cover;" src="/assets/images/brand/logo3.png">
+        </div>
+        <div class="carousel-cell">
+            <img style="object-fit: cover;" src="/assets/images/brand/logo4.png">
+        </div>
+        <div class="carousel-cell">
+            <img style="object-fit: cover;" src="/assets/images/brand/logo5.jpg">
+        </div>
+        <div class="carousel-cell">
+            <img style="object-fit: cover;" src="/assets/images/brand/logo6.jpg">
+        </div>
+        <div class="carousel-cell">
+            <img style="object-fit: cover;" src="/assets/images/brand/logo7.jpg">
+        </div>
+        <div class="carousel-cell">
+            <img style="object-fit: cover;" src="/assets/images/brand/logo8.jpg">
+        </div>
+        <div class="carousel-cell">
+            <img style="object-fit: cover;" src="/assets/images/brand/logo9.jpg">
+        </div>
+
+
+    </carousel>
+</div>
+
+<div *ngIf="isMobile" class="row mb-5" style="width: 90%; margin:auto;">
+    <carousel [objectFit]="'cover'" [height]="150" [margin]="20  " [autoplay]="true" [borderRadius]="40" [dots]="true" [cellsToShow]="3" [loop]="true">
         <div class="carousel-cell">
             <img style="object-fit: cover;" src="/assets/images/brand/logo1.png">
         </div>
