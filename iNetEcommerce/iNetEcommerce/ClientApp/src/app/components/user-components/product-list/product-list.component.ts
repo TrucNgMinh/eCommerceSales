@@ -16,6 +16,7 @@ export class ProductListComponent implements OnInit, AfterViewInit {
   productsSrc: Product[] = [];
   products: Product[] = [];
   productGroupId: any;
+  isMobile: boolean = false;
 
   constructor(
     private productGroupService: ProductGroupService,
@@ -33,6 +34,10 @@ export class ProductListComponent implements OnInit, AfterViewInit {
     this.getQueryParam();
     
     this.getProductGroups();
+
+    this.isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+
+    console.log(this.isMobile);
 
   }
 
