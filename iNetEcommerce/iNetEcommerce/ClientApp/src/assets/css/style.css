@@ -479,9 +479,6 @@
     .wrapper-page.account-page-full {
         width: 100%;
     }
-    .carousel {
-        height: 300px !important;
-    }
 }
 
 @media (min-width: 480px) {

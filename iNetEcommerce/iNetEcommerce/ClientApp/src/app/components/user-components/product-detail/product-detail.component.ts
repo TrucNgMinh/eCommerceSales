@@ -5,6 +5,7 @@ import { ProductGroup } from 'src/app/models/product-group.model';
 import { Product } from 'src/app/models/product.model';
 import { ProductGroupService } from 'src/app/services/product-group.service';
 import { ProductService } from 'src/app/services/product.service';
+import UtilCommons from 'src/app/utils/util-common';
 
 @Component({
   selector: 'app-product-detail',
@@ -17,6 +18,7 @@ export class ProductDetailComponent implements OnInit {
   product: Product = new Product();
   images: ImageModel[] = [];
   productGroups: ProductGroup[] = [];
+  isMobile :boolean = false;
 
   constructor(
     private productGroupService: ProductGroupService,
@@ -29,6 +31,9 @@ export class ProductDetailComponent implements OnInit {
     this.getQueryParams();
     
     this.getProductGroups();
+
+    this.isMobile = UtilCommons.isMobile();
+
   }
 
   getProductGroups():void {

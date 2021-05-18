@@ -4,6 +4,7 @@ import { ProductGroup } from 'src/app/models/product-group.model';
 import { Product } from 'src/app/models/product.model';
 import { ProductGroupService } from 'src/app/services/product-group.service';
 import { ProductService } from 'src/app/services/product.service';
+import UtilCommons from 'src/app/utils/util-common';
 
 @Component({
   selector: 'app-product-list',
@@ -35,7 +36,7 @@ export class ProductListComponent implements OnInit, AfterViewInit {
     
     this.getProductGroups();
 
-    this.isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    this.isMobile = UtilCommons.isMobile();
 
     console.log(this.isMobile);
 

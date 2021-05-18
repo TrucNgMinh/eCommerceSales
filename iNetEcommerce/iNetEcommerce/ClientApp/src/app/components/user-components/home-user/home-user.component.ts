@@ -1,6 +1,7 @@
 import { AfterViewInit, ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { Home } from 'src/app/models/home.model';
 import { HomeService } from 'src/app/services/home.service';
+import UtilCommons from 'src/app/utils/util-common';
 declare var $:any;
 
 @Component({
@@ -12,6 +13,8 @@ declare var $:any;
 export class HomeUserComponent implements OnInit, AfterViewInit {
   images: any[] = [];
   homeModel: Home = new Home();
+  isMobile: boolean = false;
+
   constructor(
     private homeService: HomeService,
     private cd: ChangeDetectorRef
@@ -40,6 +43,8 @@ export class HomeUserComponent implements OnInit, AfterViewInit {
   ngOnInit(): void {
 
       this.getHomeSetting();
+
+      this.isMobile = UtilCommons.isMobile();
   }
 
   generateImageCasoul():void {
