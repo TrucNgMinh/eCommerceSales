@@ -7,7 +7,7 @@
 .stop {
     -webkit-text-size-adjust: 100%;
     -webkit-font-smoothing: antialiased;
-    --wpcargo: #007dc5;
+    --wpcargo: #8b0000;
     line-height: 1.6;
     font-size: 15px;
     color: #000;
@@ -26,7 +26,7 @@
 .site-footer {
     -webkit-text-size-adjust: 100%;
     -webkit-font-smoothing: antialiased;
-    --wpcargo: #007dc5;
+    --wpcargo: #8b0000;
     line-height: 1.6;
     text-align: justify;
     font-style: inherit;
@@ -47,7 +47,7 @@
 .site-footer .col-md-4 {
     -webkit-text-size-adjust: 100%;
     -webkit-font-smoothing: antialiased;
-    --wpcargo: #007dc5;
+    --wpcargo: #8b0000;
     line-height: 1.6;
     font-size: 14px;
     color: #AAA;
@@ -86,7 +86,7 @@ section {
 .site-footer .widget-title {
     -webkit-text-size-adjust: 100%;
     -webkit-font-smoothing: antialiased;
-    --wpcargo: #007dc5;
+    --wpcargo: #8b0000;
     line-height: 1.6;
     -webkit-box-sizing: border-box;
     border: 0;
@@ -110,7 +110,7 @@ section {
 .site-footer .widget-title span {
     -webkit-text-size-adjust: 100%;
     -webkit-font-smoothing: antialiased;
-    --wpcargo: #007dc5;
+    --wpcargo: #8b0000;
     line-height: 1.6;
     text-transform: uppercase;
     font-size: 18px;
@@ -147,7 +147,7 @@ section {
 .site-footer .menu {
     -webkit-text-size-adjust: 100%;
     -webkit-font-smoothing: antialiased;
-    --wpcargo: #007dc5;
+    --wpcargo: #8b0000;
     line-height: 1.6;
     color: #AAA;
     -webkit-box-sizing: border-box;
@@ -172,7 +172,7 @@ section {
 .site-footer .menu li {
     -webkit-text-size-adjust: 100%;
     -webkit-font-smoothing: antialiased;
-    --wpcargo: #007dc5;
+    --wpcargo: #8b0000;
     line-height: 1.6;
     color: #AAA;
     list-style: disc;
@@ -226,7 +226,7 @@ section {
 .copyright {
     -webkit-text-size-adjust: 100%;
     -webkit-font-smoothing: antialiased;
-    --wpcargo: #007dc5;
+    --wpcargo: #8b0000;
     font-size: 15px;
     -webkit-box-sizing: border-box;
     border: 0;
@@ -258,7 +258,7 @@ section {
 .copyright .left {
     -webkit-text-size-adjust: 100%;
     -webkit-font-smoothing: antialiased;
-    --wpcargo: #007dc5;
+    --wpcargo: #8b0000;
     font-size: 15px;
     line-height: 1;
     color: #fff;
@@ -463,7 +463,7 @@ ul.style1 li:before,
 .vc_custom_heading.style1:after,
 .vc_custom_heading.style2:before,
 .vc_custom_heading.style2:after {
-    color: #007dc5;
+    color: #8b0000;
 }
 
 .extra-info i {

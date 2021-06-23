@@ -21,7 +21,7 @@ p {
 
 b,
 strong {
-    color: #007dc5;
+    color: #8b0000;
 }
 
 .wpb_wrapper h3,
@@ -89,7 +89,7 @@ ul.style1 li:before,
 .vc_custom_heading.style1:after,
 .vc_custom_heading.style2:before,
 .vc_custom_heading.style2:after {
-    color: #007dc5;
+    color: #8b0000;
     font-size: 20px;
 }
 

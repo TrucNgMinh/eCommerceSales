@@ -269,7 +269,7 @@ a.fc-more {
     font-weight: 300;
     text-align: center;
     line-height: 35px;
-    color: #007dc5;
+    color: #8b0000;
 }
 
 .features-div {
@@ -551,7 +551,7 @@ div.info-title h2 {
 /*******************************/
 
 .theme_color {
-    color: #007dc5;
+    color: #8b0000;
 }
 
 .paddding_left_15 {
@@ -597,11 +597,11 @@ div.info-title h2 {
 }
 
 .call-action-color .main_heading h1 {
-    color: #007dc5;
+    color: #8b0000;
 }
 
 .call-action-color .underline {
-    background-color: #007dc5;
+    background-color: #8b0000;
 }
 
 .product_list {
