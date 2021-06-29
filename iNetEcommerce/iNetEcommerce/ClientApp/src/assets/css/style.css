@@ -1208,7 +1208,7 @@ code {
 }
 
 .text-muted {
-    color: #98a6ad !important;
+    color: #000000 !important;
 }
 
 .text-primary {
@@ -6772,7 +6772,7 @@ figure {
 
 .h1-trangchu h1 {
     font-size: 25px;
-    color: #007dc5;
+    color: #8b0000;
     text-align: center;
 }
 
