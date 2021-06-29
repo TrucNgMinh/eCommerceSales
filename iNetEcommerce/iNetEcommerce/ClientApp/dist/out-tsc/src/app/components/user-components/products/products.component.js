@@ -1,8 +1,18 @@
 import { __decorate } from "tslib";
 import { Component } from '@angular/core';
 let ProductsComponent = class ProductsComponent {
-    constructor() { }
+    constructor(productService) {
+        this.productService = productService;
+        this.products = [];
+    }
     ngOnInit() {
+        this.getProducts();
+    }
+    getProducts() {
+        this.productService.getProducts().subscribe((res) => {
+            this.products = res;
+            this.products = this.products.slice(0, 3);
+        });
     }
 };
 ProductsComponent = __decorate([

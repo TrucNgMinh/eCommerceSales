@@ -2,16 +2,26 @@ import { __decorate } from "tslib";
 import { Component } from '@angular/core';
 import { ImageModel } from 'src/app/models/image.model';
 import { Product } from 'src/app/models/product.model';
+import UtilCommons from 'src/app/utils/util-common';
 let ProductDetailComponent = class ProductDetailComponent {
-    constructor(productService, route, router) {
+    constructor(productGroupService, productService, route) {
+        this.productGroupService = productGroupService;
         this.productService = productService;
         this.route = route;
-        this.router = router;
         this.product = new Product();
         this.images = [];
+        this.productGroups = [];
+        this.isMobile = false;
     }
     ngOnInit() {
         this.getQueryParams();
+        this.getProductGroups();
+        this.isMobile = UtilCommons.isMobile();
+    }
+    getProductGroups() {
+        this.productGroupService.getProductGroups().subscribe((res) => {
+            this.productGroups = res;
+        });
     }
     generateImageCasoul() {
         this.product.images.forEach(element => {

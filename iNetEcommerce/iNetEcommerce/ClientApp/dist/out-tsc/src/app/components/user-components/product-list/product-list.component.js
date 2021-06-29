@@ -1,5 +1,6 @@
 import { __decorate } from "tslib";
 import { Component } from '@angular/core';
+import UtilCommons from 'src/app/utils/util-common';
 let ProductListComponent = class ProductListComponent {
     constructor(productGroupService, productService, router, route) {
         this.productGroupService = productGroupService;
@@ -9,12 +10,15 @@ let ProductListComponent = class ProductListComponent {
         this.productGroups = [];
         this.productsSrc = [];
         this.products = [];
+        this.isMobile = false;
     }
     ngAfterViewInit() {
     }
     ngOnInit() {
         this.getQueryParam();
         this.getProductGroups();
+        this.isMobile = UtilCommons.isMobile();
+        console.log(this.isMobile);
     }
     getQueryParam() {
         this.route.params.subscribe(params => {

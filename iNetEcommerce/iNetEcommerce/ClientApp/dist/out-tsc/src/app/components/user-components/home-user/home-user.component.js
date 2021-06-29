@@ -1,18 +1,14 @@
 import { __decorate } from "tslib";
 import { Component } from '@angular/core';
+import { Home } from 'src/app/models/home.model';
+import UtilCommons from 'src/app/utils/util-common';
 let HomeUserComponent = class HomeUserComponent {
-    constructor() {
-        this.images2 = [
-            {
-                path: '/assets/images/photo-1445452916036-9022dfd33aa8.jfif',
-            },
-            {
-                path: '/assets/images/photo-1444065707204-12decac917e8.jfif',
-            },
-            {
-                path: '/assets/images/photo-1505839673365-e3971f8d9184.jfif',
-            }
-        ];
+    constructor(homeService, cd) {
+        this.homeService = homeService;
+        this.cd = cd;
+        this.images = [];
+        this.homeModel = new Home();
+        this.isMobile = false;
     }
     ngAfterViewInit() {
         $("#readmore").on("click", function () {
@@ -31,8 +27,40 @@ let HomeUserComponent = class HomeUserComponent {
                 moreText.css("display", "inline");
             }
         });
+        this.cd.detectChanges();
     }
     ngOnInit() {
+        this.getHomeSetting();
+        this.isMobile = UtilCommons.isMobile();
+    }
+    generateImageCasoul() {
+        if (this.homeModel.banner1) {
+            this.images.push({
+                path: this.homeModel.banner1.toString()
+            });
+        }
+        if (this.homeModel.banner2) {
+            this.images.push({
+                path: this.homeModel.banner2.toString()
+            });
+        }
+        if (this.homeModel.banner3) {
+            this.images.push({
+                path: this.homeModel.banner3.toString()
+            });
+        }
+        if (this.homeModel.banner4) {
+            this.images.push({
+                path: this.homeModel.banner4.toString()
+            });
+        }
+    }
+    getHomeSetting() {
+        this.homeService.getSetting().subscribe((res) => {
+            this.homeModel = res;
+            this.generateImageCasoul();
+            this.cd.detectChanges();
+        });
     }
 };
 HomeUserComponent = __decorate([

@@ -705,3 +705,18 @@ div.info-title h2 {
     display: flex;
     justify-content: center;
 }
+
+
+/******* Section Header ********/
+
+.featured-list .fa{
+    font-style: normal;
+    color: black;
+    padding-right: 10px;
+}
+.featured-list li {
+    list-style-type: none;
+    line-height: 2;
+}
+
+/*******************************/

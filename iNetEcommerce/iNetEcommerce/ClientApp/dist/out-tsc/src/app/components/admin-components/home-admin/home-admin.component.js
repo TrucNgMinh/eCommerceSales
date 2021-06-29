@@ -2,7 +2,8 @@ import { __decorate } from "tslib";
 import { Component } from '@angular/core';
 import { Home } from 'src/app/models/home.model';
 let HomeAdminComponent = class HomeAdminComponent {
-    constructor() {
+    constructor(homeService) {
+        this.homeService = homeService;
         this.homeModel = new Home();
     }
     ngAfterViewInit() {
@@ -12,6 +13,12 @@ let HomeAdminComponent = class HomeAdminComponent {
         $('.colorpicker-rgba').colorpicker();
     }
     ngOnInit() {
+        this.getHomeSetting();
+    }
+    getHomeSetting() {
+        this.homeService.getSetting().subscribe((result) => {
+            this.homeModel = result;
+        });
     }
     onChangeBanner(event, index) {
         const filesUpload = event.target.files[0];
@@ -33,6 +40,11 @@ let HomeAdminComponent = class HomeAdminComponent {
             default:
                 break;
         }
+    }
+    updateBanner() {
+        this.homeService.updateBanner(this.homeModel).subscribe((res) => {
+            this.getHomeSetting();
+        });
     }
 };
 HomeAdminComponent = __decorate([
