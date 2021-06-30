@@ -11,7 +11,12 @@
                                 <h4><a [routerLink]="['/product-detail', product.id]">{{product.name}}</a></h4>
                             </div>
                             <div class="product_price text-center">
-                                <p><span class="new_price">{{product.sellPrice | appNumber}}đ - </span><span class="new_price"> {{product.sellPriceMax | appNumber}}đ</span></p>
+                                <p>
+                                    <span *ngIf="product.sellPrice === 0" class="new_price"> Giá liên hệ</span>
+                                </p>
+                                <p>
+                                    <span *ngIf="product.sellPrice !== 0" class="new_price">{{product.sellPrice | appNumber}}đ - </span><span *ngIf="product.sellPrice !== 0" class="new_price"> {{product.sellPriceMax | appNumber}}đ</span>
+                                </p>
                             </div>
                         </div>
                     </div>

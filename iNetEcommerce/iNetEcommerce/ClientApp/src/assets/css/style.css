@@ -6964,7 +6964,7 @@ img {
 }
 
 .details-product .carousel .carousel-container {
-    border: 1px dashed !important;
+    border: 1px solid !important;
     border-radius: 10px !important;
 }
 
@@ -6973,6 +6973,6 @@ img {
 }
 
 .breadcrumb-item.active {
-    color: cornflowerblue;
+    color: #8b0000;
     cursor: pointer;
 }
