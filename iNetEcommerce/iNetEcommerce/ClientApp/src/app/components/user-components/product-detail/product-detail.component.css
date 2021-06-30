@@ -257,7 +257,7 @@ strong {
     font-weight: bold;
     line-height: 24px;
     margin-right: 10px;
-    color: #35c0c5;
+    color: #8b0000;
 }
 
 .product-box .product-price,
@@ -626,4 +626,6 @@ img {
     padding-top: 15px;
     border-top: 1px solid #ccc;
     width: 100%;
+    font-size: 24px;
+    font-weight: bold !important;
 }

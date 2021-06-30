@@ -52,13 +52,16 @@
                                     <div class="product_img"> <img class="img-responsive" [routerLink]="['/product-detail', product.id]" [src]="product.images[0] | image" alt=""> </div>
                                     <div class="product_detail_btm">
                                         <div class="center">
-                                            <h4><a [routerLink]="['/product-detail', product.id]">{{product.name}}</a></h4>
+                                            <h4><a class="product_name" [routerLink]="['/product-detail', product.id]">{{product.name}}</a></h4>
                                         </div>
                                         <!-- <div class="starratin">
                                             <div class="center"> <i class="fa fa-star" aria-hidden="true"></i> <i class="fa fa-star" aria-hidden="true"></i> <i class="fa fa-star" aria-hidden="true"></i> <i class="fa fa-star" aria-hidden="true"></i> <i class="fa fa-star-o"
                                                     aria-hidden="true"></i> </div>
                                         </div> -->
-                                        <div class="product_price text-center">
+                                        <div *ngIf="product.sellPrice === 0" class="product_price text-center">
+                                            <p><span class="new_price">Giá liên hệ</span></p>
+                                        </div>
+                                        <div *ngIf="product.sellPrice !== 0" class="product_price text-center">
                                             <p><span class="new_price">{{product.sellPrice | appNumber}}đ - </span><span class="new_price"> {{product.sellPriceMax | appNumber}}đ</span></p>
                                         </div>
                                     </div>

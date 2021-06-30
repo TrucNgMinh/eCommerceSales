@@ -73,8 +73,9 @@
                                         <div class="price-box mb-1">
                                             <div class="special-price">
                                                 <span>Giá sản phẩm:</span>
-                                                <span class="price product-price ml-2" style="display: revert;">{{product.sellPrice}}đ -
+                                                <span *ngIf="product.sellPrice!==0" class="price product-price ml-2" style="display: revert;">{{product.sellPrice}}đ -
                                                 {{product.sellPriceMax}}đ</span>
+                                                <span *ngIf="product.sellPrice===0" class="price product-price ml-2" style="display: revert;">Liên hệ</span>
                                             </div>
                                         </div>
                                         <span>Mô tả:</span>

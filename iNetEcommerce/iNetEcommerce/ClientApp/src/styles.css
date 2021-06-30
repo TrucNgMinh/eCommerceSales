@@ -354,7 +354,7 @@ div.info-title h2 {
     position: relative;
     height: auto;
     font-family: robotoC;
-    color: #0364b5;
+    color: #8b0000;
     font-size: 24px;
     margin: 20px 0px;
     text-transform: uppercase;
@@ -616,7 +616,7 @@ div.info-title h2 {
 .product_list:hover,
 .product_list:focus {
     box-shadow: 0 0 25px -17px #000;
-    border-bottom: solid #17a5e9 5px;
+    border-bottom: solid #8b0000 5px;
 }
 
 .product_img {
@@ -679,7 +679,7 @@ div.info-title h2 {
 .new_price {
     font-size: 18px;
     font-weight: 600;
-    color: #000;
+    color: #8b0000;
 }
 
 .recent_item {
@@ -708,14 +708,16 @@ div.info-title h2 {
 
 /******* Section Header ********/
 
-.featured-list .fa{
+.featured-list .fa {
     font-style: normal;
     color: black;
     padding-right: 10px;
 }
+
 .featured-list li {
     list-style-type: none;
     line-height: 2;
 }
+
 
 /*******************************/
