@@ -12,6 +12,10 @@ export class HomeAdminComponent implements OnInit, AfterViewInit {
 
   homeModel: Home = new Home();
 
+  phoneNumber: any;
+  zaloNumber: any;
+  emailAddress: any;
+
   constructor(
     private homeService: HomeService
   ) { }
@@ -63,5 +67,13 @@ export class HomeAdminComponent implements OnInit, AfterViewInit {
     this.homeService.updateBanner(this.homeModel).subscribe((res) => {
       this.getHomeSetting();
     });
+  }
+
+  updateSetting():void {
+
+  }
+
+  updateContact():void {
+
   }
 }

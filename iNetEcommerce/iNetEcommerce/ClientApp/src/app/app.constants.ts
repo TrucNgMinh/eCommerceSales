@@ -98,7 +98,7 @@ export const datatableLanguageOptions = {
 export const ngEditorOptions = {
     editable: true,
     spellcheck: true,
-    height: '150px',
+    height: '300px',
     minHeight: '0',
     maxHeight: 'auto',
     width: 'auto',

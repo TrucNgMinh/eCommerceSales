@@ -32,7 +32,7 @@
     font-style: inherit;
     -webkit-box-sizing: border-box;
     display: block;
-    font-family: Open Sans;
+    font-family: 'Roboto', sans-serif;
     font-size: 14px;
     font-weight: 400;
     padding: 70px 0 40px 0;
@@ -97,7 +97,7 @@ section {
     vertical-align: baseline;
     margin: 0;
     font-weight: 300!important;
-    font-family: Open Sans Condensed;
+    font-family: 'Roboto', sans-serif;
     overflow: hidden;
     position: relative;
     text-transform: uppercase;

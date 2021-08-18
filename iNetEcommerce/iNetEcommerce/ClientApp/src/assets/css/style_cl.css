@@ -149,7 +149,7 @@ File: Main Css File
   text-transform: uppercase;
   letter-spacing: 1px;
   display: block;
-  font-family: "Rubik", sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 
 .logo span span {
@@ -313,7 +313,7 @@ File: Main Css File
   font-size: 11px;
   text-transform: uppercase;
   color: #98a6ad;
-  font-family: "Rubik", sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 
 .enlarged .slimScrollDiv, .enlarged .slimscroll-menu {
@@ -869,7 +869,7 @@ html {
 }
 
 .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
-  font-family: "Rubik", sans-serif;
+  font-family: 'Roboto', sans-serif;
   margin: 10px 0;
 }
 
@@ -1391,7 +1391,7 @@ code {
 
 /* Badge */
 .badge {
-  font-family: "Rubik", sans-serif;
+  font-family: 'Roboto', sans-serif;
   -webkit-box-shadow: 0 0 24px 0 rgba(0, 0, 0, 0.06), 0 1px 0 0 rgba(0, 0, 0, 0.02);
           box-shadow: 0 0 24px 0 rgba(0, 0, 0, 0.06), 0 1px 0 0 rgba(0, 0, 0, 0.02);
   padding: .35em .5em;
@@ -2069,7 +2069,7 @@ code {
   padding: 5px 12px 5px 12px;
   margin-left: -30px;
   margin-bottom: 15px;
-  font-family: "Rubik", sans-serif;
+  font-family: 'Roboto', sans-serif;
   -webkit-box-shadow: 2px 5px 10px rgba(49, 58, 70, 0.15);
   -o-box-shadow: 2px 5px 10px rgba(49, 58, 70, 0.15);
   box-shadow: 2px 5px 10px rgba(49, 58, 70, 0.15);
@@ -2179,7 +2179,7 @@ code {
 .ribbon-box .ribbon-two span {
   font-size: 13px;
   color: #ffffff;
-  font-family: "Rubik", sans-serif;
+  font-family: 'Roboto', sans-serif;
   text-align: center;
   line-height: 20px;
   transform: rotate(-45deg);
@@ -2360,7 +2360,7 @@ code {
 
 /* Tooltips */
 .tooltip {
-  font-family: "Rubik", sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 
 .tooltip .tooltip-inner {
@@ -2844,7 +2844,7 @@ code {
 }
 
 .jq-toast-single h2 {
-  font-family: "Rubik", sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 
 .jq-toast-single a {
@@ -3182,7 +3182,7 @@ code {
 
 .nav-tabs > li > a, .nav-pills > li > a {
   color: #98a6ad;
-  font-family: "Rubik", sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 
 .nav-pills .nav-item.show .nav-link, .nav-pills .nav-link.active {
@@ -3207,7 +3207,7 @@ code {
 .tabs-vertical-env .nav.tabs-vertical li > a {
   color: #98a6ad;
   white-space: nowrap;
-  font-family: "Rubik", sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 
 .tabs-vertical-env .nav.tabs-vertical li > a.active {
@@ -3455,7 +3455,7 @@ code {
 
 .legend tr {
   height: 30px;
-  font-family: "Rubik", sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 
 .legendLabel {
@@ -3773,7 +3773,7 @@ code {
 }
 
 .mail-list a {
-  font-family: "Rubik", sans-serif;
+  font-family: 'Roboto', sans-serif;
   vertical-align: middle;
   color: #797979;
   padding: 10px 15px;
@@ -3816,7 +3816,7 @@ code {
 label {
   font-size: 14px;
   color: #313a46;
-  font-family: "Rubik", sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-weight: 500;
 }
 
@@ -4440,7 +4440,7 @@ input[type="color"] {
 }
 
 .mce-window-head .mce-title {
-  font-family: "Rubik", sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 
 .mce-window {
@@ -4511,7 +4511,7 @@ input[type="color"] {
 }
 
 th {
-  font-family: "Rubik", sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-weight: 500;
 }
 
@@ -4594,7 +4594,7 @@ table.dataTable.dtr-inline.collapsed > tbody > tr.parent > th:first-child:before
 }
 
 table.dataTable > tbody > tr.child span.dtr-title {
-  font-family: "Rubik", sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 
 /* Responsive Table */
@@ -4734,7 +4734,7 @@ table.dataTable > tbody > tr.child span.dtr-title {
 .tablesaw thead tr:first-child th {
   border: none;
   font-weight: 500;
-  font-family: "Rubik", sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 
 .tablesaw td {
@@ -4915,7 +4915,7 @@ table.dataTable > tbody > tr.child span.dtr-title {
   border: none;
   background: #313a46;
   color: white;
-  font-family: "Rubik", sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-size: 14px;
   padding: 5px 8px;
 }
@@ -4935,7 +4935,7 @@ table.dataTable > tbody > tr.child span.dtr-title {
   max-width: 200px;
   display: none;
   color: #ffffff;
-  font-family: "Rubik", sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 
 .mapael .zoomIn, .mapael .zoomOut, .mapael .zoomReset {
@@ -4988,13 +4988,13 @@ table.dataTable > tbody > tr.child span.dtr-title {
 
 .fc-toolbar h2 {
   font-size: 20px;
-  font-family: "Rubik", sans-serif;
+  font-family: 'Roboto', sans-serif;
   line-height: 30px;
   text-transform: uppercase;
 }
 
 .fc-day-grid-event .fc-time {
-  font-family: "Rubik", sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 
 .fc-day {
@@ -5078,12 +5078,12 @@ table.dataTable > tbody > tr.child span.dtr-title {
 
 .fc-basic-view td.fc-week-number span {
   padding-right: 8px;
-  font-family: "Rubik", sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 
 .fc-basic-view td.fc-day-number {
   padding-right: 8px;
-  font-family: "Rubik", sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 
 .fc-basic-view .fc-content {
@@ -5880,7 +5880,7 @@ h3.timeline-title {
   padding: 5px 10px;
   display: inline-block;
   margin-bottom: 5px;
-  font-family: "Rubik", sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 
 .portfolioFilter a:hover {
@@ -5996,7 +5996,7 @@ h3.timeline-title {
   margin-top: 20px;
   font-size: 26px;
   line-height: 42px;
-  font-family: "Rubik", sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-weight: 500;
   height: 42px;
   display: inline-block;

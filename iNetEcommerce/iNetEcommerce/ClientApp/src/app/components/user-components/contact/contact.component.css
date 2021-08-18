@@ -81,7 +81,7 @@ ul.style1 li:before,
     margin-top: -4px;
     line-height: 1;
     font-weight: 700;
-    font-family: "Times New Roman", "Bitstream Charter", Times, serif;
+    font-family: 'Roboto', sans-serif;
 }
 
 .vc_custom_heading.style3 h2,
